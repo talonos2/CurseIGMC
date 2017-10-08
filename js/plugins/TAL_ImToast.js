@@ -47,7 +47,7 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var zoomX = $gamePlayer.screenX();
         var zoomY = $gamePlayer.screenY() - 24;
         if (n === 2) {
-            $gameScreen.setZoom(zoomX, zoomY, 1);
+            //$gameScreen.setZoom(zoomX, zoomY, 1);
             this.snapForBattleBackground();
             this.startFlashForEncounter(12);
         }
@@ -133,18 +133,37 @@ BattleManager.processVictory = function() {
 
 Scene_Battle.prototype.stop = function() {
     Scene_Base.prototype.stop.call(this);
-	this.startFadeOut(15, true);
+	this.startFadeOut(10, true);
     this._statusWindow.close();
     this._partyCommandWindow.close();
     this._actorCommandWindow.close();
 };
 
-Game_Actor.prototype.makeAutoBattleActions = function() {
-    for (var i = 0; i < this.numActions(); i++) {
-        var list = this.makeActionList();
-        this.setAction(i, list[0]);
-    }
+Game_Actor.prototype.makeAutoBattleActions = function() 
+{
+    if (this.doSkill(5, "up")) {return;}
+    this.doBasicAttack();
+};
+
+Game_Actor.prototype.doBasicAttack = function() 
+{
+    var action = new Game_Action(this);
+    action.setAttack();
+    this.setAction(0, action);
     this.setActionState('waiting');
+};
+
+Game_Actor.prototype.doSkill = function(skillNum, key) 
+{
+    if (Input.isPressed(key)&&this.canUse($dataSkills[skillNum]))
+    {
+        var action = new Game_Action(this);
+        action.setSkill(skillNum);
+        this.setAction(0, action);
+        this.setActionState('waiting');
+        return true;
+    }
+    return false;
 };
 
 //Taken from Yanfly's BEC 1868
@@ -160,3 +179,19 @@ BattleManager.endTurn = function() {
     Yanfly.BEC.BattleManager_endTurn.call(this);
     BattleManager.refreshAllMembers();
 };
+
+//Here for reference:
+/*
+Game_Actor.prototype.makeActionList = function() {
+    var list = [];
+    var action = new Game_Action(this);
+    action.setAttack();
+    list.push(action);
+    this.usableSkills().forEach(function(skill) {
+        action = new Game_Action(this);
+        action.setSkill(skill.id);
+        list.push(action);
+    }, this);
+    return list;
+};
+*/

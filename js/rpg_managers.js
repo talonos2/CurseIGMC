@@ -2413,14 +2413,11 @@ BattleManager.startTurn = function() {
 BattleManager.updateTurn = function() {
     $gameParty.requestMotionRefresh();
     if (!this._subject) {
-        console.log("Updating turn - No subject")
         this._subject = this.getNextSubject();
     }
     if (this._subject) {
-        console.log("Updating turn - Has subject")
         this.processTurn();
     } else {
-        console.log("Updating turn - Still No subject")
         this.endTurn();
     }
 };
@@ -2445,7 +2442,6 @@ BattleManager.processTurn = function() {
 };
 
 BattleManager.endTurn = function() {
-    console.log("START END TURN");
     this._phase = 'turnEnd';
     this._preemptive = false;
     this._surprise = false;
@@ -2458,7 +2454,6 @@ BattleManager.endTurn = function() {
     if (this.isForcedTurn()) {
         this._turnForced = false;
     }
-    console.log("END END TURN");
 };
 
 BattleManager.isForcedTurn = function () {
