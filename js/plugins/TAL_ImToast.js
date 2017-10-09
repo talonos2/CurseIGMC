@@ -198,7 +198,7 @@ Game_Actor.prototype.makeActionList = function() {
 };
 */
 
-Input._defOfRecently = 200;
+Input._defOfRecently = 165;
 Input._pressedTimeMap = {};
 
 Input.wasPressedRecently = function(keyName) 
