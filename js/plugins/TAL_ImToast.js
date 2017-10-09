@@ -9,6 +9,8 @@
  * @help There IS no help. You are doomed.
  */
 
+ var TAL_Input
+
 //Copied from RPGScenes 635:
 
 Scene_Map.prototype.launchBattle = function() {
@@ -195,3 +197,36 @@ Game_Actor.prototype.makeActionList = function() {
     return list;
 };
 */
+
+Input._defOfRecently = 120;
+Input._pressedTimeMap = {};
+
+Input.wasPressedRecently = function(keyName) 
+{
+    var timeSincePressed = SceneManager._getTimeInMs()-this._pressedTimeMap[keyName];
+    console.log(timeSincePressed);
+    return (timeSincePressed <= this._defOfRecently);
+};
+
+Input.update = function() 
+{
+    this._pollGamepads();
+    if (this._currentState[this._latestButton]) {
+        this._pressedTime++;
+    } else {
+        this._latestButton = null;
+    }
+    //iterate over all held keys, check if previously unheld, set time held to 1;
+    for (var name in this._currentState) 
+    {
+        if (this._currentState[name] && !this._previousState[name]) 
+        {
+            this._pressedTimeMap[name] = SceneManager._getTimeInMs();
+            this._latestButton = name;
+            this._pressedTime = 0;
+            this._date = Date.now();
+        }
+        this._previousState[name] = this._currentState[name];
+    }
+    this._updateDirection();
+};
