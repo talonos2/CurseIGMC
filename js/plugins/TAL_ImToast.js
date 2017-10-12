@@ -230,3 +230,27 @@ Input.update = function()
     }
     this._updateDirection();
 };
+
+Game_Actor.prototype.changeExp = function(exp, show) {
+    this._exp[this._classId] = Math.max(exp, 0);
+    var oldMHP = this.mhp;
+    var lastLevel = this._level;
+    var lastSkills = this.skills();
+    while (!this.isMaxLevel() && this.currentExp() >= this.nextLevelExp()) {
+        this.levelUp();
+    }
+    while (this.currentExp() < this.currentLevelExp()) {
+        this.levelDown();
+    }
+    if (show && this._level > lastLevel) {
+        this.displayLevelUp(this.findNewSkills(lastSkills));
+    }
+    this.refresh();
+    console.log(oldMHP, this.mhp)
+    this._hp += (this.mhp-oldMHP);
+};
+
+Game_Player.prototype.distancePerFrame = function() 
+{
+    return 24/256 + (this.isDashing()?16/256:0);
+};
