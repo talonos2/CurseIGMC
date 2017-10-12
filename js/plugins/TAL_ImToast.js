@@ -9,7 +9,7 @@
  * @help There IS no help. You are doomed.
  */
 
- var TAL_Input
+ var Talonos = {}
 
 //Copied from RPGScenes 635:
 
@@ -253,4 +253,21 @@ Game_Actor.prototype.changeExp = function(exp, show) {
 Game_Player.prototype.distancePerFrame = function() 
 {
     return 24/256 + (this.isDashing()?16/256:0);
+};
+
+Talonos.Game_Timer_Update = Game_Timer.prototype.update
+
+Game_Timer.prototype.update = function(sceneActive) 
+{
+    Talonos.Game_Timer_Update.apply(this, arguments);
+    var framesPerHpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mhp);
+    var framesPerMpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mmp);
+    if (this.getFrames()%framesPerHpRegen === 0)
+    {
+        $gameParty.allMembers()[0].gainHp(1);
+    }
+    if (this.getFrames()%framesPerMpRegen === 0)
+    {
+        $gameParty.allMembers()[0].gainMp(1);
+    }
 };
