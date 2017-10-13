@@ -10,6 +10,7 @@
  */
 
  var Talonos = {}
+ Talonos.unsungLevels = 0;
 
 //Copied from RPGScenes 635:
 
@@ -198,6 +199,8 @@ Game_Actor.prototype.makeActionList = function() {
 };
 */
 
+//Used by some action sequences.
+
 Input._defOfRecently = 165;
 Input._pressedTimeMap = {};
 
@@ -231,6 +234,8 @@ Input.update = function()
     this._updateDirection();
 };
 
+//Gain HP on Level up.
+
 Game_Actor.prototype.changeExp = function(exp, show) {
     this._exp[this._classId] = Math.max(exp, 0);
     var oldMHP = this.mhp;
@@ -238,22 +243,29 @@ Game_Actor.prototype.changeExp = function(exp, show) {
     var lastSkills = this.skills();
     while (!this.isMaxLevel() && this.currentExp() >= this.nextLevelExp()) {
         this.levelUp();
+        //This line used to make level up popups appear.
+        Talonos.unsungLevels ++;
     }
     while (this.currentExp() < this.currentLevelExp()) {
         this.levelDown();
     }
-    if (show && this._level > lastLevel) {
-        this.displayLevelUp(this.findNewSkills(lastSkills));
-    }
+    // NUKED: No level up screen.
+    //if (show && this._level > lastLevel) {
+    //    this.displayLevelUp(this.findNewSkills(lastSkills));
+    //}
     this.refresh();
     console.log(oldMHP, this.mhp)
     this._hp += (this.mhp-oldMHP);
 };
 
+//Change Speed
+
 Game_Player.prototype.distancePerFrame = function() 
 {
     return 24/256 + (this.isDashing()?16/256:0);
 };
+
+//Do passive HP/MP Regen
 
 Talonos.Game_Timer_Update = Game_Timer.prototype.update
 
@@ -270,4 +282,13 @@ Game_Timer.prototype.update = function(sceneActive)
     {
         $gameParty.allMembers()[0].gainMp(1);
     }
+
+    //Also play level up effects if warranted.
+
+    if (SceneManager._scene.constructor === Scene_Map && this.getFrames()%45 === 0 && Talonos.unsungLevels > 0)
+    {
+        Talonos.unsungLevels -= 1;
+        $gamePlayer.requestAnimation (1);
+    }
 };
+
