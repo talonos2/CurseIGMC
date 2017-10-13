@@ -292,3 +292,8 @@ Game_Timer.prototype.update = function(sceneActive)
     }
 };
 
+//Can only dash with some elemental power active. (Currently Element 3, switch 64)
+Game_Map.prototype.isDashDisabled = function() 
+{
+    return $dataMap.disableDashing || !$gameSwitches.value(64);
+};
