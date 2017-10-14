@@ -2,6 +2,7 @@ audio/
 fonts/
 icon/
 img/
+img/tilesets/*
 !img/tilesets/Outside_B.png
 !img/tilesets/Outside_A2.png
 save/
