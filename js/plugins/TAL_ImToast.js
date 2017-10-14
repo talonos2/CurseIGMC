@@ -85,6 +85,7 @@ Scene_Battle.prototype.start = function() {
     //this.startFadeIn(this.fadeSpeed(), false);
     BattleManager.playBattleBgm();
     BattleManager.startBattle();
+    this._statusWindow.visible = false
 };
 
 Sprite_Enemy.prototype.setBattler = function(battler) {
