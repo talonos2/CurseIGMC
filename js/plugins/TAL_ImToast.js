@@ -9,6 +9,9 @@
  * @help There IS no help. You are doomed.
  */
 
+
+// PLEASE don't look at this code! It will not help you, I promise! I had
+// so little time, it was a game jam, I'm gonna cry, I'm sorry. :( :( :(
  var Talonos = {}
  Talonos.unsungLevels = 0;
 
@@ -86,6 +89,7 @@ Scene_Battle.prototype.start = function() {
     BattleManager.playBattleBgm();
     BattleManager.startBattle();
     this._statusWindow.visible = false
+    $gamePlayer.setStealthMode(false);
 };
 
 Sprite_Enemy.prototype.setBattler = function(battler) {
@@ -145,7 +149,7 @@ Scene_Battle.prototype.stop = function() {
 
 Game_Actor.prototype.makeAutoBattleActions = function() 
 {
-    if (this.doSkill(5, "up")) {return;}
+    //if (this.doSkill(5, "up")) {return;}
     this.doBasicAttack();
 };
 
@@ -202,14 +206,13 @@ Game_Actor.prototype.makeActionList = function() {
 
 //Used by some action sequences.
 
-Input._defOfRecently = 165;
 Input._pressedTimeMap = {};
 
-Input.wasPressedRecently = function(keyName) 
+Input.wasPressedRecently = function(keyName, defOfRecently) 
 {
     var timeSincePressed = SceneManager._getTimeInMs()-this._pressedTimeMap[keyName];
     console.log(timeSincePressed);
-    return (timeSincePressed <= this._defOfRecently);
+    return (timeSincePressed <= defOfRecently);
 };
 
 Input.update = function() 
@@ -240,6 +243,7 @@ Input.update = function()
 Game_Actor.prototype.changeExp = function(exp, show) {
     this._exp[this._classId] = Math.max(exp, 0);
     var oldMHP = this.mhp;
+    var oldMMP = this.mmp;
     var lastLevel = this._level;
     var lastSkills = this.skills();
     while (!this.isMaxLevel() && this.currentExp() >= this.nextLevelExp()) {
@@ -255,17 +259,21 @@ Game_Actor.prototype.changeExp = function(exp, show) {
     //    this.displayLevelUp(this.findNewSkills(lastSkills));
     //}
     this.refresh();
-    console.log(oldMHP, this.mhp)
     this._hp += (this.mhp-oldMHP);
+    this._mp += (this.mmp-oldMMP);
 };
 
 //Change Speed
 
 Game_Player.prototype.distancePerFrame = function() 
 {
+    if (this.isStealthMode())
+    {
+        return 16/256; //1x speed, mutually exclusive with haste and dashing.
+    }
     if (this.moveSpeed()===6)
     {
-        return 192/256 //12x speed
+        return 192/256; //12x speed
     }
     return 24/256 + (this.isDashing()?16/256:0); //1.5x speed, or 2.5x when dashing.
 };
@@ -273,6 +281,8 @@ Game_Player.prototype.distancePerFrame = function()
 //Do passive HP/MP Regen
 
 Talonos.Game_Timer_Update = Game_Timer.prototype.update
+
+Talonos.StealthModeCost = 10; //Cost is in mana per second
 
 Game_Timer.prototype.update = function(sceneActive) 
 {
@@ -288,6 +298,17 @@ Game_Timer.prototype.update = function(sceneActive)
         $gameParty.allMembers()[0].gainMp(1);
     }
 
+    //If stealth mode is on, lower mana by some amount
+    var framesPerStealthManaDrainTick = Math.round(60/Talonos.StealthModeCost);
+    if ($gamePlayer.isStealthMode() && this.getFrames()%framesPerStealthManaDrainTick === 0)
+    {
+        $gameParty.allMembers()[0].gainMp(-1);
+        if ($gameParty.allMembers()[0].mp<=0) 
+        {
+            $gamePlayer.setStealthMode(false);
+        }
+    }
+
     //Also play level up effects if warranted.
 
     if (SceneManager._scene.constructor === Scene_Map && this.getFrames()%45 === 0 && Talonos.unsungLevels > 0)
@@ -301,4 +322,87 @@ Game_Timer.prototype.update = function(sceneActive)
 Game_Map.prototype.isDashDisabled = function() 
 {
     return $dataMap.disableDashing || !$gameSwitches.value(64);
+};
+
+Scene_Map.prototype.isMenuEnabled = function() 
+{
+    return !$gameMap.isEventRunning();
+};
+
+Scene_Map.prototype.callMenu = function() {
+    SoundManager.playOk();
+    if ($gameSystem.isMenuEnabled())
+    {
+        SceneManager.push(Scene_Menu);
+    }
+    else
+    {
+        SceneManager.push(Scene_Options);
+    }
+    Window_MenuCommand.initCommandPosition();
+    $gameTemp.clearDestination();
+    this._mapNameWindow.hide();
+    this._waitCount = 2;
+};
+
+Window_Options.prototype.makeCommandList = function() 
+{
+    this.addGeneralOptions();
+    this.addVolumeOptions();
+    this.addCommand(TextManager.toTitle, 'toTitle');
+};
+
+Scene_Options.prototype.createOptionsWindow = function() {
+    this._optionsWindow = new Window_Options();
+    this._optionsWindow.setHandler('toTitle',  this.commandToTitle.bind(this));
+    this._optionsWindow.setHandler('cancel', this.popScene.bind(this));
+    this.addWindow(this._optionsWindow);
+};
+
+Scene_Options.prototype.commandToTitle = function() {
+    this.fadeOutAll();
+    SceneManager.goto(Scene_Title);
+};
+
+Window_Options.prototype.statusText = function(index) {
+    var symbol = this.commandSymbol(index);
+    var value = this.getConfigValue(symbol);
+    if (this.isExitSymbol(symbol))
+    {
+        return "";
+    }
+    if (this.isVolumeSymbol(symbol)) 
+    {
+        return this.volumeStatusText(value);
+    } 
+    else 
+    {
+        return this.booleanStatusText(value);
+    }
+};
+
+Window_Options.prototype.isExitSymbol = function(symbol) 
+{
+    return symbol.contains('Title');
+};
+
+Window_Options.prototype.processOk = function() {
+    var index = this.index();
+    var symbol = this.commandSymbol(index);
+    var value = this.getConfigValue(symbol);
+    if (this.isExitSymbol(symbol))
+    {
+        //What the crap am I even doing.
+        SceneManager._scene.commandToTitle();
+    }
+    if (this.isVolumeSymbol(symbol)) {
+        value += this.volumeOffset();
+        if (value > 100) {
+            value = 0;
+        }
+        value = value.clamp(0, 100);
+        this.changeValue(symbol, value);
+    } else {
+        this.changeValue(symbol, !value);
+    }
 };

@@ -3036,7 +3036,7 @@ Input.gamepadMapper = {
     3: 'c',         // Y
     4: 'pageup',    // LB
     5: 'pagedown',  // RB
-    9: 'menu',      // RB
+    9: 'menu',      // Start
     12: 'up',       // D-pad up
     13: 'down',     // D-pad down
     14: 'left',     // D-pad left
