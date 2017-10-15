@@ -263,7 +263,11 @@ Game_Actor.prototype.changeExp = function(exp, show) {
 
 Game_Player.prototype.distancePerFrame = function() 
 {
-    return 24/256 + (this.isDashing()?16/256:0);
+    if (this.moveSpeed()===6)
+    {
+        return 192/256 //12x speed
+    }
+    return 24/256 + (this.isDashing()?16/256:0); //1.5x speed, or 2.5x when dashing.
 };
 
 //Do passive HP/MP Regen
