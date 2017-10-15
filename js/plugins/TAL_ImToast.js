@@ -9,6 +9,9 @@
  * @help There IS no help. You are doomed.
  */
 
+
+// PLEASE don't look at this code! It will not help you, I promise! I had
+// so little time, it was a game jam, I'm gonna cry, I'm sorry. :( :( :(
  var Talonos = {}
  Talonos.unsungLevels = 0;
 
@@ -319,4 +322,87 @@ Game_Timer.prototype.update = function(sceneActive)
 Game_Map.prototype.isDashDisabled = function() 
 {
     return $dataMap.disableDashing || !$gameSwitches.value(64);
+};
+
+Scene_Map.prototype.isMenuEnabled = function() 
+{
+    return !$gameMap.isEventRunning();
+};
+
+Scene_Map.prototype.callMenu = function() {
+    SoundManager.playOk();
+    if ($gameSystem.isMenuEnabled())
+    {
+        SceneManager.push(Scene_Menu);
+    }
+    else
+    {
+        SceneManager.push(Scene_Options);
+    }
+    Window_MenuCommand.initCommandPosition();
+    $gameTemp.clearDestination();
+    this._mapNameWindow.hide();
+    this._waitCount = 2;
+};
+
+Window_Options.prototype.makeCommandList = function() 
+{
+    this.addGeneralOptions();
+    this.addVolumeOptions();
+    this.addCommand(TextManager.toTitle, 'toTitle');
+};
+
+Scene_Options.prototype.createOptionsWindow = function() {
+    this._optionsWindow = new Window_Options();
+    this._optionsWindow.setHandler('toTitle',  this.commandToTitle.bind(this));
+    this._optionsWindow.setHandler('cancel', this.popScene.bind(this));
+    this.addWindow(this._optionsWindow);
+};
+
+Scene_Options.prototype.commandToTitle = function() {
+    this.fadeOutAll();
+    SceneManager.goto(Scene_Title);
+};
+
+Window_Options.prototype.statusText = function(index) {
+    var symbol = this.commandSymbol(index);
+    var value = this.getConfigValue(symbol);
+    if (this.isExitSymbol(symbol))
+    {
+        return "";
+    }
+    if (this.isVolumeSymbol(symbol)) 
+    {
+        return this.volumeStatusText(value);
+    } 
+    else 
+    {
+        return this.booleanStatusText(value);
+    }
+};
+
+Window_Options.prototype.isExitSymbol = function(symbol) 
+{
+    return symbol.contains('Title');
+};
+
+Window_Options.prototype.processOk = function() {
+    var index = this.index();
+    var symbol = this.commandSymbol(index);
+    var value = this.getConfigValue(symbol);
+    if (this.isExitSymbol(symbol))
+    {
+        //What the crap am I even doing.
+        SceneManager._scene.commandToTitle();
+    }
+    if (this.isVolumeSymbol(symbol)) {
+        value += this.volumeOffset();
+        if (value > 100) {
+            value = 0;
+        }
+        value = value.clamp(0, 100);
+        this.changeValue(symbol, value);
+    } else {
+        this.changeValue(symbol, !value);
+    }
 };
