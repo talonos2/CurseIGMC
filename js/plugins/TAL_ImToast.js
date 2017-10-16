@@ -275,7 +275,7 @@ Game_Player.prototype.distancePerFrame = function()
     {
         return 192/256; //12x speed
     }
-    return 24/256 + (this.isDashing()?16/256:0); //1.5x speed, or 2.5x when dashing.
+    return 24/256 + (this.isDashing()?24/256:0); //1.5x speed, or 3x when dashing.
 };
 
 //Do passive HP/MP Regen
@@ -283,6 +283,7 @@ Game_Player.prototype.distancePerFrame = function()
 Talonos.Game_Timer_Update = Game_Timer.prototype.update
 
 Talonos.StealthModeCost = 10; //Cost is in mana per second
+Talonos.HasteCost = 15; //Cost is in mana per second
 
 Game_Timer.prototype.update = function(sceneActive) 
 {
@@ -309,6 +310,17 @@ Game_Timer.prototype.update = function(sceneActive)
         }
     }
 
+    //If haste mode is on, lower mana by some amount
+    var framesPerHasteManaDrainTick = Math.round(60/Talonos.HasteCost);
+    if ($gamePlayer.dashSpellOn && this.getFrames()%framesPerStealthManaDrainTick === 0)
+    {
+        $gameParty.allMembers()[0].gainMp(-1);
+        if ($gameParty.allMembers()[0].mp<=0) 
+        {
+            $gamePlayer.dashSpellOn = false;
+        }
+    }
+
     //Also play level up effects if warranted.
 
     if (SceneManager._scene.constructor === Scene_Map && this.getFrames()%45 === 0 && Talonos.unsungLevels > 0)
@@ -321,7 +333,7 @@ Game_Timer.prototype.update = function(sceneActive)
 //Can only dash with some elemental power active. (Currently Element 3, switch 64)
 Game_Map.prototype.isDashDisabled = function() 
 {
-    return $dataMap.disableDashing || !$gameSwitches.value(64);
+    return true;//$dataMap.disableDashing || !$gameSwitches.value(64);
 };
 
 Scene_Map.prototype.isMenuEnabled = function() 
@@ -405,4 +417,9 @@ Window_Options.prototype.processOk = function() {
     } else {
         this.changeValue(symbol, !value);
     }
+};
+
+Game_Player.prototype.isDashing = function() 
+{
+    return this.dashSpellOn;
 };
