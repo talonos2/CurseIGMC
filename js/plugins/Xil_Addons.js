@@ -119,7 +119,22 @@
 		    }
 
 		if (command == 'RollCrystal') {
+            //Assuming crystals in slots 10-13
 		    var rarity = GetRarity();
+		    //((floor+2)/3)^2
+		    var amount = Math.pow((rarity + 2) / 3, 2);
+		    amount = Math.round(amount);
+		    var CrystalType = Math.floor((Math.random() * 4) +10);
+		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
+		    var CrystalsSoFar = $gameVariables.value(CrystalType);
+		    CrystalsSoFar+=amount;
+		    $gameVariables.setValue(CrystalType, CrystalsSoFar);
+		    $gameInterp.pluginCommand('GabText', outputTxt);
+		    $gameInterp.pluginCommand('ShowGab');
+		    //$gamePlayer.requestAnimation(135);
+		    //this.setWaitMode('animation');
+            
+        
 		    
 		}
 		if (command == 'HealPlayer') {
@@ -149,7 +164,7 @@
 	            var item = $dataItems[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                $gameParty.gainItem($dataItems[item.id], 1);
-	                var outputTxt = ["\\ii[" + item.id + "]  obtained and sent to town."];
+	                var outputTxt = ["\\ii[" + item.id + "] obtained and sent to town."];
 	                $gameInterp.pluginCommand('GabText', outputTxt);
 	                $gameInterp.pluginCommand('ShowGab');
 	                return 0;
