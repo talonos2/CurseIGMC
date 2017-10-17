@@ -6,6 +6,9 @@
 *@author Xillith
 *
 *
+*@param CurrentMapVar
+*@desc Variable the current floor is stored at
+*@default 1
 *
 *@param ItemChest
 *@desc Chance a common chest will appear
@@ -96,7 +99,7 @@
 		    var HealingChest = Number(parameters['HealingChance']) + CrystalChest;
 		    CurrentMapVar = Number(parameters['CurrentMapVar']);
 		    CurrentFloor = $gameVariables.value(CurrentMapVar);
-		    if (CurrentFloor == 1) HealingChest = 100;		    
+		    if (CurrentFloor == 1) 		        HealingChest = 100;
 			var rolling = Math.floor((Math.random() * 100) + 1);
 			if (rolling <= ItemChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
 			else if (rolling <= CrystalChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'B'], true); }
@@ -122,17 +125,14 @@
 		if (command == 'HealPlayer') {
 		    var rarity = GetRarity();
 		    var HealingParam = Number(parameters['HealingMultiplier']);
-		    console.log(" hlngparm " + HealingParam);
-		    console.log(" rarity " + HealingParam);
 		    var healing = rarity * HealingParam;
-		    console.log(" hmm " + healing);
 		    $gameParty.members()[0].gainHp(Number(healing));
 
 		}
 		if (command == 'RollEpicItem') {
 		    var rarity = GetRarity();
 		    if (CurrentFloor == 2 && rarity == 1) rarity = 2; 
-		    ShowRareDatabase();
+		    //ShowRareDatabase();
 		    if (RareLoot[rarity]) {
 		        var finalResult = Math.floor((Math.random() * RareLoot[rarity].length))
 		        var ItemName = RareLoot[rarity][finalResult];
