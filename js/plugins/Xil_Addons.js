@@ -5,9 +5,6 @@
 *
 *@author Xillith
 *
-*@param CurrentMapVar
-*@desc Variable that the current Map is stored in
-*@default 1
 *
 *
 *@param ItemChest
@@ -20,11 +17,15 @@
 *
 *@param HealingChance
 *@desc Chance a common chest will appear 
-*@default 25
+*@default 15
 *
 *@param GoldChests
 *@desc Not actual value. Remainder of 3 above.
 *@default 5
+*
+*@param HealingMultiplier
+*@desc The amount you multiply each level with for healing
+*@default 15
 *
 *@help
 *
@@ -38,6 +39,12 @@
 *
 *Plugin Command to roll random epic item: 
 *RollEpicItem
+*
+*RollCrystal
+*Generate random crystal and give it to the player
+*
+*HealPlayer
+*Heal the party
 *
 *Notetag to designate a common item of level X (X being the level the item is found in)
 *<Common Item Level: X>
@@ -65,7 +72,7 @@
                 return false;
             }
             if (!NoteTagsLoaded) {
-                FillDatabase();
+                FillDatabaseItm();
                
                 NoteTagsLoaded = true;
             }
@@ -77,7 +84,7 @@
 	var _Game_Interprete_pluginCommand=Game_Interpreter.prototype.pluginCommand;
 	Game_Interpreter.prototype.pluginCommand = function(command, args) {
     // to be overridden by plugins
-		_Game_Interprete_pluginCommand.call(this,command);
+		_Game_Interprete_pluginCommand.call(this,command,args);
 
 		var CurrentMapVar;
 		var CurrentFloor;
@@ -110,14 +117,24 @@
 
 		if (command == 'RollCrystal') {
 		    var rarity = GetRarity();
+		    
+		}
+		if (command == 'HealPlayer') {
+		    var rarity = GetRarity();
+		    var HealingParam = Number(parameters['HealingMultiplier']);
+		    console.log(" hlngparm " + HealingParam);
+		    console.log(" rarity " + HealingParam);
+		    var healing = rarity * HealingParam;
+		    console.log(" hmm " + healing);
+		    $gameParty.members()[0].gainHp(Number(healing));
+
 		}
 		if (command == 'RollEpicItem') {
 		    var rarity = GetRarity();
 		    if (CurrentFloor == 2 && rarity == 1) rarity = 2; 
-		    //ShowRareDatabase();
+		    ShowRareDatabase();
 		    if (RareLoot[rarity]) {
 		        var finalResult = Math.floor((Math.random() * RareLoot[rarity].length))
-		       // console.log("Item Rolled: " + RareLoot[rarity][finalResult] + " Roll: " + finalResult);
 		        var ItemName = RareLoot[rarity][finalResult];
 		        receiveItems(ItemName);
 		    }
@@ -132,8 +149,8 @@
 	            var item = $dataItems[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                $gameParty.gainItem($dataItems[item.id], 1);
-	                //console.log("Item obtained " + item.name);
-	                $gameInterp.pluginCommand('GabText', "\ii[" + item.id + "] has been obtained. " + item.name);
+	                var outputTxt = ["\\ii[" + item.id + "]  obtained and sent to town."];
+	                $gameInterp.pluginCommand('GabText', outputTxt);
 	                $gameInterp.pluginCommand('ShowGab');
 	                return 0;
 	            }
@@ -146,8 +163,8 @@
 	            var item = $dataWeapons[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                $gameParty.gainItem($dataWeapons[item.id], 1);
-	                //console.log("Weapon obtained " + item.name);
-	                $gameInterp.pluginCommand('GabText', "\iw[" + item.id + "] has been obtained. " + item.name);
+	                var outputTxt = ["\\iw[" + item.id + "] obtained and sent to town."];
+	                $gameInterp.pluginCommand('GabText', outputTxt);
 	                $gameInterp.pluginCommand('ShowGab');
 	                return 0;
 	            }
@@ -160,8 +177,8 @@
 	            var item = $dataArmors[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                $gameParty.gainItem($dataArmors[item.id], 1);
-	                //console.log("Armor obtained " + item.name);
-	                $gameInterp.pluginCommand('GabText', "\ia[" + item.id + "] has been obtained. "+item.name);
+	                var outputTxt = ["\\ia[" + item.id + "] obtained and sent to town."];
+	                $gameInterp.pluginCommand('GabText', outputTxt);
 	                $gameInterp.pluginCommand('ShowGab');
 	                return 0;
 	            }
@@ -170,11 +187,12 @@
 
 	}
 
-	function FillDatabase() {
+	function FillDatabaseItm() {
        
-	    var regexCommonItem = /<Common Item Level:(\s*\d+\s*)>/gi;
-	    var regexRareItem = /<Rare Item Level:(\s*\d+\s*)>/gi;
-        var PullOut =/.*(\d+).*/;
+	    var regexCommonItem = /<Common Item Level:\s*(\d+)\s*>/gi;
+	    var regexRareItem = /<Rare Item Level:\s*(\d+)\s*>/gi;
+	    var PullOutC = /<Common Item Level:\s*(\d+)\s*>/i;
+	    var PullOutE = /<Rare Item Level:\s*(\d+)\s*>/i;
 
 	    $dataItems.forEach(function (item) {
 	        if (item && item.name.length > 0 ) {
@@ -182,10 +200,7 @@
 	            var matchRare = item.note.match(regexRareItem);
 	            if (match) {
 	                for (var i = 0; i < match.length; i++) {
-	                    var actMatch = match[i].match(PullOut);
-	                 //   console.log("actual " + actMatch);
-	                 //   console.log("match length " + match.length);
-	                 //   console.log("match result: " + match[0] + " and " + match[1]);
+	                    var actMatch = match[i].match(PullOutC);
 	                    if (!CommonLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        CommonLoot[Number(actMatch[1])] = initValues;
@@ -197,7 +212,7 @@
 
 	            if (matchRare) {
 	                for (var i = 0; i < matchRare.length; i++) {
-	                    var actMatch = matchRare[i].match(PullOut);
+	                    var actMatch = matchRare[i].match(PullOutE);
 	                    if (!RareLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        RareLoot[Number(actMatch[1])] = initValues;
@@ -215,7 +230,11 @@
 	            var matchRare = item.note.match(regexRareItem);
 	            if (match) {
 	                for (var i = 0; i < match.length; i++) {
-	                    var actMatch = match[i].match(PullOut);
+
+	                    var actMatch = match[i].match(PullOutC);
+	                 //   console.log("match result: " + match[0] + " and " + match[1] );
+	                 //   console.log("actual " + actMatch[0] + " and " + actMatch[1]);
+	                  //  console.log(" ");
 	                    if (!CommonLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        CommonLoot[Number(actMatch[1])] = initValues;
@@ -227,7 +246,11 @@
 
 	            if (matchRare) {
 	                for (var i = 0; i < matchRare.length; i++) {
-	                    var actMatch = matchRare[i].match(PullOut);
+	                    var actMatch = matchRare[i].match(PullOutE);
+	                //    console.log("match result: " + matchRare[0] + " and " + matchRare[1] );
+	                //    console.log("pullout " + actMatch[0]+ " and " +actMatch[1]);
+	               //     console.log (" ");
+	                    
 	                    if (!RareLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        RareLoot[Number(actMatch[1])] = initValues;
@@ -246,7 +269,7 @@
 	            var matchRare = item.note.match(regexRareItem);
 	            if (match) {
 	                for (var i = 0; i < match.length; i++) {
-	                    var actMatch = match[i].match(PullOut);
+	                    var actMatch = match[i].match(PullOutC);
 	                    if (!CommonLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        CommonLoot[Number(actMatch[1])] = initValues;
@@ -258,7 +281,7 @@
 
 	            if (matchRare) {
 	                for (var i = 0; i < matchRare.length; i++) {
-	                    var actMatch = matchRare[i].match(PullOut);
+	                    var actMatch = matchRare[i].match(PullOutE);
 	                    if (!RareLoot[Number(actMatch[1])]) {
 	                        var initValues = [];
 	                        RareLoot[Number(actMatch[1])] = initValues;
