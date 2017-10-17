@@ -110,7 +110,7 @@
 		
 
 		if (command == 'RollItem') {
-		    ShowDatabase();
+		   // ShowDatabase();
 		    var rarity = GetRarity();
 		    if (CommonLoot[rarity]) {
 		        var finalResult = Math.floor((Math.random() * CommonLoot[rarity].length))
@@ -167,7 +167,7 @@
 	        if ($dataItems[i]) {
 	            var item = $dataItems[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
-	                console.log("which item found: " + ItemName);
+	                //console.log("which item found: " + ItemName);
 	                ChooseEquip(item, "item");
 	                return 0;
 
@@ -180,7 +180,7 @@
 	        if ($dataWeapons[i]) {
 	            var item = $dataWeapons[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
-	                console.log("which item found: " + ItemName);
+	                //console.log("which item found: " + ItemName);
 	                ChooseEquip(item, "weapon");
 
 	                return 0;
@@ -193,7 +193,7 @@
 	        if ($dataArmors[i]) {
 	            var item = $dataArmors[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
-	                console.log("which item found: " + ItemName);
+	                //console.log("which item found: " + ItemName);
 	                ChooseEquip(item, "armor");
 	                return 0;
 
@@ -292,7 +292,6 @@
 
 	        if (itemType == "weapon" && n == 0) {
 	            SendToTown(Item2, itemType);
-	            console.log(" id " + item.etypeId + " item " + item);
 	            $gameParty.members()[0]._equips[item.etypeId-1].setObject(item);
 	            outputTxt = ["\\iw[" + item.id + "] equipped."];
 	        }
@@ -316,7 +315,7 @@
 
 	function SendToTown(item, itemType) {
 
-	    console.log("sending to town + " + itemType);
+	   // console.log("sending to town + " + itemType);
 
 	    var outputTxt="";
 	    if (itemType == "armor") {
