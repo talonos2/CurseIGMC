@@ -125,7 +125,7 @@
             //Assuming crystals in slots 10-13
 		    var rarity = GetRarity();
 		    //((floor+2)/3)^2
-		    var amount = Math.pow((rarity + 2) / 3, 2);
+		    var amount =5* Math.pow((rarity + 2) / 3, 2);
 		    amount = Math.round(amount);
 		    var CrystalType = Math.floor((Math.random() * 4) +10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
@@ -280,8 +280,8 @@
 	            return 0;
 	        }
 	        if (itemType == "armor" && n == 0) {
-	            SendToTown(Item2, itemType);
-	            $gameParty.members()[0]._equips[item.etypeId-1].setObject(item);
+	            $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	            SendToTown(Item2, itemType);	            
 	            outputTxt = ["\\ia[" + item.id + "] equipped."];
 	        }
 
@@ -291,8 +291,8 @@
 	        }
 
 	        if (itemType == "weapon" && n == 0) {
-	            SendToTown(Item2, itemType);
-	            $gameParty.members()[0]._equips[item.etypeId-1].setObject(item);
+	            $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	            SendToTown(Item2, itemType);	          
 	            outputTxt = ["\\iw[" + item.id + "] equipped."];
 	        }
 
