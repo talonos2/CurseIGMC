@@ -1,6 +1,6 @@
 [
 null,
-{"id":1,"battlerName":"Actor1_1","characterIndex":0,"characterName":"Actor1","classId":1,"equips":[1,0,2,0,0],"faceIndex":0,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Harold","nickname":"the Town Guard","note":"","profile":""},
+{"id":1,"battlerName":"Actor1_1","characterIndex":0,"characterName":"Actor1","classId":1,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Harold","nickname":"the Town Guard","note":"","profile":""},
 {"id":2,"battlerName":"Actor1_6","characterIndex":5,"characterName":"Actor1","classId":2,"equips":[0,0,0,0,0],"faceIndex":5,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Sara","nickname":"","note":"","profile":""},
 {"id":3,"battlerName":"Actor1_1","characterIndex":4,"characterName":"People1","classId":4,"equips":[0,0,0,0,0],"faceIndex":4,"faceName":"People1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person D","nickname":"","note":"","profile":""},
 {"id":4,"battlerName":"Actor1_2","characterIndex":5,"characterName":"People1","classId":4,"equips":[0,0,0,0,0],"faceIndex":5,"faceName":"People1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person E","nickname":"","note":"","profile":""},

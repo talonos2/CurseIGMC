@@ -16,11 +16,15 @@
 *
 *@param CrystalChance
 *@desc Chance a Crystal chest will appear
-*@default 35
+*@default 30
 *
 *@param HealingChance
 *@desc Chance a common chest will appear 
-*@default 15
+*@default 10
+*
+*@param ManaChance
+*@desc Chance a common chest will appear 
+*@default 10
 *
 *@param GoldChests
 *@desc Not actual value. Remainder of 3 above.
@@ -28,6 +32,10 @@
 *
 *@param HealingMultiplier
 *@desc The amount you multiply each level with for healing
+*@default 15
+*
+*@param ManaMultiplier
+*@desc The amount you multiply each level with for Mana gained
 *@default 15
 *
 *@help
@@ -95,32 +103,34 @@ console.log(Xillith);
 		var CurrentFloor;
 
 		if (command == 'ChestType') {
-
 		    var ItemChest = Number(parameters['ItemChest']);
 		    var CrystalChest = Number(parameters['CrystalChance'])+ItemChest;
 		    var HealingChest = Number(parameters['HealingChance']) + CrystalChest;
+		    var ManaChest = Number(parameters['ManaChance']) + HealingChest;
 		    CurrentMapVar = Number(parameters['CurrentMapVar']);
 		    CurrentFloor = $gameVariables.value(CurrentMapVar);
-		    if (CurrentFloor == 1) 		        HealingChest = 100;
-			var rolling = Math.floor((Math.random() * 100) + 1);
+		    if (CurrentFloor == 1) ManaChest = 100;
+		    var rolling = Math.floor((Math.random() * 100) + 1);
+		    //console.log("Rolled: " + rolling + " Item chance " + ItemChest + " CrystalChance " + CrystalChest + " healing chance" + HealingChest + " Mana chance " + ManaChest);
 			if (rolling <= ItemChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
 			else if (rolling <= CrystalChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'B'], true); }
 			else if (rolling <= HealingChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'C'], true); }
+			else if (rolling <= ManaChest) {this.setSelfSwitchValue($gameMap._mapId, this._eventId, 81, true);}
 			else { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'D'], true); }
 		}
 
 		
 
 		if (command == 'RollItem') {
-		   // ShowDatabase();
-		    var rarity = GetRarity();
+		    //ShowDatabase();
+		    var rarity = Number(GetRarity());
+		  //  console.log("floor " + rarity);
 		    if (CommonLoot[rarity]) {
 		        var finalResult = Math.floor((Math.random() * CommonLoot[rarity].length))
 		        //console.log("Item Rolled: " + CommonLoot[rarity][finalResult] + " Roll: " + finalResult);
 		        var ItemName = CommonLoot[rarity][finalResult];
 		        receiveItems(ItemName);
-
-		    }
+		        }
 		    }
 
 		if (command == 'RollCrystal') {
@@ -146,12 +156,23 @@ console.log(Xillith);
 		    $gameParty.members()[0].gainHp(Number(healing));
 		}
 
-		if (command == 'RollEpicItem') {
+		if (command == 'GainMana') {
 		    var rarity = GetRarity();
+		    var ManaParam = Number(parameters['ManaMultiplier']);
+		    var ManaGained = rarity * ManaParam;
+		    $gameParty.members()[0].gainMp(Number(ManaGained));
+
+		}
+
+		if (command == 'RollEpicItem') {
+
+		    var CurrentMapVar = Number(parameters['CurrentMapVar']);
+		    var CurrentFloor = $gameVariables.value(CurrentMapVar);
+		    var rarity = Number(GetRarity());
 		    if (CurrentFloor == 2 && rarity == 1) rarity = 2; 
-		    //ShowRareDatabase();
-		    if (RareLoot[rarity]) {
-		        var finalResult = Math.floor((Math.random() * RareLoot[rarity].length))
+		   // ShowRareDatabase();
+		    if (RareLoot[rarity]) { 
+		        var finalResult = Math.floor(( Math.random() * RareLoot[rarity].length ));		     
 		        var ItemName = RareLoot[rarity][finalResult];
 		        receiveItems(ItemName);
 		    }
@@ -159,11 +180,7 @@ console.log(Xillith);
 	};
 
 
-
-
 	function receiveItems(ItemName) {
-
-        
 
 	    for (var i = 0; i < $dataItems.length; i++) {
 	        if ($dataItems[i]) {
@@ -172,7 +189,6 @@ console.log(Xillith);
 	                //console.log("which item found: " + ItemName);
 	                ChooseEquip(item, "item");
 	                return 0;
-
 	            }
 	        }
 	    }
@@ -196,7 +212,8 @@ console.log(Xillith);
 	            var item = $dataArmors[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                //console.log("which item found: " + ItemName);
-	                ChooseEquip(item, "armor");
+	                if (item.etypeId == 3) ChooseEquip(item, "armor");
+	                if (item.etypeId == 4) ChooseEquip(item, "trinket");
 	                return 0;
 
 	            }
@@ -205,46 +222,81 @@ console.log(Xillith);
 
 	}
 
-	function ChooseEquip(item,itemType) {
+	function ChooseEquip(item, itemType) {
+
+	    //console.log("item name: " + item.name + " etypeID " + item.etypeId + " itemType "+itemType);
 
 	    var ItemInUse;
-	    var Item2=null;
+	    var Item2 = null;
+	        Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
 	    var colorCodeI1;
 	    var colorCodeI2;
-	    var outputTxt="";
-        
+	    var outputTxt = "";
+	    var item1Special = "";
+	    var item2Special = "";
+	    var regexSpecials = /<Specials:\s*(.*)\s*>/i;
+	    var matchItem1 = item.note.match(regexSpecials);
+	    var matchItem2=null;
+	        if (Item2) matchItem2 = Item2.note.match(regexSpecials);
+	    if (matchItem1) { item1Special= " Special: "+matchItem1[1]; }
+	    if (matchItem2) { item2Special = " Special: " + matchItem2[1]; }
 
 	    if (itemType == "item") {
 	        SendToTown(item, itemType);
 	        return 0;
 	    }
 
-        if (itemType == "armor") {
-            Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
-
-            if (Item2.params[3] > item.params[3]) {
-                colorCodeI1 = "\\c[18]";
-                colorCodeI2 = "\\c[3]";
-            }
-            else if (Item2.params[3] < item.params[3]) {
-                colorCodeI1 = "\\c[3]";
-                colorCodeI2 = "\\c[18]";
-            }
-            else {
-                SendToTown(item, itemType);
-                return 0;
-            }
-
-	        ItemInUse = "\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +
-                "\\>New Item: \\ia[" + item.id + "]; Defense: +" + colorCodeI1 + item.params[3] + "\\c[0]; Special: " +
-                item.description + "\n";
-	        ItemInUse += "\\>Current:  " + "\\ia[" + Item2.id + "]; Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0]; Special: " +
-                item.description + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
-	        //$gameParty.members()[0]
+	    if (itemType == "trinket") {
+	        outputTxt = ["Found \\ia[47]. It will be sent to town for inspection."];
+	        $gameParty.gainItem($dataArmors[item.id], 1);
+	        $gameInterp.pluginCommand('GabText', outputTxt);
+	        $gameInterp.pluginCommand('ShowGab');
+	        return 0;
 	    }
 
-        if (itemType == "weapon") {            
-            Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
+	    if (itemType == "armor" && !Item2) {
+	        outputTxt = ["\\ia[" + item.id + "] found and equipped."]
+	        $gameInterp.pluginCommand('GabText', outputTxt);
+	        $gameInterp.pluginCommand('ShowGab');
+	        $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	        return 0;
+	    }
+
+	    if (itemType == "weapon" && !Item2) {
+	        $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	        outputTxt=["\\iw[" + item.id + "] found and equipped."];
+	        $gameInterp.pluginCommand('GabText', outputTxt);
+	        $gameInterp.pluginCommand('ShowGab');
+	        return 0;
+	    }
+
+	    if (itemType == "armor" && Item2) {
+
+	        if (Item2.params[3] > item.params[3]) {
+	            colorCodeI1 = "\\c[18]";
+	            colorCodeI2 = "\\c[3]";
+	        }
+	        else if (Item2.params[3] < item.params[3]) {
+	            colorCodeI1 = "\\c[3]";
+	            colorCodeI2 = "\\c[18]";
+	        }
+	        else {
+	            SendToTown(item, itemType);
+	            return 0;
+	        }
+
+	        ItemInUse = "\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +
+                "\\>New Item: \\ia[" + item.id + "]; Defense: +" + colorCodeI1 + item.params[3] + "\\c[0];" + item1Special;
+	        // if (item.description!="") ItemInUse=ItemInUse+ " Special: " + item.description;
+	        ItemInUse += "\n\\>Current:  " + "\\ia[" + Item2.id + "]; Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0];" + item2Special;
+	        //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;                        
+	        ItemInUse = ItemInUse + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
+	        //$gameParty.members()[0]
+	    }
+	   // else { do you want to equip it?}
+
+        if (itemType == "weapon" && Item2) {            
+          //  Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
 
             if (Item2.params[2] > item.params[2])
             {
@@ -261,38 +313,44 @@ console.log(Xillith);
             }
 
             ItemInUse = "\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +
-                "\\>New Item: \\iw[" + item.id + "]; Attack: +" + colorCodeI1 + item.params[2] + "\\c[0]; Special: " +
-                item.description + "\n";
-            ItemInUse += "\\>Current:  \\iw[" + Item2.id + "]; Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0]; Special: " +
-                item.description + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
+                "\\>New Item: \\iw[" + item.id + "]; Attack: +" + colorCodeI1 + item.params[2] + "\\c[0];" + item1Special;
+            //if (item.description != "") ItemInUse = ItemInUse + " Special: " + item.description;
+            ItemInUse += "\n\\>Current:  \\iw[" + Item2.id + "]; Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0];" + item2Special;
+            //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;
+                ItemInUse=ItemInUse+"\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
 	        //$gameParty.members()[0]
-	    }
+        }
+
+
+
 	    //$gameMessage.setFaceImage('Actor1', 0);
 	    $gameMessage.setBackground(1);
 	    $gameMessage.setPositionType(1);
 	    $gameMessage.add(ItemInUse);
+
 	    choices = []; params = [];
 	    $gameMessage.setChoices(choices, 1, 1);
 	    choices.push("Yes"); choices.push("No");
 	    params.push();
 	    $gameMessage.setChoiceCallback(function (n) {
   
-	        if (itemType == "armor" && n==1) {
+	        if (itemType == "armor" && Item2 && n==1) {
 	            SendToTown(item, itemType);
 	            return 0;
 	        }
-	        if (itemType == "armor" && n == 0) {
+
+	        if (itemType == "armor" && Item2 && n == 0) {
 	            $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
 	            SendToTown(Item2, itemType);	            
 	            outputTxt = ["\\ia[" + item.id + "] equipped."];
 	        }
 
-	        if (itemType == "weapon" && n == 1) {
+	        if (itemType == "weapon" && Item2 && n == 1) {
 	            SendToTown(item, itemType);
 	            return 0;
 	        }
 
-	        if (itemType == "weapon" && n == 0) {
+	        if (itemType == "weapon" && Item2 && n == 0) {
 	            $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
 	            SendToTown(Item2, itemType);	          
 	            outputTxt = ["\\iw[" + item.id + "] equipped."];
