@@ -59,6 +59,8 @@
 *
 *
 */
+var Xillith = {}
+console.log(Xillith);
 
 (function(){
 
@@ -493,8 +495,11 @@
 	    return result;
 	}
 
+	Xillith.receiveItems = receiveItems;
+
     
 })();
+
 
 
 /*
