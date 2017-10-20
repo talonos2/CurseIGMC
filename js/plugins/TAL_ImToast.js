@@ -25,6 +25,16 @@ Scene_Map.prototype.launchBattle = function() {
     this._mapNameWindow.hide();
 };
 
+BattleManager.playBattleBgm = function() 
+{
+    AudioManager.fadeInOverlay(.5);
+};
+
+BattleManager.replayBgmAndBgs = function() 
+{
+    AudioManager.fadeOutOverlay(.5)
+};
+
 //Kills Sound effects and music effects. Commented out above.
 Scene_Map.prototype.stopAudioOnBattleStart = function() {
     if (!AudioManager.isCurrentBgm($gameSystem.battleBgm())) {
@@ -141,7 +151,7 @@ BattleManager.processVictory = function() {
 
 Scene_Battle.prototype.stop = function() {
     Scene_Base.prototype.stop.call(this);
-	this.startFadeOut(10, true);
+	//this.startFadeOut(10, true);
     this._statusWindow.close();
     this._partyCommandWindow.close();
     this._actorCommandWindow.close();
@@ -422,4 +432,44 @@ Window_Options.prototype.processOk = function() {
 Game_Player.prototype.isDashing = function() 
 {
     return this.dashSpellOn;
+};
+
+AudioManager._overlayBuffer = null;
+
+AudioManager.silentlyPlayOverlay = function(overlay, pos) 
+{
+    if (overlay.name) 
+    { 
+        this._overlayBuffer = this.createBuffer('bgm', overlay.name);
+        this.updateOverlayParameters(overlay);
+        this._overlayBuffer.play(true, pos || 0);
+        AudioManager._overlayBuffer.fadeOut(.01);
+    }
+};
+
+AudioManager.fadeInOverlay = function(duration) 
+{
+    if (this._overlayBuffer) 
+    { 
+        AudioManager._overlayBuffer.fadeIn(duration);
+        AudioManager.syncOverlayToMusic();
+    }
+};
+
+AudioManager.fadeOutOverlay = function(duration) 
+{
+    if (this._overlayBuffer) 
+    { 
+        AudioManager._overlayBuffer.fadeOut(duration);
+    }
+};
+
+AudioManager.syncOverlayToMusic = function()
+{
+    AudioManager._overlayBuffer.play(true, AudioManager._bgmBuffer.seek())
+}
+
+AudioManager.updateOverlayParameters = function(overlay) 
+{
+    this.updateBufferParameters(this._overlayBuffer, this._bgmVolume, overlay);
 };
