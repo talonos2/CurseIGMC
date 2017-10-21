@@ -312,13 +312,26 @@ console.log(Xillith);
                 return 0;
             }
 
-            ItemInUse = /*"\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +*/
+            /** Old Xillith Code
+
+            ItemInUse = "\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +
                 "\\>Found   \\iw[" + item.id + "]: Attack: +" + colorCodeI1 + item.params[2] + "\\c[0]" + item1Special;
             //if (item.description != "") ItemInUse = ItemInUse + " Special: " + item.description;
             ItemInUse += "\n\\>Current \\iw[" + Item2.id + "]: Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0]" + item2Special;
             //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;
             //    ItemInUse=ItemInUse+"\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
 	        //$gameParty.members()[0]
+
+	        Talonos Code: */
+	        
+	        var difference = (item.params[2]-Item2.params[2])
+	        if (difference >= 1)
+	        {
+	        	difference = "+"+difference;
+	        }
+
+            ItemInUse = "\\>Found   \\iw[" + item.id + "], Attack: " + item.params[2] + "("+colorCodeI1+difference+"\\c[0])" + item1Special;
+            ItemInUse += "\n\\>Current \\iw[" + Item2.id + "], Attack: " + Item2.params[2] + item2Special;
         }
 
 
@@ -328,9 +341,11 @@ console.log(Xillith);
 	    $gameMessage.setPositionType(1);
 	    $gameMessage.add(ItemInUse);
 
+        iTypeChar = (itemType=="weapon"?"w":"a")
+
 	    choices = []; params = [];
 	    $gameMessage.setChoices(choices, 1, 1);
-	    choices.push("Equip"); choices.push("Send Home");
+	    choices.push("Equip \\n"+iTypeChar+"["+item.id+"]"); choices.push("Send \\n"+iTypeChar+"["+item.id+"] Home");
 	    params.push();
 	    $gameMessage.setChoiceCallback(function (n) {
   
