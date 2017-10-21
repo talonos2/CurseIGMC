@@ -238,8 +238,8 @@ console.log(Xillith);
 	    var matchItem1 = item.note.match(regexSpecials);
 	    var matchItem2=null;
 	        if (Item2) matchItem2 = Item2.note.match(regexSpecials);
-	    if (matchItem1) { item1Special= " Special: "+matchItem1[1]; }
-	    if (matchItem2) { item2Special = " Special: " + matchItem2[1]; }
+	    if (matchItem1) { item1Special= "; Special: "+matchItem1[1]; }
+	    if (matchItem2) { item2Special = "; Special: " + matchItem2[1]; }
 
 	    if (itemType == "item") {
 	        SendToTown(item, itemType);
@@ -285,12 +285,12 @@ console.log(Xillith);
 	            return 0;
 	        }
 
-	        ItemInUse = "\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +
-                "\\>New Item: \\ia[" + item.id + "]; Defense: +" + colorCodeI1 + item.params[3] + "\\c[0];" + item1Special;
+	        ItemInUse = /*"\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +*/
+                "\\>Found   \\ia[" + item.id + "]: Defense: +" + colorCodeI1 + item.params[3] + "\\c[0]" + item1Special;
 	        // if (item.description!="") ItemInUse=ItemInUse+ " Special: " + item.description;
-	        ItemInUse += "\n\\>Current:  " + "\\ia[" + Item2.id + "]; Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0];" + item2Special;
+	        ItemInUse += "\n\\>Current " + "\\ia[" + Item2.id + "]: Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0]" + item2Special;
 	        //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;                        
-	        ItemInUse = ItemInUse + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
+	        //ItemInUse = ItemInUse + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
 	        //$gameParty.members()[0]
 	    }
 	   // else { do you want to equip it?}
@@ -312,12 +312,12 @@ console.log(Xillith);
                 return 0;
             }
 
-            ItemInUse = "\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +
-                "\\>New Item: \\iw[" + item.id + "]; Attack: +" + colorCodeI1 + item.params[2] + "\\c[0];" + item1Special;
+            ItemInUse = /*"\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +*/
+                "\\>Found   \\iw[" + item.id + "]: Attack: +" + colorCodeI1 + item.params[2] + "\\c[0]" + item1Special;
             //if (item.description != "") ItemInUse = ItemInUse + " Special: " + item.description;
-            ItemInUse += "\n\\>Current:  \\iw[" + Item2.id + "]; Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0];" + item2Special;
+            ItemInUse += "\n\\>Current \\iw[" + Item2.id + "]: Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0]" + item2Special;
             //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;
-                ItemInUse=ItemInUse+"\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
+            //    ItemInUse=ItemInUse+"\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
 	        //$gameParty.members()[0]
         }
 
@@ -330,7 +330,7 @@ console.log(Xillith);
 
 	    choices = []; params = [];
 	    $gameMessage.setChoices(choices, 1, 1);
-	    choices.push("Yes"); choices.push("No");
+	    choices.push("Equip"); choices.push("Send Home");
 	    params.push();
 	    $gameMessage.setChoiceCallback(function (n) {
   
