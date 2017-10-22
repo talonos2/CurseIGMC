@@ -181,7 +181,7 @@ myprim = function(numNodes, connections)
 //    console.log("new frontier is " + frontier);
 }
 
-
+ return final;
 }
 
 myprim();
