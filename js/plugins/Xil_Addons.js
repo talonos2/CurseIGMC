@@ -177,6 +177,28 @@ console.log(Xillith);
 		        receiveItems(ItemName);
 		    }
 		}
+
+		if (command == 'SetCrystalBuffs') {
+		    var atk = $gameVariables.value(8);
+		    var def = $gameVariables.value(6);
+		    var hp = $gameVariables.value(7);
+		    var mana = $gameVariables.value(9);
+		    //console.log("who " + $gameParty.members()[0].name + " atk " + atk + " def " + def + " hp " + hp + " mana " + mana);
+
+		    $gameParty.members()[0]._paramPlus[0] += hp;
+		    $gameParty.members()[0]._paramPlus[1] += mana;
+		    $gameParty.members()[0]._paramPlus[2] += atk;
+		    $gameParty.members()[0]._paramPlus[3] += def;
+		    $gameParty.members()[0].gainHp(140);
+		    $gameParty.members()[0].gainMp(140);
+		    $gameParty.members()[0].refresh();
+
+
+
+
+		}
+
+
 	};
 
 
