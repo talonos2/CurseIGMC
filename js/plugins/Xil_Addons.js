@@ -104,12 +104,20 @@ console.log(Xillith);
 
 		if (command == 'ChestType') {
 		    var ItemChest = Number(parameters['ItemChest']);
-		    var CrystalChest = Number(parameters['CrystalChance'])+ItemChest;
-		    var HealingChest = Number(parameters['HealingChance']) + CrystalChest;
-		    var ManaChest = Number(parameters['ManaChance']) + HealingChest;
+		    var ManaChest = Number(parameters['ManaChance']);
+		    var EpicChest = Number(parameters['GoldChests']);
+		    if ($gameVariables.value(3) == 0) {
+		        ItemChest += ManaChest;
+		        ManaChest = 0;
+		    }
 		    CurrentMapVar = Number(parameters['CurrentMapVar']);
 		    CurrentFloor = $gameVariables.value(CurrentMapVar);
-		    if (CurrentFloor == 1) ManaChest = 100;
+		    if (CurrentFloor == 1) ItemChest+=EpicChest;
+
+		    var CrystalChest = Number(parameters['CrystalChance'])+ItemChest;
+		    var HealingChest = Number(parameters['HealingChance']) + CrystalChest;
+		    ManaChest = ManaChest + HealingChest;
+		   
 		    var rolling = Math.floor((Math.random() * 100) + 1);
 		    //console.log("Rolled: " + rolling + " Item chance " + ItemChest + " CrystalChance " + CrystalChest + " healing chance" + HealingChest + " Mana chance " + ManaChest);
 			if (rolling <= ItemChest) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
@@ -123,13 +131,20 @@ console.log(Xillith);
 
 		if (command == 'RollItem') {
 		    //ShowDatabase();
+		    var reroll = 0;
 		    var rarity = Number(GetRarity());
 		  //  console.log("floor " + rarity);
 		    if (CommonLoot[rarity]) {
 		        var finalResult = Math.floor((Math.random() * CommonLoot[rarity].length))
 		        //console.log("Item Rolled: " + CommonLoot[rarity][finalResult] + " Roll: " + finalResult);
 		        var ItemName = CommonLoot[rarity][finalResult];
-		        receiveItems(ItemName);
+		        reroll=receiveItems(ItemName,reroll);
+		        if (reroll == -1) {
+		            finalResult = Math.floor((Math.random() * CommonLoot[rarity].length));
+		            ItemName = CommonLoot[rarity][finalResult];
+		            receiveItems(ItemName);
+		        }
+
 		        }
 		    }
 
@@ -166,6 +181,7 @@ console.log(Xillith);
 
 		if (command == 'RollEpicItem') {
 
+		    var reroll = 0;
 		    var CurrentMapVar = Number(parameters['CurrentMapVar']);
 		    var CurrentFloor = $gameVariables.value(CurrentMapVar);
 		    var rarity = Number(GetRarity());
@@ -174,7 +190,12 @@ console.log(Xillith);
 		    if (RareLoot[rarity]) { 
 		        var finalResult = Math.floor(( Math.random() * RareLoot[rarity].length ));		     
 		        var ItemName = RareLoot[rarity][finalResult];
-		        receiveItems(ItemName);
+		        reroll = receiveItems(ItemName, reroll);
+		        if (reroll == -1) {
+		            finalResult = Math.floor((Math.random() * CommonLoot[rarity].length));
+		            ItemName = CommonLoot[rarity][finalResult];
+		            receiveItems(ItemName);
+		        }
 		    }
 		}
 
@@ -202,7 +223,7 @@ console.log(Xillith);
 	};
 
 
-	function receiveItems(ItemName) {
+	function receiveItems(ItemName,reroll) {
 
 	    for (var i = 0; i < $dataItems.length; i++) {
 	        if ($dataItems[i]) {
@@ -234,7 +255,11 @@ console.log(Xillith);
 	            var item = $dataArmors[i];
 	            if (item.name.length > 0 && item.name === ItemName) {
 	                //console.log("which item found: " + ItemName);
+
+	                if (reroll == 0 && item.etypeId == 4) return -1;
+
 	                if (item.etypeId == 3) ChooseEquip(item, "armor");
+                    
 	                if (item.etypeId == 4) ChooseEquip(item, "trinket");
 	                return 0;
 
@@ -396,9 +421,7 @@ console.log(Xillith);
 	        if (itemType == "item" ) {
 	            SendToTown(item, itemType);
 	            return 0;
-	        }
-
-	    
+	        }	    
 
 	        $gameInterp.pluginCommand('GabText', outputTxt);
 	        $gameInterp.pluginCommand('ShowGab');
@@ -592,6 +615,24 @@ console.log(Xillith);
 
 	Xillith.receiveItems = receiveItems;
 
+
+    //Section for Managine the End of a Battle
+
+	var _BattleManager_processDefeat = BattleManager.processDefeat;
+	BattleManager.processDefeat = function () {
+	   // console.log("hmm");
+	   // _BattleManager_processDefeat.call(this);
+
+	    //this.displayDefeatMessage();
+	    this.playDefeatMe();
+	    if (this._canLose) {
+	        this.replayBgmAndBgs();
+	    } else {
+	        AudioManager.stopBgm();
+	    }	    
+	    this.endBattle(2);
+	    $gameTemp.reserveCommonEvent(10);
+	};
     
 })();
 
