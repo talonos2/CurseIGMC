@@ -615,8 +615,9 @@ console.log(Xillith);
 
 	Xillith.receiveItems = receiveItems;
 
-
-    //Section for Managine the End of a Battle
+    /*
+    *Section for Managing the End of a Battle
+    */
 
 	var _BattleManager_processDefeat = BattleManager.processDefeat;
 	BattleManager.processDefeat = function () {
@@ -631,7 +632,7 @@ console.log(Xillith);
 	        AudioManager.stopBgm();
 	    }	    
 	    this.endBattle(2);
-	    $gameTemp.reserveCommonEvent(10);
+	    //$gameTemp.reserveCommonEvent(10);
 	};
     
 })();
