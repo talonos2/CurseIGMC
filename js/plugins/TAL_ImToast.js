@@ -27,12 +27,12 @@ Scene_Map.prototype.launchBattle = function() {
 
 BattleManager.playBattleBgm = function() 
 {
-    AudioManager.fadeInOverlay(.5);
+    AudioManager.fadeInOverlay(1);
 };
 
 BattleManager.replayBgmAndBgs = function() 
 {
-    AudioManager.fadeOutOverlay(.5)
+    AudioManager.fadeOutOverlay(1)
 };
 
 //Kills Sound effects and music effects. Commented out above.
