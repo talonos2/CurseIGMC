@@ -29,6 +29,6 @@ null,
 {"id":27,"battlerName":"Actor3_6","characterIndex":3,"characterName":"People4","classId":4,"equips":[1,0,1,0,0],"faceIndex":3,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person Θ","nickname":"","note":"","profile":""},
 {"id":28,"battlerName":"Actor3_5","characterIndex":5,"characterName":"People4","classId":4,"equips":[1,0,1,0,0],"faceIndex":5,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person Σ","nickname":"","note":"","profile":""},
 {"id":29,"battlerName":"Actor2_4","characterIndex":7,"characterName":"People4","classId":4,"equips":[1,0,1,0,0],"faceIndex":7,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person Ψ","nickname":"","note":"","profile":""},
-{"id":30,"battlerName":"Actor3_8","characterIndex":6,"characterName":"People4","classId":4,"equips":[1,0,1,0,0],"faceIndex":6,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Person Ω","nickname":"","note":"","profile":""},
+{"id":30,"battlerName":"Actor3_8","characterIndex":6,"characterName":"People4","classId":4,"equips":[1,0,1,0,0],"faceIndex":6,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Village Elder","nickname":"","note":"","profile":""},
 {"id":31,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
 ]
