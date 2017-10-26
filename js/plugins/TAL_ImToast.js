@@ -336,7 +336,7 @@ Game_Timer.prototype.update = function(sceneActive)
     if (SceneManager._scene.constructor === Scene_Map && this.getFrames()%45 === 0 && Talonos.unsungLevels > 0)
     {
         Talonos.unsungLevels -= 1;
-        $gamePlayer.requestAnimation (1);
+        $gamePlayer.requestAnimation (137);
     }
 };
 
