@@ -334,11 +334,8 @@ console.log(Xillith);
 
 	        ItemInUse = /*"\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +*/
                 "\\>Found   \\ia[" + item.id + "]: Defense: +" + colorCodeI1 + item.params[3] + "\\c[0]" + item1Special;
-	        // if (item.description!="") ItemInUse=ItemInUse+ " Special: " + item.description;
 	        ItemInUse += "\n\\>Current " + "\\ia[" + Item2.id + "]: Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0]" + item2Special;
-	        //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;                        
-	        //ItemInUse = ItemInUse + "\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
-	        //$gameParty.members()[0]
+
 	    }
 	   // else { do you want to equip it?}
 
