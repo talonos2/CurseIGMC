@@ -304,6 +304,8 @@ if (Imported["MVCommons"] === undefined) {
     var shouldRefresh = $._isDirty;
     var self = this;
 
+    OrangeHud.saveAddOns = $._addons
+
     if (self.group.AutoRefresh) 
     {
       for (var lineType in $._addons) 
