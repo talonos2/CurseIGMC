@@ -86,8 +86,7 @@ if (Imported["OrangeHudFixedPicture"] === undefined) {
   };
   
   OrangeHudFixedPicture.getKey = function(variableData) {
-    //console.log('fixed-picture'+variableData.FileName);
-    return 'fixed-picture'+variableData.FileName;
+    return 'fixed-picture';
   };
 
   OrangeHud.registerLineType('OrangeHudFixedPicture', OrangeHudFixedPicture);
