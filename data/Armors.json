@@ -1,7 +1,7 @@
 [
 null,
-{"id":1,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Clothing","note":"","params":[0,0,0,1,0,0,0,0],"price":0},
-{"id":2,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Cloth Armor","note":"<Common Item Level: 1>\n<Specials: SuperSpecial>","params":[0,0,0,4,0,0,0,0],"price":0},
+{"id":1,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Thick Jacket","note":"","params":[0,0,0,1,0,0,0,0],"price":0},
+{"id":2,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Cloth Armor","note":"<Common Item Level: 1>","params":[0,0,0,4,0,0,0,0],"price":0},
 {"id":3,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Hide Wrappings","note":"<Common Item Level: 2>","params":[0,0,0,6,0,0,0,0],"price":0},
 {"id":4,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Leather Armor","note":"<Common Item Level: 3>","params":[0,0,0,8,0,0,0,0],"price":0},
 {"id":5,"atypeId":1,"description":"Not very helpful...","etypeId":3,"traits":[],"iconIndex":135,"name":"Studded Leather","note":"<Common Item Level: 4>","params":[0,0,0,10,0,0,0,0],"price":0},
