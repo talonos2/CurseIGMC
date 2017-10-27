@@ -187,7 +187,7 @@ if (Imported["OrangeHudGauge"] === undefined) {
   };
 
   OrangeHudGauge.drawGauge = function(hudWindow, variableData) {
-    console.log("drawing"+variableData.ValueVariableId)
+    //console.log("drawing"+variableData.ValueVariableId)
     var x = this.realX(variableData);
     var y = this.realY(variableData);
 
@@ -235,7 +235,7 @@ if (Imported["OrangeHudGauge"] === undefined) {
           fillY = fillY + height - fillH;
         }
       }
-      console.log(x+", "+gaugeY+", "+width+", "+height+", "+hudWindow.gaugeBackColor())
+      //console.log(x+", "+gaugeY+", "+width+", "+height+", "+hudWindow.gaugeBackColor())
 
       hudWindow.contents.fillRect(x, gaugeY, width, height, hudWindow.gaugeBackColor());
       hudWindow.contents.gradientFillRect(fillX, fillY, fillW, fillH, color1, color2);
