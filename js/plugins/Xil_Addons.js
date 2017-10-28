@@ -144,7 +144,7 @@ console.log(Xillith);
             //Assuming crystals in slots 10-13
 		    var rarity = GetRarity();
 		    //((floor+2)/3)^2
-		    var amount =5* Math.pow((rarity + 2) / 3, 2);
+		    var amount =10* Math.pow((rarity + 2) / 3, 2);
 		    amount = Math.round(amount);
 		    var CrystalType = Math.floor((Math.random() * 4) +10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
