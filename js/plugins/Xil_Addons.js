@@ -244,7 +244,7 @@ console.log(Xillith);
 
 	    var ItemInUse="";
 	    var Item2 = null;
-	        Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
+	        Item2 = getEquipOfType($gameParty.members()[0], item.etypeId);
 	    var colorCodeI1;
 	    var colorCodeI2;
 	    var outputTxt = "";
@@ -360,7 +360,8 @@ console.log(Xillith);
 	                SendToTown(Item2, itemType);
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
-	            if (!Item2) {
+	            else 
+	            {
 	                equipAThing($gameParty.members()[0],item)
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
@@ -383,7 +384,7 @@ console.log(Xillith);
 	equipAThing = function(actor, item) 
 	{
 		//Bail out if no actor.
-	    if (!actor) console.log("No actor found!"); return;
+	    if (!actor) {console.log("No actor found!"); return;}
 		//Save HP
 	    var savedHPRate = actor.hpRate()
 	    var savedMPRate = actor.mpRate()
@@ -396,6 +397,12 @@ console.log(Xillith);
 	    actor._mp = Math.round(actor.mmp*savedMPRate);
     	return true;
 	};
+
+	getEquipOfType = function(actor, etypeId)
+	{
+		var index = actor.equipSlots().indexOf(etypeId);
+		return actor.equips()[index];
+	}
 
 
 	function SendToTown(item, itemType) {
