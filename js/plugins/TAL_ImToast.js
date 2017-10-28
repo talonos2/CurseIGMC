@@ -147,6 +147,11 @@ BattleManager.processVictory = function() {
     this.endBattle(0);
 };
 
+Scene_Map.prototype.needsFadeIn = function() {
+    return (//SceneManager.isPreviousScene(Scene_Battle) ||
+            SceneManager.isPreviousScene(Scene_Load));
+};
+
 //Window_BattleLog.prototype.startTurn = function() {
 //};
 
