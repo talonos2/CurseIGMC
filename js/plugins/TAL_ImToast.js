@@ -480,3 +480,12 @@ Talonos.crystalTiers = [100,350,850,1600,2600,3850,5100,6350,8100,10100]
 Talonos.crystalUpgrades = [100,250,500,750,1000,1250,1250,1250,1750,2000]
 Talonos.crystalTiers[-1] = 0;       //lol javascript
 Talonos.crystalUpgrades[-1] = 0;
+
+//Overrides Yanfly's stuff at YEP_EquipCore 817
+Window_StatCompare.prototype.refresh = function() {
+    this.contents.clear();
+    if (!this._actor) return;
+    for (var i = 0; i < 4; ++i) {
+        this.drawItem(0, this.lineHeight() * i, i);
+    }
+};
