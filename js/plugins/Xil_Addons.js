@@ -355,12 +355,13 @@ console.log(Xillith);
 	        }
 	        if (n == 0) {
 	            if (Item2) {
-	                $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	            	//Equip the Item
+	                equipAThing($gameParty.members()[0],item)
 	                SendToTown(Item2, itemType);
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
 	            if (!Item2) {
-	                $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	                equipAThing($gameParty.members()[0],item)
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
 	        }
@@ -378,6 +379,21 @@ console.log(Xillith);
 	    }.bind(this));
 
 	}
+
+	equipAThing = function(actor, item) 
+	{
+		//Bail out if no actor.
+	    if (!actor) console.log("Dying here!");
+		//Save HP
+	    var savedHPRate = actor.hpRate()
+	    //Actually do the equipping
+    	var index = actor.equipSlots().indexOf(item.etypeId);
+    	actor._equips[index].setObject(item);
+	    //Scale HP proportionately.
+	    actor.refresh()
+	    actor._hp = Math.round(actor.mhp*savedHPRate);
+    	return true;
+	};
 
 
 	function SendToTown(item, itemType) {
