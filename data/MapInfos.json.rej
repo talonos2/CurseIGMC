@@ -1,0 +1,8 @@
+diff a/data/MapInfos.json b/data/MapInfos.json	(rejected hunks)
+@@ -1,5 +1,6 @@
+ [
+ null,
++<<<<<<< HEAD
+ {"id":1,"expanded":false,"name":"MAP001","order":1,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
+ {"id":2,"expanded":false,"name":"ForestTestDung","order":2,"parentId":0,"scrollX":841.7142857142857,"scrollY":1032.857142857143},
+ {"id":3,"expanded":true,"name":"xil_TestDungion","order":3,"parentId":0,"scrollX":2184,"scrollY":1229.3333333333333},

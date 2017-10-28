@@ -183,8 +183,3 @@ myprim = function(numNodes, connections)
 
  return final;
 }
-
-myprim();
-
-
-//console.log("ends");

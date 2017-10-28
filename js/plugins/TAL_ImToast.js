@@ -27,7 +27,8 @@ Scene_Map.prototype.launchBattle = function() {
 
 BattleManager.playBattleBgm = function() 
 {
-    AudioManager.fadeInOverlay(1);
+    console.log("Now playing: MUSIC!")
+    AudioManager.fadeInOverlay(.1);
 };
 
 BattleManager.replayBgmAndBgs = function() 
@@ -46,6 +47,7 @@ Scene_Map.prototype.stopAudioOnBattleStart = function() {
 };
 
 Scene_Map.prototype.startEncounterEffect = function() {
+    BattleManager.playBattleBgm();
     this._spriteset.hideCharacters();
     this._encounterEffectDuration = this.encounterEffectSpeed();
 };
@@ -68,7 +70,7 @@ Scene_Map.prototype.updateEncounterEffect = function() {
             this.startFlashForEncounter(12);
         }
         if (n === Math.floor(speed / 2)) {
-            BattleManager.playBattleBgm();
+            //BattleManager.playBattleBgm();
             //this.startFadeOut(10);
         }
     }
@@ -96,7 +98,6 @@ Scene_Map.prototype.encounterEffectSpeed = function() {
 Scene_Battle.prototype.start = function() {
     Scene_Base.prototype.start.call(this);
     //this.startFadeIn(this.fadeSpeed(), false);
-    BattleManager.playBattleBgm();
     BattleManager.startBattle();
     this._statusWindow.visible = false
     $gamePlayer.setStealthMode(false);
@@ -221,7 +222,6 @@ Input._pressedTimeMap = {};
 Input.wasPressedRecently = function(keyName, defOfRecently) 
 {
     var timeSincePressed = SceneManager._getTimeInMs()-this._pressedTimeMap[keyName];
-    console.log(timeSincePressed);
     return (timeSincePressed <= defOfRecently);
 };
 
@@ -298,8 +298,13 @@ Talonos.HasteCost = 15; //Cost is in mana per second
 Game_Timer.prototype.update = function(sceneActive) 
 {
     Talonos.Game_Timer_Update.apply(this, arguments);
+    if(this._isPaused || this.isAutoPaused() || !this._working) 
+    {
+        return;
+    }
     var framesPerHpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mhp);
     var framesPerMpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mmp);
+
     if (this.getFrames()%framesPerHpRegen === 0)
     {
         $gameParty.allMembers()[0].gainHp(1);
@@ -451,8 +456,10 @@ AudioManager.fadeInOverlay = function(duration)
 {
     if (this._overlayBuffer) 
     { 
-        AudioManager._overlayBuffer.fadeIn(duration);
+        AudioManager._overlayBuffer.stop();
+        this._overlayBuffer.play(true, 0 || 0);
         AudioManager.syncOverlayToMusic();
+        AudioManager._overlayBuffer.fadeIn(duration);
     }
 };
 
@@ -474,7 +481,16 @@ AudioManager.updateOverlayParameters = function(overlay)
     this.updateBufferParameters(this._overlayBuffer, this._bgmVolume, overlay);
 };
 
-Talonos.crystalTiers = [200,700,1700,3200,5200,7700,10200,12700,16200,20200]
-Talonos.crystalUpgrades = [200,500,1000,1500,2000,2500,2500,2500,3500,4000]
+Talonos.crystalTiers = [100,350,850,1600,2600,3850,5100,6350,8100,10100]
+Talonos.crystalUpgrades = [100,250,500,750,1000,1250,1250,1250,1750,2000]
 Talonos.crystalTiers[-1] = 0;       //lol javascript
 Talonos.crystalUpgrades[-1] = 0;
+
+//Overrides Yanfly's stuff at YEP_EquipCore 817
+Window_StatCompare.prototype.refresh = function() {
+    this.contents.clear();
+    if (!this._actor) return;
+    for (var i = 0; i < 4; ++i) {
+        this.drawItem(0, this.lineHeight() * i, i);
+    }
+};

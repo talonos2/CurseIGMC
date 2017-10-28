@@ -144,7 +144,7 @@ console.log(Xillith);
             //Assuming crystals in slots 10-13
 		    var rarity = GetRarity();
 		    //((floor+2)/3)^2
-		    var amount =5* Math.pow((rarity + 2) / 3, 2);
+		    var amount =10* Math.pow((rarity + 2) / 3, 2);
 		    amount = Math.round(amount);
 		    var CrystalType = Math.floor((Math.random() * 4) +10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
@@ -244,7 +244,7 @@ console.log(Xillith);
 
 	    var ItemInUse="";
 	    var Item2 = null;
-	        Item2 = $gameParty.members()[0].equips()[item.etypeId - 1];
+	        Item2 = getEquipOfType($gameParty.members()[0], item.etypeId);
 	    var colorCodeI1;
 	    var colorCodeI2;
 	    var outputTxt = "";
@@ -355,12 +355,14 @@ console.log(Xillith);
 	        }
 	        if (n == 0) {
 	            if (Item2) {
-	                $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	            	//Equip the Item
+	                equipAThing($gameParty.members()[0],item)
 	                SendToTown(Item2, itemType);
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
-	            if (!Item2) {
-	                $gameParty.members()[0]._equips[item.etypeId - 1].setObject(item);
+	            else 
+	            {
+	                equipAThing($gameParty.members()[0],item)
 	                outputTxt = ["\\i"+iTypeChar+"[" + item.id + "] equipped."];
 	            }
 	        }
@@ -377,6 +379,29 @@ console.log(Xillith);
 	        return n;
 	    }.bind(this));
 
+	}
+
+	equipAThing = function(actor, item) 
+	{
+		//Bail out if no actor.
+	    if (!actor) {console.log("No actor found!"); return;}
+		//Save HP
+	    var savedHPRate = actor.hpRate()
+	    var savedMPRate = actor.mpRate()
+	    //Actually do the equipping
+    	var index = actor.equipSlots().indexOf(item.etypeId);
+    	actor._equips[index].setObject(item);
+	    //Scale HP proportionately.
+	    actor.refresh()
+	    actor._hp = Math.round(actor.mhp*savedHPRate);
+	    actor._mp = Math.round(actor.mmp*savedMPRate);
+    	return true;
+	};
+
+	getEquipOfType = function(actor, etypeId)
+	{
+		var index = actor.equipSlots().indexOf(etypeId);
+		return actor.equips()[index];
 	}
 
 
