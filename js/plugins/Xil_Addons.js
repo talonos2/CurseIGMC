@@ -383,15 +383,17 @@ console.log(Xillith);
 	equipAThing = function(actor, item) 
 	{
 		//Bail out if no actor.
-	    if (!actor) console.log("Dying here!");
+	    if (!actor) console.log("No actor found!"); return;
 		//Save HP
 	    var savedHPRate = actor.hpRate()
+	    var savedMPRate = actor.mpRate()
 	    //Actually do the equipping
     	var index = actor.equipSlots().indexOf(item.etypeId);
     	actor._equips[index].setObject(item);
 	    //Scale HP proportionately.
 	    actor.refresh()
 	    actor._hp = Math.round(actor.mhp*savedHPRate);
+	    actor._mp = Math.round(actor.mmp*savedMPRate);
     	return true;
 	};
 
