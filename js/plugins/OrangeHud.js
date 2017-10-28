@@ -319,11 +319,6 @@ if (Imported["MVCommons"] === undefined) {
     var shouldRefresh = $._isDirty;
     var self = this;
 
-    if (shouldRefresh)
-    {
-      console.log("I'm dirty.");
-    }
-
     OrangeHud.saveAddOns = $._addons
 
     if (self.group.AutoRefresh) 
@@ -341,7 +336,6 @@ if (Imported["MVCommons"] === undefined) {
 
             if (value !== addOn.lines[key]) 
             {
-              console.log("Key Mismatch: "+addOn.lines[key]+", "+value)
               shouldRefresh = true;
             }
           }
@@ -466,8 +460,6 @@ if (Imported["MVCommons"] === undefined) {
   
   var oldGameMap_requestRefresh = Game_Map.prototype.requestRefresh;
   Game_Map.prototype.requestRefresh = function(mapId) {
-    console.log("Map requests refresh.")
-    console.trace();
     oldGameMap_requestRefresh.call(this, mapId);
     $._isDirty = true;
   };
