@@ -298,8 +298,13 @@ Talonos.HasteCost = 15; //Cost is in mana per second
 Game_Timer.prototype.update = function(sceneActive) 
 {
     Talonos.Game_Timer_Update.apply(this, arguments);
+    if(this._isPaused || this.isAutoPaused() || !this._working) 
+    {
+        return;
+    }
     var framesPerHpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mhp);
     var framesPerMpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mmp);
+
     if (this.getFrames()%framesPerHpRegen === 0)
     {
         $gameParty.allMembers()[0].gainHp(1);
