@@ -240,7 +240,7 @@ console.log(Xillith);
 
 	function ChooseEquip(item, itemType) {
 
-	    //console.log("item name: " + item.name + " etypeID " + item.etypeId + " itemType "+itemType);
+	    //console.log("item name: " + item.name + " etypeID " + item.etypeId + " itemType "+itemType);    
 
 	    var ItemInUse="";
 	    var Item2 = null;
@@ -291,10 +291,6 @@ console.log(Xillith);
 	        ItemInUse = "\\>Found   \\ia[" + item.id + "], Defense: " + item.params[3] + "(" + colorCodeI1 + difference + "\\c[0])" + item1Special;
 	        ItemInUse += "\n\\>Current \\ia[" + Item2.id + "], Defense: " + Item2.params[3] + item2Special;
 
-	//        ItemInUse = /*"\\>Received: \\ia[" + item.id + "]. Would you like to equip it?\n" +*/
-      //          "\\>Found   \\ia[" + item.id + "]: Defense: +" + colorCodeI1 + item.params[3] + "\\c[0]" + item1Special;
-	    //    ItemInUse += "\n\\>Current " + "\\ia[" + Item2.id + "]: Defense: +" + colorCodeI2 + Item2.params[3] + "\\c[0]" + item2Special;
-
 	    }
 	   // else { do you want to equip it?}
 
@@ -315,17 +311,7 @@ console.log(Xillith);
                 return 0;
             }
 
-            /** Old Xillith Code
-
-            ItemInUse = "\\>Received: \\iw[" + item.id + "]. Would you like to equip it?\n" +
-                "\\>Found   \\iw[" + item.id + "]: Attack: +" + colorCodeI1 + item.params[2] + "\\c[0]" + item1Special;
-            //if (item.description != "") ItemInUse = ItemInUse + " Special: " + item.description;
-            ItemInUse += "\n\\>Current \\iw[" + Item2.id + "]: Attack: +" + colorCodeI2 + Item2.params[2] + "\\c[0]" + item2Special;
-            //if (Item2.description != "") ItemInUse = ItemInUse + " Special: " + Item2.description;
-            //    ItemInUse=ItemInUse+"\n" + "\\>\\}Warning: Currently equipped items lost upon death.";
-	        //$gameParty.members()[0]
-
-	        Talonos Code: */
+	       // Talonos Code: */
 	        
             var difference = (item.params[2] - Item2.params[2]);
 	        if (difference >= 1)
@@ -336,6 +322,8 @@ console.log(Xillith);
             ItemInUse = "\\>Found   \\iw[" + item.id + "], Attack: " + item.params[2] + "("+colorCodeI1+difference+"\\c[0])" + item1Special;
             ItemInUse += "\n\\>Current \\iw[" + Item2.id + "], Attack: " + Item2.params[2] + item2Special;
         }
+
+        $gameInterp.pluginCommand("StopEventMovement");
 
 	    $gameMessage.setBackground(1);
 	    $gameMessage.setPositionType(1);
@@ -351,6 +339,7 @@ console.log(Xillith);
   
 	        if (n==1) {
 	            SendToTown(item, itemType);
+	            $gameInterp.pluginCommand("AllowEventMovement");
 	            return 0;
 	        }
 	        if (n == 0) {
@@ -369,13 +358,13 @@ console.log(Xillith);
 
 	        if (itemType == "item" ) {
 	            SendToTown(item, itemType);
+	            $gameInterp.pluginCommand("AllowEventMovement");
 	            return 0;
 	        }	    
 
 	        $gameInterp.pluginCommand('GabText', outputTxt);
 	        $gameInterp.pluginCommand('ShowGab');
-
-
+	        $gameInterp.pluginCommand("AllowEventMovement");
 	        return n;
 	    }.bind(this));
 
