@@ -21,7 +21,7 @@ null,
 {"id":19,"expanded":true,"name":"Floor 12 (Lvl 5-3)","order":35,"parentId":5,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":20,"expanded":true,"name":"Floor 13 (Lvl 3-1)","order":27,"parentId":5,"scrollX":1081.3333333333333,"scrollY":896},
 {"id":21,"expanded":true,"name":"Floor 14 (Lvl 4-1)","order":30,"parentId":5,"scrollX":1081.3333333333333,"scrollY":825.3333333333334},
-{"id":22,"expanded":true,"name":"Floor 15 (Lvl 5-1)","order":33,"parentId":5,"scrollX":1081.3333333333333,"scrollY":825.3333333333334},
+{"id":22,"expanded":true,"name":"Floor 15 (Lvl 5-1)","order":33,"parentId":5,"scrollX":1081.3333333333333,"scrollY":614.6666666666666},
 {"id":23,"expanded":true,"name":"Floor Final: Boss","order":10,"parentId":5,"scrollX":720,"scrollY":430.6666666666667},
 {"id":24,"expanded":false,"name":"Death Map","order":36,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":25,"expanded":true,"name":"Town Buildings","order":11,"parentId":5,"scrollX":1092,"scrollY":614.6666666666666},
@@ -34,6 +34,6 @@ null,
 {"id":32,"expanded":false,"name":"Church","order":18,"parentId":25,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":33,"expanded":false,"name":"Witches House","order":19,"parentId":32,"scrollX":720,"scrollY":430.6666666666667},
 {"id":34,"expanded":false,"name":"Mage Center","order":20,"parentId":25,"scrollX":1092,"scrollY":614.6666666666666},
-{"id":35,"expanded":true,"name":"cutscene town","order":6,"parentId":3,"scrollX":1318.6666666666667,"scrollY":1776.6666666666667},
-{"id":36,"expanded":false,"name":"intro town","order":7,"parentId":35,"scrollX":1558,"scrollY":2000}
+{"id":35,"expanded":true,"name":"cutscene town","order":6,"parentId":3,"scrollX":1318.6666666666667,"scrollY":1796},
+{"id":36,"expanded":false,"name":"intro town","order":7,"parentId":35,"scrollX":1558.6666666666667,"scrollY":2000}
 ]
