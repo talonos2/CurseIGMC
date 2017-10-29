@@ -203,6 +203,40 @@ Khas.Lighting.LIGHTS = {
         fileName: "torch",
         intensity: 80, variation: 20,
         offset_x: 0, offset_y: 0  
+    }, lava: {
+        fileName: "lava",
+        intensity: 65, variation: 0, size: 150,
+        offset_x: 0, offset_y: 0
+    },
+    lake: {
+        fileName: "cyan4",
+        intensity: 100, variation: 0, size: 200,
+        offset_x: 0, offset_y: 0
+    },
+    torch2: {
+        fileName: "torch_red4",
+        intensity: 70, variation: 0, size: 170,
+        offset_x: 0, offset_y: 0
+    },
+    torch3: {
+        fileName: "torch_red3",
+        intensity: 95, variation: 0, size: 180,
+        offset_x: 0, offset_y: 0
+    },
+    torch4: {
+        fileName: "torch_red10",
+        intensity: 90, variation: 0, size: 220,
+        offset_x: 0, offset_y: 0
+    },
+    torch5: {
+        fileName: "torch",
+        intensity: 90, variation: 0, size: 180,
+        offset_x: 0, offset_y: 0
+    },
+    torch6: {
+        fileName: "cyan3",
+        intensity: 95, variation: 0, size: 190,
+        offset_x: 0, offset_y: 0
     },
     torch_big: {
         fileName: "torch",
@@ -276,8 +310,8 @@ Khas.Lighting.LIGHTS = {
         offset_x: 0, offset_y: 0  
     },
     cyan: {
-        fileName: "cyan",
-        intensity: 100, variation: 0,
+        fileName: "cyan3",
+        intensity: 90, variation: 0,
         offset_x: 0, offset_y: 0  
     },
     yellow: {
