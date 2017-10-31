@@ -101,6 +101,8 @@ Scene_Battle.prototype.start = function() {
     BattleManager.startBattle();
     this._statusWindow.visible = false
     $gamePlayer.setStealthMode(false);
+    $gamePlayer.dashSpellOn = false;
+    $gameSwitches.setValue(91,false);
 };
 
 Sprite_Enemy.prototype.setBattler = function(battler) {
@@ -338,6 +340,7 @@ Game_Timer.prototype.update = function(sceneActive)
         if ($gameParty.allMembers()[0].mp<=0) 
         {
             $gamePlayer.dashSpellOn = false;
+            $gameSwitches.setValue(91,false);
         }
     }
 
