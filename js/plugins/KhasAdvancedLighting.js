@@ -248,6 +248,21 @@ Khas.Lighting.LIGHTS = {
         intensity: 95, variation: 0, size: 195,
         offset_x: 0, offset_y: 0
     },
+    crystal: {
+        fileName: "CystalLight",
+        intensity: 100, variation: 0, size: 60,
+        offset_x: 0, offset_y: -34
+    },
+    mana: {
+        fileName: "ManaGlow",
+        intensity: 100, variation: 0, size: 40,
+        offset_x: 0, offset_y: 4
+    },
+    heal: {
+        fileName: "HealGlow",
+        intensity: 100, variation: 0, size: 40,
+        offset_x: 0, offset_y: 4
+    },
     torch_big: {
         fileName: "torch",
         intensity: 80, variation: 20, size: 150,
