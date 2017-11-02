@@ -312,7 +312,7 @@ Game_Timer.prototype.update = function(sceneActive)
     var framesPerHpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mhp);
     var framesPerMpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mmp);
 
-    if (this.getFrames()%framesPerHpRegen === 0)
+    if (this.getFrames()%framesPerHpRegen === 0&&$gameParty.allMembers()[0].hp > 0)
     {
         $gameParty.allMembers()[0].gainHp(1);
     }
