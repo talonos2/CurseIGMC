@@ -321,6 +321,15 @@ Game_Timer.prototype.update = function(sceneActive)
         $gameParty.allMembers()[0].gainMp(1);
     }
 
+    if (Input.isTriggered('rest')&&this.getFrames()>1800)
+    {
+        $gameParty.allMembers()[0].gainHp(Math.round($gameParty.allMembers()[0].hp*.15));
+        console.log("Frames "+Game_Timer._frames)
+        $gameTimer._frames -= 1800;
+        console.log("Frames "+Game_Timer._frames)
+        $gamePlayer.requestAnimation(165);
+    }
+
     //If stealth mode is on, lower mana by some amount
     var framesPerStealthManaDrainTick = Math.round(60/Talonos.StealthModeCost);
     if ($gamePlayer.isStealthMode() && this.getFrames()%framesPerStealthManaDrainTick === 0)
