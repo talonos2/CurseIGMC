@@ -3010,9 +3010,10 @@ Input.keyMapper = {
     40: 'down',     // down arrow
     45: 'escape',   // insert
     67: 'c',        // C
-    81: 'pageup',   // Q
-    87: 'pagedown', // W
+    65: 'pageup',   // A
+    68: 'pagedown', // D
     88: 'escape',   // X
+    83: 'rest',     // S
     90: 'ok',       // Z
     96: 'escape',   // numpad 0
     98: 'down',     // numpad 2
@@ -3034,8 +3035,9 @@ Input.gamepadMapper = {
     1: 'cancel',    // B
     2: 'shift',     // X
     3: 'c',         // Y
-    4: 'pageDown',    // LB
-    5: 'pageUp',  // RB
+    4: 'pageDown',  // LB
+    5: 'pageUp',    // RB
+    7: 'rest',      // RT
     9: 'menu',      // Start
     12: 'up',       // D-pad up
     13: 'down',     // D-pad down
