@@ -262,10 +262,10 @@ console.log(Xillith);
 	        return 0;
 	    }
 	   
-	    if (itemType == "trinket" && !Item2) ItemInUse = "\\>Found \\ia[" + item.id + "]; " + item1Special;
+	    if (itemType == "trinket" && !Item2) ItemInUse = "\\>Found \\ia[" + item.id + "]" + item1Special;
 	    if (itemType == "trinket" && Item2) {
-	        ItemInUse = "\\>Found   \\ia[" + item.id + "]; " + item1Special;
-	        ItemInUse += "\n\\>Current \\ia[" + Item2.id + "]; " + item2Special;
+	        ItemInUse = "\\>Found   \\ia[" + item.id + "]" + item1Special;
+	        ItemInUse += "\n\\>Current \\ia[" + Item2.id + "]" + item2Special;
 	    }
 
 	    if (itemType == "armor" && !Item2) ItemInUse = "\\>Found \\ia[" + item.id + "]; " + item1Special;
