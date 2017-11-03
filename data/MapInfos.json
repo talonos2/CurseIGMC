@@ -34,6 +34,6 @@ null,
 {"id":32,"expanded":false,"name":"Church","order":18,"parentId":25,"scrollX":756,"scrollY":913},
 {"id":33,"expanded":false,"name":"Witches House","order":19,"parentId":32,"scrollX":720,"scrollY":430.6666666666667},
 {"id":34,"expanded":false,"name":"Mage Center","order":20,"parentId":25,"scrollX":756,"scrollY":913},
-{"id":35,"expanded":true,"name":"cutscene town","order":6,"parentId":3,"scrollX":1031,"scrollY":848.5},
+{"id":35,"expanded":true,"name":"cutscene town","order":6,"parentId":3,"scrollX":568,"scrollY":448.5},
 {"id":36,"expanded":false,"name":"intro town","order":7,"parentId":35,"scrollX":2003,"scrollY":1951.5}
 ]
