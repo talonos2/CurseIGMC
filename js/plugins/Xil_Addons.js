@@ -158,14 +158,14 @@ console.log(Xillith);
 		if (command == 'HealPlayer') {
 		    var rarity = GetRarity();
 		    var HealingParam = Number(parameters['HealingMultiplier']);
-		    var healing = rarity * HealingParam;
+		    var healing = 15+ rarity * HealingParam;
 		    $gameParty.members()[0].gainHp(Number(healing));
 		}
 
 		if (command == 'GainMana') {
 		    var rarity = GetRarity();
 		    var ManaParam = Number(parameters['ManaMultiplier']);
-		    var ManaGained = rarity * ManaParam;
+		    var ManaGained = 15+rarity * ManaParam;
 		    $gameParty.members()[0].gainMp(Number(ManaGained));
 		}
 
