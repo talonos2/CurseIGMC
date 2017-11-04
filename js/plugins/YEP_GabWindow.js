@@ -408,7 +408,7 @@ Game_Interpreter.prototype.setGabSwitch = function(args) {
     this._gabSwitch = parseInt(args[0]);
 };
 
-Game_Interpreter.prototype.showGab = function() {
+Game_Interpreter.prototype.showGab = function () {
     if (!this._gabText) return;
     var gabData = [
         this._gabText,
@@ -562,7 +562,7 @@ Window_Gab.prototype.updateFadeOut = function() {
 
 Window_Gab.prototype.addGabData = function(gabData) {
     if (!gabData) return;
-    if (this.checkDuplicateGab(gabData)) return;
+    //if (this.checkDuplicateGab(gabData)) return;
     this._gabQueue.push(gabData);
 };
 

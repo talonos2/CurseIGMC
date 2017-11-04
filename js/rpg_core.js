@@ -3010,8 +3010,8 @@ Input.keyMapper = {
     40: 'down',     // down arrow
     45: 'escape',   // insert
     67: 'c',        // C
-    65: 'pageup',   // A
-    68: 'pagedown', // D
+    65: 'pageUp',   // A
+    68: 'pageDown', // D
     88: 'escape',   // X
     83: 'rest',     // S
     90: 'ok',       // Z
