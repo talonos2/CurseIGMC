@@ -321,7 +321,7 @@ Game_Timer.prototype.update = function(sceneActive)
         $gameParty.allMembers()[0].gainMp(1);
     }
 
-    if (Input.isTriggered('rest')&&this.getFrames()>1800)
+    if (Input.isTriggered('rest')&&this.getFrames()>1800&&SceneManager._scene.constructor == Scene_Map)
     {
         $gameParty.allMembers()[0].gainHp(Math.round($gameParty.allMembers()[0].mhp*.15));
         $gameTimer._frames -= 1800;
