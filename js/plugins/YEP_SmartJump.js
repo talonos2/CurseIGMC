@@ -329,8 +329,12 @@ Game_CharacterBase.prototype.isSmartJumpValid = function(x, y) {
     var events = $gameMap.eventsXyNt(x, y);
     var length = events.length;
     var regionId = $gameMap.regionId(x, y);
+    console.log(regionId);
     if (Yanfly.Param.JumpEqualRegion.contains(regionId)) {
-      if (this.regionId() !== regionId) return false;
+      if (this.regionId() !== regionId&&regionId != 0)
+      {
+        return false;
+      }
     }
     for (var i = 0; i < length; ++i) {
       var ev = events[i];
@@ -341,7 +345,10 @@ Game_CharacterBase.prototype.isSmartJumpValid = function(x, y) {
     }
     var regionId = $gameMap.regionId(x, y);
     if (regionId > 0 && Yanfly.Param.JumpEqualRegion.contains(regionId)) {
-      if (this.regionId() === regionId) return true;
+      if (this.regionId() === regionId)
+      {
+        return true;
+      }
     }
     return $gameMap.isPassable(x, y, this._direction);
 };
