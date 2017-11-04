@@ -1,4 +1,4 @@
-// This plugin was compiled from sapphirescript (v1.0 Beta)
+﻿// This plugin was compiled from sapphirescript (v1.0 Beta)
 // sapphirescript by Nilo K. - Khas (arcthunder.blogspot.com/p/sapphire-script.html)
 //=====================================================================================================================
 // * KhasAdvancedLighting
@@ -248,6 +248,16 @@ Khas.Lighting.LIGHTS = {
         intensity: 95, variation: 0, size: 195,
         offset_x: 0, offset_y: 0
     },
+    torch9: {
+        fileName: "Cyan7",
+        intensity: 80, variation: 0, size: 170,
+        offset_x: 0, offset_y: 0
+    },
+    torch10: {
+        fileName: "torch_red2",
+        intensity: 80, variation: 0, size: 280,
+        offset_x: 0, offset_y: 0
+    },
     crystal: {
         fileName: "CystalLight",
         intensity: 100, variation: 0, size: 60,
@@ -346,7 +356,7 @@ Khas.Lighting.LIGHTS = {
     },
     purple: {
         fileName: "purple",
-        intensity: 100, variation: 0,
+        intensity: 100, variation: 0, size: 170,
         offset_x: 0, offset_y: 0  
     },
     // TEST
