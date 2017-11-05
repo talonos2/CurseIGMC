@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"atypeId":1,"description":"More useful against cold than blades,\nbut it's all we had on hand.","etypeId":3,"traits":[],"iconIndex":135,"name":"Warm Jacket","note":"","params":[0,0,0,1,0,0,0,0],"price":0},
-{"id":2,"atypeId":1,"description":"Surprisingly effective, but a little too warm.","etypeId":3,"traits":[],"iconIndex":135,"name":"Cloth Armor","note":"<Common Item Level: 1>","params":[0,0,0,4,0,0,0,0],"price":0},
+{"id":2,"atypeId":1,"description":"A little stuffy, but somewhat effective.","etypeId":3,"traits":[],"iconIndex":135,"name":"Cloth Armor","note":"<Common Item Level: 1>","params":[0,0,0,4,0,0,0,0],"price":0},
 {"id":3,"atypeId":1,"description":"It's not stealth armor, it's strips of animal skin.","etypeId":3,"traits":[],"iconIndex":135,"name":"Hide Wrappings","note":"<Common Item Level: 2>","params":[0,0,0,6,0,0,0,0],"price":0},
 {"id":4,"atypeId":1,"description":"Makes you as tough as a cow.","etypeId":3,"traits":[],"iconIndex":135,"name":"Leather Armor","note":"<Common Item Level: 3>","params":[0,0,0,8,0,0,0,0],"price":0},
 {"id":5,"atypeId":1,"description":"This came from cows that knew how to party.","etypeId":3,"traits":[],"iconIndex":135,"name":"Studded Leather","note":"<Common Item Level: 4>","params":[0,0,0,10,0,0,0,0],"price":0},
@@ -49,5 +49,5 @@ null,
 {"id":47,"atypeId":0,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":326,"name":"Unidentified Item","note":"","params":[0,0,0,0,0,0,0,0],"price":0},
 {"id":48,"atypeId":0,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":0,"name":"Unidentified Item","note":"","params":[0,0,0,0,0,0,0,0],"price":0},
 {"id":49,"atypeId":0,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":0,"name":"","note":"","params":[0,0,0,0,0,0,0,0],"price":0},
-{"id":50,"atypeId":0,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":0,"name":"","note":"","params":[0,0,0,0,0,0,0,0],"price":0}
+{"id":50,"atypeId":1,"description":"Made with love.","etypeId":3,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":135,"name":"Sweater","note":"","params":[0,0,0,4,0,0,0,0],"price":0}
 ]
