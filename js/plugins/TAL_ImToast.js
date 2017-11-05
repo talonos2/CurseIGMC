@@ -299,8 +299,8 @@ Game_Player.prototype.distancePerFrame = function()
 
 Talonos.Game_Timer_Update = Game_Timer.prototype.update
 
-Talonos.StealthModeCost = 10; //Cost is in mana per second
-Talonos.HasteCost = 15; //Cost is in mana per second
+Talonos.StealthModeCost = 8; //Cost is in mana per second
+Talonos.HasteCost = 12; //Cost is in mana per second
 
 Game_Timer.prototype.update = function(sceneActive) 
 {
@@ -321,7 +321,7 @@ Game_Timer.prototype.update = function(sceneActive)
         $gameParty.allMembers()[0].gainMp(1);
     }
 
-    if (Input.isTriggered('rest')&&this.getFrames()>1800&&SceneManager._scene.constructor == Scene_Map)
+    if (Input.isTriggered('rest')&&this.getFrames()>1800&&SceneManager._scene.constructor == Scene_Map&&$gameParty.allMembers()[0].hp!=$gameParty.allMembers()[0].mhp)
     {
         $gameParty.allMembers()[0].gainHp(Math.round($gameParty.allMembers()[0].mhp*.12));
         $gameParty.allMembers()[0].gainMp(Math.round($gameParty.allMembers()[0].mmp*.12));
