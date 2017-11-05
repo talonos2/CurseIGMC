@@ -1189,16 +1189,10 @@ Each parameter is well explained in the Plugin Manager.
     SOUL_MV.UltimateTitleSceeen.SceneTitle_commandNewGame = Scene_Title.prototype.commandNewGame;
     Scene_Title.prototype.commandNewGame = function() {
         SOUL_MV.UltimateTitleSceeen.SceneTitle_commandNewGame.call(this);
-            if (Imported.YEP_CreditsPage) {
                 this._spriteNewGame.visible = false;
                 this._spriteContinueGame.visible = false;
                 this._spriteOptions.visible = false;
                 this._spriteCredits.visible = false;
-            } else {
-                this._spriteNewGame.visible = false;
-                this._spriteContinueGame.visible = false;
-                this._spriteOptions.visible = false;   
-            }
     };
 
     SOUL_MV.UltimateTitleSceeen.sceneTitle_createCommandWindow = Scene_Title.prototype.createCommandWindow;
