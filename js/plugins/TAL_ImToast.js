@@ -510,3 +510,14 @@ Window_StatCompare.prototype.refresh = function() {
         this.drawItem(0, this.lineHeight() * i, i);
     }
 };
+
+//Override
+Scene_Map.prototype.fadeInForTransfer = function() {
+    var fadeType = $gamePlayer.fadeType();
+    switch (fadeType) {
+    case 0: case 1:
+    $gameScreen.startTint([0, 0, 0, 68], 50);
+        this.startFadeIn(this.fadeSpeed(), fadeType === 1);
+        break;
+    }
+};
