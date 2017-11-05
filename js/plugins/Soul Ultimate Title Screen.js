@@ -1156,12 +1156,10 @@ Each parameter is well explained in the Plugin Manager.
 
 
     // Compatibility fix with Yanfly's Credits Page plugin
-    if (Imported.YEP_CreditsPage) {
         SOUL_MV.UltimateTitleSceeen.creditsOnImage = PluginManager.parameters('Soul Ultimate Title Screen')["Credits On Image"];
         SOUL_MV.UltimateTitleSceeen.creditsOffImage = PluginManager.parameters('Soul Ultimate Title Screen')["Credits Off Image"];    
         SOUL_MV.UltimateTitleSceeen.creditsX = 770//PluginManager.parameters('Soul Ultimate Title Screen')["Credits X"];
-        SOUL_MV.UltimateTitleSceeen.creditsY = 540//PluginManager.parameters('Soul Ultimate Title Screen')["Credits Y"];
-    }
+        SOUL_MV.UltimateTitleSceeen.creditsY = 480//PluginManager.parameters('Soul Ultimate Title Screen')["Credits Y"];
 
     SOUL_MV.UltimateTitleSceeen.Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
 	Game_Interpreter.prototype.pluginCommand = function(command, args) {
@@ -1548,6 +1546,7 @@ Each parameter is well explained in the Plugin Manager.
     }
 
     Scene_Title.prototype.create_title_buttons = function() {
+    	console.log("Here 1")
         this._spriteNewGame = new Sprite_Button();
         this._spriteNewGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.newGameImage);
         this._spriteNewGame.x = SOUL_MV.UltimateTitleSceeen.newGameX;
@@ -1571,14 +1570,17 @@ Each parameter is well explained in the Plugin Manager.
         this._spriteLogo.x = SOUL_MV.UltimateTitleSceeen.logoX;
         this._spriteLogo.y = SOUL_MV.UltimateTitleSceeen.logoY;
 
-        if (true) {
-            this._spriteCredits = new Sprite_Button();
-            this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsnImage);
-            this._spriteCredits.setClickHandler(this.commandCredits.bind(this));
-            this._spriteCredits.x = SOUL_MV.UltimateTitleSceeen.creditsX;
-            this._spriteCredits.y = SOUL_MV.UltimateTitleSceeen.creditsY;
-            this.addChild(this._spriteCredits);
-        } 
+        this._spriteCredits = new Sprite_Button();
+        console.log("Here 2")
+        this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage);
+        console.log("Here 2")
+        this._spriteCredits.setClickHandler(this.commandCredits.bind(this));
+        console.log(SOUL_MV.UltimateTitleSceeen.creditsX)
+        this._spriteCredits.x = SOUL_MV.UltimateTitleSceeen.creditsX;
+        this._spriteCredits.y = SOUL_MV.UltimateTitleSceeen.creditsY;
+        console.log(this._spriteCredits.x)
+        this.addChild(this._spriteCredits);
+
         this.addChild(this._spriteLogo);
         this.addChild(this._spriteNewGame);
         this.addChild(this._spriteContinueGame);
@@ -1699,25 +1701,25 @@ Each parameter is well explained in the Plugin Manager.
                     this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameUnavailableImage);
                 }
                 this._spriteOptions.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.optionsOffImage);
-                this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage);
+                //this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage);
             } 
             if (this._commandWindow._index === 1) {
                 this._spriteNewGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.newGameOffImage);
                 this._spriteOptions.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.optionsOffImage);    
                 this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOffImage);        
                 if (DataManager.isAnySavefileExists()) { 
-                    this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameOffImage);
+                    this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameImage);
                 } else {
                     this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameUnavailableImage);
                 }
-                this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage);
+                //this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage);
             } 
             if (this._commandWindow._index === 2) {
                 this._spriteNewGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.newGameOffImage); 
                 this._spriteOptions.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.optionsOffImage);
                 this._spriteCredits.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.creditsOnImage); 
                 if (DataManager.isAnySavefileExists()) { 
-                    this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameImage);
+                    this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameOffImage);
                 } else {
                     this._spriteContinueGame.bitmap = ImageManager.loadUltimateTitle(SOUL_MV.UltimateTitleSceeen.continueGameUnavailableImage);
                 }
