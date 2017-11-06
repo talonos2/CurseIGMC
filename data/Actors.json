@@ -30,5 +30,8 @@ null,
 {"id":28,"battlerName":"Em_Teamster","characterIndex":0,"characterName":"Em_Teamster","classId":1,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"Em_Teamster","traits":[],"initialLevel":1,"maxLevel":99,"name":"Patrick","nickname":"Teamster","note":"","profile":""},
 {"id":29,"battlerName":"Em_Journalist","characterIndex":0,"characterName":"Em_Journalist","classId":3,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"Em_Journalist","traits":[],"initialLevel":1,"maxLevel":99,"name":"Tristana","nickname":"Journalist","note":"","profile":""},
 {"id":30,"battlerName":"Em_Elder","characterIndex":6,"characterName":"People4","classId":2,"equips":[1,0,1,0,0],"faceIndex":6,"faceName":"People4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Village Elder","nickname":"","note":"","profile":""},
-{"id":31,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
+{"id":31,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[1,0,1,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":32,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":7,"faceName":"Monster","traits":[],"initialLevel":1,"maxLevel":99,"name":"???","nickname":"","note":"","profile":""},
+{"id":33,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":3,"faceName":"Boss Monster","traits":[],"initialLevel":1,"maxLevel":99,"name":"???","nickname":"","note":"","profile":""},
+{"id":34,"battlerName":"","characterIndex":6,"characterName":"Nature","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"Boss Monster","traits":[],"initialLevel":1,"maxLevel":99,"name":"???","nickname":"","note":"","profile":""}
 ]
