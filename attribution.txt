@@ -7,7 +7,7 @@ Benjamin "Xillith" Chambers
 Adam "Ipecac" Wright
 	Additional Programming, Lead Writer, Lead Eventer
 
-Dale "Duke Daisuke" Payne
+Dale "Duke_Daisuke" Payne
 	Mapping, Quality Assurance
 
 
@@ -18,7 +18,7 @@ Sadie "Incandescaent" Lowry
 	Title Screen
 
 
-Dallin "Faldera" Pulsipher
+Sterling "Faldera" Downer
 	All music except for intro
 
 
@@ -31,7 +31,7 @@ Dallin "Faldera" Pulsipher
 Emily "Aishea" Smith
 	Child management, Asset Generation, Quality Assurance
 
-Katrina "Euphonia" Wright
+Katrina "Euphina" Wright
 	Child Management, Eventing, additional Writing
 
 
@@ -46,7 +46,7 @@ SumRndmDde
 	Super Tools Engine, Timer Upgrade
 
 Nilo "Khas" Kruchelski
-	Ligting Engine
+	Lighting Engine
 
 Soulpour777
 	TitleScreen (Script modified for additional compatibility)
@@ -76,7 +76,7 @@ TonyTextures
 		And of course
 
 Degica
-	MV Stock Assets, incuding majority of assets, base code, and editor.
+	MV Stock Assets, including majority of assets, base code, and editor.
 
 
 	Moving to javascript and JSON data storage was such a good idea!
