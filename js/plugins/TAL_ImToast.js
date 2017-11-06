@@ -309,16 +309,32 @@ Game_Timer.prototype.update = function(sceneActive)
     {
         return;
     }
-    var framesPerHpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mhp);
-    var framesPerMpRegen = Math.round((36000/2)/$gameParty.allMembers()[0].mmp);
+    var recoverHp = 1;
+    var framesPerHpRegen = (36000/2)/$gameParty.allMembers()[0].mhp;
+    while (framesPerHpRegen<120)
+    {
+        recoverHp*=2;
+        framesPerHpRegen*=2;
+    }
+
+    var recoverMp = 1;
+    var framesPerMpRegen = (36000/2)/$gameParty.allMembers()[0].mmp;
+    while (framesPerMpRegen<120)
+    {
+        recoverMp*=2;
+        framesPerMpRegen*=2;
+    }
+
+    framesPerHpRegen=Math.round(framesPerHpRegen);
+    framesPerMpRegen=Math.round(framesPerMpRegen);
 
     if (this.getFrames()%framesPerHpRegen === 0&&$gameParty.allMembers()[0].hp > 0)
     {
-        $gameParty.allMembers()[0].gainHp(1);
+        $gameParty.allMembers()[0].gainHp(recoverHp);
     }
     if (this.getFrames()%framesPerMpRegen === 0)
     {
-        $gameParty.allMembers()[0].gainMp(1);
+        $gameParty.allMembers()[0].gainMp(recoverMp);
     }
 
     if (Input.isTriggered('rest')&&this.getFrames()>1800&&SceneManager._scene.constructor == Scene_Map&&$gameParty.allMembers()[0].hp!=$gameParty.allMembers()[0].mhp)
