@@ -273,6 +273,11 @@ Khas.Lighting.LIGHTS = {
         intensity: 100, variation: 0, size: 40,
         offset_x: 0, offset_y: 4
     },
+    CrystalRoom: {
+        fileName: "torch_red2",
+        intensity: 100, variation: 0, size: 170,
+        offset_x: 0, offset_y: 0
+    },
     torch_big: {
         fileName: "torch",
         intensity: 80, variation: 20, size: 150,
