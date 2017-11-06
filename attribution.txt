@@ -1,0 +1,82 @@
+Brennan "Talonos" Smith
+	Producer, Lead Designer, Programming, Mapping
+
+Benjamin "Xillith" Chambers
+	Programming, Quality Assurance, Mapping
+
+Adam "Ipecac" Wright
+	Additional Programming, Lead Writer, Lead Eventer
+
+Dale "Duke Daisuke" Payne
+	Mapping, Quality Assurance
+
+
+
+		Comissioned Artists
+
+Sadie "Incandescaent" Lowry
+	Title Screen
+
+
+Dallin "Faldera" Pulsipher
+	All music except for intro
+
+
+
+
+
+
+		Supportive Spouses
+
+Emily "Aishea" Smith
+	Child management, Asset Generation, Quality Assurance
+
+Katrina "Euphonia" Wright
+	Child Management, Eventing, additional Writing
+
+
+
+
+		Asset Attribution
+
+Yanfly, Patron Saint of Plugins
+	Like a Bajillion scripts. Seriously.
+
+SumRndmDde
+	Super Tools Engine, Timer Upgrade
+
+Nilo "Khas" Kruchelski
+	Ligting Engine
+
+Soulpour777
+	TitleScreen (Script modified for additional compatibility)
+
+KockaAdmiralac
+	Weak/Resist popups (Script modified for additional compatibility)
+
+Hudell
+	HUD engine. (Script modified for additional compatibility)
+
+Tree of Mint
+	Vampire character sprite
+
+Avery
+	Gazer and Snake character sprites
+
+ChalkDust
+	Spider, Scorpion, Elemental character sprites
+
+HiddenOne 
+	Generator parts
+
+TonyTextures
+	Fog Overlay
+
+
+		And of course
+
+Degica
+	MV Stock Assets, incuding majority of assets, base code, and editor.
+
+
+	Moving to javascript and JSON data storage was such a good idea!
