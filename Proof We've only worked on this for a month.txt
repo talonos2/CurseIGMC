@@ -1,0 +1,7 @@
+https://github.com/talonos2/CurseIGMC/commits/master?after=a893537ed5b0be8dce92e1b54e199c5a7568b0e9+594
+
+Feel free to browse our commit history. Prowl through our issue tracker to see how often things broke (and what we chose not to fix.)
+
+If you need additional proof, we can invite you to https://talonos-igmc.slack.com where you can see our team's message history.
+
+If there are any questions and concerns, please contact me!
