@@ -65,6 +65,8 @@
 *
 *Include the notetag multiple times if you want the item to show up on multiple levels. 
 *
+*Plugin Command DistanceToPlayer
+*checks the distance to the player. If within x units, goes to self variable A
 *
 */
 var Xillith = {}
@@ -195,6 +197,25 @@ console.log(Xillith);
 		    $gameParty.members()[0].gainHp(140);
 		    $gameParty.members()[0].gainMp(140);
 		    $gameParty.members()[0].refresh();
+		}
+        
+		if (command == 'DistanceToPlayer') {
+		    var thisx = $gameMap._events[this._eventId]._x;
+		    var thisy = $gameMap._events[this._eventId]._y;
+		    var playerposx = $gamePlayer.x;
+		    var playerposy = $gamePlayer.y;
+		    //var gameSx = $gameMap.width();
+		    //var gameSy = $gameMap.height();
+		    var DistX = playerposx - thisx;
+		    //if (DistX > (gameSx / 2)) { DistX = thisx - playerposx; }
+		    var DistY = playerposy - thisy;
+		    //if (DistY > (gameSy / 2)) { DistY = thisy - playerposy; }
+		    var distF = Math.sqrt(Math.pow(DistX, 2) + Math.pow(DistY, 2));
+
+		    if (distF <= .5) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
+
+		  
+
 		}
 
 	};
@@ -572,6 +593,10 @@ console.log(Xillith);
 	    if (result < 1) result = 1;
 	    if (result > 15) result = 15;
 	    return result;
+	}
+
+	function GetDistanceToPlayer() {
+
 	}
 
 	Xillith.receiveItems = receiveItems;
