@@ -139,7 +139,7 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
         if (battler) {
             console.log(battler);
             //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
-            this.setHome(402, 330);
+            this.setHome(402+22, 330+76);
         }
         this.startEntryMotion();
     	this._stateIconSprite.setup(battler);
@@ -148,7 +148,7 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
 
 Sprite_Actor.prototype.setActorHome = function(index) {
     //Only one guy.
-    this.setHome(357+232, 215+118);
+    this.setHome(357+232+22+1, 215+118+76+1);
 };
 
 Sprite_Enemy.prototype.initialize = function(battler) {
