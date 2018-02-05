@@ -19,6 +19,7 @@
 
 Scene_Map.prototype.launchBattle = function() {
     BattleManager.saveBgmAndBgs();
+    $gameScreen.setZoom(4, 4, 1);
     //this.stopAudioOnBattleStart();
     SoundManager.playBattleStart(); //Plays a sound effect only.
     this.startEncounterEffect();
@@ -48,11 +49,12 @@ Scene_Map.prototype.stopAudioOnBattleStart = function() {
 
 Scene_Map.prototype.startEncounterEffect = function() {
     BattleManager.playBattleBgm();
-    this._spriteset.hideCharacters();
+    //this._spriteset.hideCharacters(); //Removed so we can see the chars as we zoom in.
     this._encounterEffectDuration = this.encounterEffectSpeed();
 };
 
-Scene_Map.prototype.updateEncounterEffect = function() {
+//Deprecated: used in the old combat transition.
+Scene_Map.prototype.oldUpdateEncounterEffect = function() {
     if (this._encounterEffectDuration > 0) {
         this._encounterEffectDuration--;
         var speed = this.encounterEffectSpeed();
@@ -64,23 +66,42 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var q = (p - 1);
         var zoomX = $gamePlayer.screenX();
         var zoomY = $gamePlayer.screenY() - 24;
-        if (n === 2) {
-            //$gameScreen.setZoom(zoomX, zoomY, 1);
-            this.snapForBattleBackground();
-            this.startFlashForEncounter(12);
-        }
-        if (n === Math.floor(speed / 2)) {
-            //BattleManager.playBattleBgm();
-            //this.startFadeOut(10);
+        if (n === 2) 
+        {
+            this.snapForBattleBackground(); //Take a picture to use as a backdrop
+            this.startFlashForEncounter(12); //Flash a little.
         }
     }
 };
 
-// ???
-Scene_Map.prototype.snapForBattleBackground = function() {
-    this._windowLayer.visible = false;
-    SceneManager.snapForBackground();
-    this._windowLayer.visible = true;
+Scene_Map.prototype.updateEncounterEffect = function() {
+    if (this._encounterEffectDuration > 0) {
+        this._encounterEffectDuration--;
+        var lengthOfEffect = this.encounterEffectSpeed();
+        var framesPassed = lengthOfEffect - this._encounterEffectDuration;
+        var percent = framesPassed / lengthOfEffect;
+        var targetX = $gamePlayer.screenX()-24;
+        var targetY = $gamePlayer.screenY()-24;
+        //var zoomY = 0;
+        //console.log("Zoom is"+(1+(percent*3)))
+        var maxAddedZoom = 3;
+        var tz = maxAddedZoom + 1;
+        //var tz = 1+(percent*3);
+        var zoomX = (targetX*(tz/(tz-1)))-(1040/((2*tz-2)));
+        var zoomY = (targetY*(tz/(tz-1)))-(624/((2*tz-2)));
+        $gameScreen.setZoom(zoomX, zoomY, 1+(percent*maxAddedZoom));
+        if (framesPassed === lengthOfEffect) {
+            this.snapForBattleBackground();
+        }
+    }
+};
+
+Scene_Map.prototype.updateMain = function() {
+    var active = this.isActive();
+    $gameMap.update(active);
+    $gamePlayer.update(active);
+    $gameTimer.update(active);
+    $gameScreen.update();
 };
 
 //Changed
@@ -89,9 +110,14 @@ Scene_Map.prototype.startFlashForEncounter = function(duration) {
     $gameScreen.startFlash(color, duration);
 };
 
+//Deprecated: used in old encounter transition
+Scene_Map.prototype.oldEncounterEffectSpeed = function() {
+    return 18;
+};
+
 //Changed
 Scene_Map.prototype.encounterEffectSpeed = function() {
-    return 18;
+    return 80;
 };
 
 //Changed
@@ -111,11 +137,18 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
     if (changed) {
         this._enemy = battler;
         if (battler) {
-            this.setHome(battler.screenX(), battler.screenY());
+            console.log(battler);
+            //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
+            this.setHome(402+22, 330+76);
         }
         this.startEntryMotion();
     	this._stateIconSprite.setup(battler);
     }
+};
+
+Sprite_Actor.prototype.setActorHome = function(index) {
+    //Only one guy.
+    this.setHome(357+232+22+1, 215+118+76+1);
 };
 
 Sprite_Enemy.prototype.initialize = function(battler) {
@@ -128,13 +161,14 @@ Sprite_Enemy.prototype.moveToStartPosition = function() {
     //this.startMove(-500, 0, 0);
 };
 
+//Commented out most of this. Enemies start in their home position... ALWAYS.
 Sprite_Enemy.prototype.startEntryMotion = function() {
-    if (this._enemy && this._enemy.canMove()) {
-    	this.startMove(-300, 0, 0);
-        this.startMove(0, 0, 20);
-    } else {
+    //if (this._enemy && this._enemy.canMove()) {
+    	//this.startMove(-300, 0, 0);
+        //this.startMove(0, 0, 20);
+    //} else {
         this.startMove(0, 0, 0);
-    }
+    //}
 };
 
 BattleManager.processVictory = function() {
