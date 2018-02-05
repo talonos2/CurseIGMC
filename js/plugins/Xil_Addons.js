@@ -204,20 +204,16 @@ console.log(Xillith);
 		    var thisy = $gameMap._events[this._eventId]._y;
 		    var playerposx = $gamePlayer.x;
 		    var playerposy = $gamePlayer.y;
-		    //var gameSx = $gameMap.width();
-		    //var gameSy = $gameMap.height();
 		    var DistX = playerposx - thisx;
-		    //if (DistX > (gameSx / 2)) { DistX = thisx - playerposx; }
 		    var DistY = playerposy - thisy;
-		    //if (DistY > (gameSy / 2)) { DistY = thisy - playerposy; }
 		    var distF = Math.sqrt(Math.pow(DistX, 2) + Math.pow(DistY, 2));
 
 		    if (distF <= .5) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
-
-		  
-
 		}
 
+		if (command == 'CalculateMonsterDirection') {
+		    CalculateMonsterDirection(this._eventId);
+		}
 	};
 
 
@@ -595,11 +591,29 @@ console.log(Xillith);
 	    return result;
 	}
 
-	function GetDistanceToPlayer() {
+	var MonsterFacing=0;
 
+	function GetMonsterFaceing() { return MonsterFacing; }
+
+	function CalculateMonsterDirection(eventId) {
+	    var MonsterFace=0;	    
+	    var thisx = $gameMap._events[eventId]._x;
+	    var thisy = $gameMap._events[eventId]._y;
+	    var playerposx = $gamePlayer.x;
+	    var playerposy = $gamePlayer.y;
+	    var DistX = playerposx - thisx;
+	    var DistY = playerposy - thisy;
+	    if (DistX == -1) MonsterFace = 1;
+	    if (DistY == 1) MonsterFace = 0;
+	    if (DistX == 1) MonsterFace = 2;
+	    if (DistY == -1) MonsterFace = 3;
+	    // console.log("EvntX " + thisx + " Evnty " + thisy + " plyrx " + playerposx + " plyry " + playerposy + " disx " + DistX + " disy " + DistY);	  	    
+	    MonsterFacing = MonsterFace;
 	}
 
+	Xillith.GetMonsterFaceing = GetMonsterFaceing;
 	Xillith.receiveItems = receiveItems;
+	Xillith.CalculateMonsterDirection = CalculateMonsterDirection;
 
     /*
     *Section for Managing the End of a Battle
@@ -620,7 +634,21 @@ console.log(Xillith);
 	    this.endBattle(2);
 	    //$gameTemp.reserveCommonEvent(10);
 	};
-    
+
+
+    /*
+    *This part is to allow the calculation of monster distance to happen every time a battle is started.
+    *
+    */
+
+	var _Game_Interpreter_prototype_command301 = Game_Interpreter.prototype.command301;
+	Game_Interpreter.prototype.command301 = function () {
+	    _Game_Interpreter_prototype_command301.call(this);
+	    Xillith.CalculateMonsterDirection(this._eventId);
+	    return true;
+	}
+
+
 })();
 
 
