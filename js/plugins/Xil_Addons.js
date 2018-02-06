@@ -211,9 +211,7 @@ console.log(Xillith);
 		    if (distF <= .5) { $gameSelfSwitches.setValue([$gameMap._mapId, this._eventId, 'A'], true); }
 		}
 
-		if (command == 'CalculateMonsterDirection') {
-		    CalculateMonsterDirection(this._eventId);
-		}
+	
 	};
 
 
@@ -591,11 +589,14 @@ console.log(Xillith);
 	    return result;
 	}
 
-	var MonsterFacing=0;
+	var MonsterFacing = 0;
+	var battleEventID = 0;
 
 	function GetMonsterFaceing() { return MonsterFacing; }
+	function GetBattleEventID() { return battleEventID;}
 
 	function CalculateMonsterDirection(eventId) {
+	    battleEventID = eventId;
 	    var MonsterFace=0;	    
 	    var thisx = $gameMap._events[eventId]._x;
 	    var thisy = $gameMap._events[eventId]._y;
@@ -646,6 +647,45 @@ console.log(Xillith);
 	    _Game_Interpreter_prototype_command301.call(this);
 	    Xillith.CalculateMonsterDirection(this._eventId);
 	    return true;
+	}
+
+
+	var Scene_Map_prototype_snapForBattleBackground = Scene_Map.prototype.snapForBattleBackground;
+
+	Scene_Map.prototype.snapForBattleBackground = function () {
+
+	
+	    
+	    $gamePlayer.setTransparent(true);
+	    //$gameMap._events[battleEventID];
+	    //$gameScreen.update();
+	    //SceneManager.renderScene();
+	    //$gameScreen.updateScene();
+	   // updateScene()
+	    //$gameMap.refresh();
+	    //SceneManager._scene.updateScene();
+	   // console.log(SceneManager._scene);
+	    //SceneManager._scene.update();
+	    
+
+	    //SceneManager._scene.updateDestination();
+	    //SceneManager._scene.updateMainMultiply();
+	    // Scene_Base.prototype.update.call(SceneManager._scene);
+
+	    //SceneManager._scene.updateChildren();
+	   // console.log(this);
+	   // this.children.Spriteset_Map.update();
+	    this.children.forEach(function (child) {
+	        if (child.update) {
+	            if (child instanceof Spriteset_Map) { child.update(); }
+	        }
+	    });
+
+
+	    Scene_Map_prototype_snapForBattleBackground.call(this);
+	    $gamePlayer.setTransparent(false);
+	
+
 	}
 
 
