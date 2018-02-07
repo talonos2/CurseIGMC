@@ -80,8 +80,12 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var lengthOfEffect = this.encounterEffectSpeed();
         var framesPassed = lengthOfEffect - this._encounterEffectDuration;
         var percent = framesPassed / lengthOfEffect;
-        var targetX = $gamePlayer.screenX()-24;
+        var targetX = $gamePlayer.screenX();
         var targetY = $gamePlayer.screenY()-24;
+        if (Xillith.GetMonsterFaceing()==1){targetX+=24}
+        if (Xillith.GetMonsterFaceing()==2){targetX-=24}
+        if (Xillith.GetMonsterFaceing()==0){targetY-=24}
+        if (Xillith.GetMonsterFaceing()==3){targetY+=24}
         //var zoomY = 0;
         //console.log("Zoom is"+(1+(percent*3)))
         var maxAddedZoom = 3;
@@ -117,7 +121,7 @@ Scene_Map.prototype.oldEncounterEffectSpeed = function() {
 
 //Changed
 Scene_Map.prototype.encounterEffectSpeed = function() {
-    return 80;
+    return 20;
 };
 
 //Changed
@@ -139,7 +143,14 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
         if (battler) {
             console.log(battler);
             //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
-            this.setHome(402+22, 330+76);
+            var homex = 520;
+            var homey = 408;
+        if (Xillith.GetMonsterFaceing()==1){homex+=96}
+        if (Xillith.GetMonsterFaceing()==2){homex-=96}
+        if (Xillith.GetMonsterFaceing()==0){homey-=96}
+        if (Xillith.GetMonsterFaceing()==3){homey+=96}
+            //this.setHome(424, 406);
+            this.setHome(homex, homey);
         }
         this.startEntryMotion();
     	this._stateIconSprite.setup(battler);
@@ -148,7 +159,13 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
 
 Sprite_Actor.prototype.setActorHome = function(index) {
     //Only one guy.
-    this.setHome(357+232+22+1, 215+118+76+1);
+    var homex = 518;
+    var homey = 408;
+    if (Xillith.GetMonsterFaceing()==1){homex-=96}
+    if (Xillith.GetMonsterFaceing()==2){homex+=96}
+    if (Xillith.GetMonsterFaceing()==0){homey+=96}
+    if (Xillith.GetMonsterFaceing()==3){homey-=96}
+    this.setHome(homex, homey);
 };
 
 Sprite_Enemy.prototype.initialize = function(battler) {
