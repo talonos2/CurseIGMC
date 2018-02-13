@@ -14,6 +14,8 @@
 // so little time, it was a game jam, I'm gonna cry, I'm sorry. :( :( :(
  var Talonos = {}
  Talonos.unsungLevels = 0;
+ Talonos.ADJUST_BATTLE_Y = 70;
+ Talonos.ADJUST_BATTLE_X = 12;
 
 //Copied from RPGScenes 635:
 
@@ -147,8 +149,8 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
             var homey = 408;
         if (Xillith.GetMonsterFaceing()==1){homex+=96}
         if (Xillith.GetMonsterFaceing()==2){homex-=96}
-        if (Xillith.GetMonsterFaceing()==0){homey-=96}
-        if (Xillith.GetMonsterFaceing()==3){homey+=96}
+        if (Xillith.GetMonsterFaceing()==0){homey-=96;homey+= Talonos.ADJUST_BATTLE_Y;homex-=Talonos.ADJUST_BATTLE_X}
+        if (Xillith.GetMonsterFaceing()==3){homey+=96;homey-= Talonos.ADJUST_BATTLE_Y;homex-=Talonos.ADJUST_BATTLE_X}
             //this.setHome(424, 406);
             this.setHome(homex, homey);
         }
@@ -163,8 +165,8 @@ Sprite_Actor.prototype.setActorHome = function(index) {
     var homey = 408;
     if (Xillith.GetMonsterFaceing()==1){homex-=96}
     if (Xillith.GetMonsterFaceing()==2){homex+=96}
-    if (Xillith.GetMonsterFaceing()==0){homey+=96}
-    if (Xillith.GetMonsterFaceing()==3){homey-=96}
+    if (Xillith.GetMonsterFaceing()==0){homey+=96;homey-= Talonos.ADJUST_BATTLE_Y;homex+=Talonos.ADJUST_BATTLE_X}
+    if (Xillith.GetMonsterFaceing()==3){homey-=96;homey+= Talonos.ADJUST_BATTLE_Y;homex+=Talonos.ADJUST_BATTLE_X}
     this.setHome(homex, homey);
 };
 
@@ -175,7 +177,24 @@ Sprite_Enemy.prototype.initialize = function(battler) {
 };
 
 Sprite_Enemy.prototype.moveToStartPosition = function() {
-    //this.startMove(-500, 0, 0);
+    if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = -Talonos.ADJUST_BATTLE_X}
+    if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = -Talonos.ADJUST_BATTLE_X}
+    this.startMove(0, 0, 20);
+};
+
+Sprite_Actor.prototype.updateMove = function() {
+    var bitmap = this._mainSprite.bitmap;
+    console.log(this._offsetY+", "+bitmap.isReady());
+    if (!bitmap || bitmap.isReady()) {
+        Sprite_Battler.prototype.updateMove.call(this);
+    }
+};
+
+Sprite_Actor.prototype.startEntryMotion = function() 
+{
+    if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = Talonos.ADJUST_BATTLE_X}
+    if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = Talonos.ADJUST_BATTLE_X}
+    this.startMove(0, 0, 20);
 };
 
 //Commented out most of this. Enemies start in their home position... ALWAYS.
