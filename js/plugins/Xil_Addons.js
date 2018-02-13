@@ -657,6 +657,7 @@ console.log(Xillith);
 	
 	    
 	    $gamePlayer.setTransparent(true);
+	    $gameMap._events[battleEventID].setTransparent(true);
 	    //$gameMap._events[battleEventID];
 	    //$gameScreen.update();
 	    //SceneManager.renderScene();
@@ -684,6 +685,7 @@ console.log(Xillith);
 
 	    Scene_Map_prototype_snapForBattleBackground.call(this);
 	    $gamePlayer.setTransparent(false);
+	    $gameMap._events[battleEventID].setTransparent(false);
 	
 
 	}
