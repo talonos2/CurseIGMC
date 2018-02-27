@@ -506,6 +506,7 @@ Sprite_Character.prototype.update = function() {
 };
 
 Sprite_Character.prototype.updateMiniLabel = function() {
+  if ($gameSwitches.value(67)){return;} //SHORT CIRCUIT
     this.setupMiniLabel();
     if (!this._miniLabel) return;
     this.positionMiniLabel();

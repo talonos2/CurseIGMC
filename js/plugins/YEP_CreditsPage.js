@@ -3224,6 +3224,7 @@ Scene_Title.prototype.createCommandWindow = function() {
 };
 
 Scene_Title.prototype.createCreditsWindow = function() {
+  if ($gameSwitches.value(67)){return;} //SHORT CIRCUIT
   this._creditsWindow = new Window_CreditsPage();
   this._creditsWindow.setHandler('cancel', this.onCreditsCancel.bind(this));
   this._creditsWindow.setHandler('ok', this.onCreditsOk.bind(this));

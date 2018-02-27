@@ -606,7 +606,7 @@ Sprite_Timer.prototype.timerText = function() {
 	const hur = Math.floor(minutes / 60) % 60;
 	if(_.usesFrames) result = result.replace(/%4/, frm.padZero(2));
 	if(_.usesSeconds) result = result.replace(/%3/, sec.padZero(2));
-	if(_.usesMinutes) result = result.replace(/%2/, min.padZero(2));
+	if(_.usesMinutes) result = result.replace(/%2/, min.padZero(1));
 	if(_.usesHours) result = result.replace(/%1/, hur.padZero(2));
 	return result;
 };

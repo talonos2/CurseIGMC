@@ -15,7 +15,7 @@
  var Talonos = {}
  Talonos.unsungLevels = 0;
  Talonos.ADJUST_BATTLE_Y = 70;
- Talonos.ADJUST_BATTLE_X = 12;
+ Talonos.ADJUST_BATTLE_X = 32;
 
 //Copied from RPGScenes 635:
 
@@ -67,7 +67,7 @@ Scene_Map.prototype.oldUpdateEncounterEffect = function() {
 
         var q = (p - 1);
         var zoomX = $gamePlayer.screenX();
-        var zoomY = $gamePlayer.screenY() - 24;
+        var zoomY = $gamePlayer.screenY() - 48;
         if (n === 2) 
         {
             this.snapForBattleBackground(); //Take a picture to use as a backdrop
@@ -83,7 +83,7 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var framesPassed = lengthOfEffect - this._encounterEffectDuration;
         var percent = framesPassed / lengthOfEffect;
         var targetX = $gamePlayer.screenX();
-        var targetY = $gamePlayer.screenY()-24;
+        var targetY = $gamePlayer.screenY()-48;
         if (Xillith.GetMonsterFaceing()==1){targetX+=24}
         if (Xillith.GetMonsterFaceing()==2){targetX-=24}
         if (Xillith.GetMonsterFaceing()==0){targetY-=24}
@@ -146,7 +146,7 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
             console.log(battler);
             //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
             var homex = 520;
-            var homey = 408;
+            var homey = 504;
         if (Xillith.GetMonsterFaceing()==1){homex+=96}
         if (Xillith.GetMonsterFaceing()==2){homex-=96}
         if (Xillith.GetMonsterFaceing()==0){homey-=96;homey+= Talonos.ADJUST_BATTLE_Y;homex-=Talonos.ADJUST_BATTLE_X}
@@ -162,7 +162,7 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
 Sprite_Actor.prototype.setActorHome = function(index) {
     //Only one guy.
     var homex = 518;
-    var homey = 408;
+    var homey = 504;
     if (Xillith.GetMonsterFaceing()==1){homex-=96}
     if (Xillith.GetMonsterFaceing()==2){homex+=96}
     if (Xillith.GetMonsterFaceing()==0){homey+=96;homey-= Talonos.ADJUST_BATTLE_Y;homex+=Talonos.ADJUST_BATTLE_X}
