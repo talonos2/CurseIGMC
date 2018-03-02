@@ -607,3 +607,21 @@ Scene_Map.prototype.fadeInForTransfer = function() {
         break;
     }
 };
+
+Game_CharacterBase.prototype.extendedJump = function(xPlus, yPlus, height) {
+    if (Math.abs(xPlus) > Math.abs(yPlus)) {
+        if (xPlus !== 0) {
+            this.setDirection(xPlus < 0 ? 4 : 6);
+        }
+    } else {
+        if (yPlus !== 0) {
+            this.setDirection(yPlus < 0 ? 8 : 2);
+        }
+    }
+    this._x += xPlus;
+    this._y += yPlus;
+    this._jumpPeak = height;
+    this._jumpCount = this._jumpPeak * 2;
+    this.resetStopCount();
+    this.straighten();
+};
