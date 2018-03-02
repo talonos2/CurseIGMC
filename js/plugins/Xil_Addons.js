@@ -612,6 +612,34 @@ console.log(Xillith);
 	    MonsterFacing = MonsterFace;
 	}
 
+	var BestRunTimes = [];
+	
+
+	function UpdateBestTimes() {
+	    var CurrentMapVar = Number(parameters['CurrentMapVar']);
+	    var CurrentFloor = $gameVariables.value(CurrentMapVar);
+	    console.log("Current Floor: " + CurrentFloor);
+	   
+
+	    var TotalTime = $gameTimer.getFrames();
+	    if (BestRunTimes[0] == null || CurrentFloor==1) BestRunTimes[0] = 36000;
+	    var CurrentRunTime = BestRunTimes[0] - TotalTime;
+       
+	    if (BestRunTimes[CurrentFloor] == null) BestRunTimes[CurrentFloor] = CurrentRunTime;
+	    console.log("Previous Best Time " + (BestRunTimes[CurrentFloor] / 60));
+	    if (BestRunTimes[CurrentFloor] > CurrentRunTime) {
+	        BestRunTimes[CurrentFloor] = CurrentRunTime;
+            //implement message update for new best run time
+	    }
+	    BestRunTimes[0] = TotalTime;
+	    console.log("Best RunTime " + (CurrentRunTime / 60));
+
+
+	    //var CurrentRunTime=
+
+	}
+
+	Xillith.UpdateBestTimes = UpdateBestTimes;
 	Xillith.GetMonsterFaceing = GetMonsterFaceing;
 	Xillith.receiveItems = receiveItems;
 	Xillith.CalculateMonsterDirection = CalculateMonsterDirection;
@@ -624,7 +652,6 @@ console.log(Xillith);
 	BattleManager.processDefeat = function () {
 	   // console.log("hmm");
 	   // _BattleManager_processDefeat.call(this);
-
 	    //this.displayDefeatMessage();
 	    this.playDefeatMe();
 	    if (this._canLose) {
@@ -641,7 +668,6 @@ console.log(Xillith);
     *This part is to allow the calculation of monster distance to happen every time a battle is started.
     *
     */
-
 	var _Game_Interpreter_prototype_command301 = Game_Interpreter.prototype.command301;
 	Game_Interpreter.prototype.command301 = function () {
 	    _Game_Interpreter_prototype_command301.call(this);
@@ -649,67 +675,28 @@ console.log(Xillith);
 	    return true;
 	}
 
-
+    /*
+    *
+    *Re-write of the snap for background to hide player/monster in question update the spriteset, then unhide player/monster
+    *
+    */
 	var Scene_Map_prototype_snapForBattleBackground = Scene_Map.prototype.snapForBattleBackground;
-
 	Scene_Map.prototype.snapForBattleBackground = function () {
-
-	
-	    
 	    $gamePlayer.setTransparent(true);
 	    $gameMap._events[battleEventID].setTransparent(true);
-	    //$gameMap._events[battleEventID];
-	    //$gameScreen.update();
-	    //SceneManager.renderScene();
-	    //$gameScreen.updateScene();
-	   // updateScene()
-	    //$gameMap.refresh();
-	    //SceneManager._scene.updateScene();
-	   // console.log(SceneManager._scene);
-	    //SceneManager._scene.update();
-	    
-
-	    //SceneManager._scene.updateDestination();
-	    //SceneManager._scene.updateMainMultiply();
-	    // Scene_Base.prototype.update.call(SceneManager._scene);
-
-	    //SceneManager._scene.updateChildren();
-	   // console.log(this);
-	   // this.children.Spriteset_Map.update();
+	   
 	    this.children.forEach(function (child) {
 	        if (child.update) {
 	            if (child instanceof Spriteset_Map) { child.update(); }
 	        }
 	    });
 
-
 	    Scene_Map_prototype_snapForBattleBackground.call(this);
 	    $gamePlayer.setTransparent(false);
 	    $gameMap._events[battleEventID].setTransparent(false);
-	
-
 	}
 
 
 })();
 
 
-
-/*
-	var NormalLoot = [["Red Crystal", "Padded Cloth", "Padded Boots", "Lovely Hat","Trinket 1"],
-    ["Hatchet", "Hide Wrappings", "Boots 2", "Hat 2", "Trinket 2"],
-    ["Shortsword", "Leather Armor", "Boots 3", "Hat 3", "Trinket 3"],
-    ["Spear", "Studded Leather", "Boots 4", "Hat 4", "Trinket 4"],
-    ["Mace", "Silk Armor", "Boots 5", "Hat 5", "Trinket 5"],
-    ["Longsword", "Gambeson", "Boots 6", "Hat 6", "Trinket 6"],
-    ["Handaxe", "Ring Mail", "Boots 7", "Hat 7", "Trinket 7"],
-    ["Gladius", "Chain Mail", "Boots 8", "Hat 8", "Trinket 8"],
-    ["Halberd", "Brigandine", "Boots 9", "Hat 9", "Trinket 9"],
-    ["Kukri", "Rivet Chain", "Boots 10", "Hat 10", "Trinket 10"],
-    ["Battleaxe", "Bronze Lamellar","Boots 11", "Hat 11", "Trinket 11"],
-    ["Greatsword", "Breastplate", "Boots 12", "Hat 12", "Trinket 12"],
-    ["Warhammer", "Half Plate", "Boots 13", "Hat 13", "Trinket 13"],
-    ["Naginata", "Full Plate", "Boots 14", "Hat 14", "Trinket 14"],
-    ["Katana", "Scale Mail", "Boots 15", "Hat 15", "Trinket 15"]
-	];
-*/
