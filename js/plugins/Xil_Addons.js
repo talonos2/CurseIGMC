@@ -585,7 +585,7 @@ console.log(Xillith);
 	    } else if (rolling <= 85) { result = CurrentFloor; }
 	    else { result = CurrentFloor + 1; }
 	    if (result < 1) result = 1;
-	    if (result > 15) result = 15;
+	    if (result > 20) result = 20;
 	    return result;
 	}
 
