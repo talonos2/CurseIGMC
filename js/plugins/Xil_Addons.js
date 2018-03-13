@@ -146,7 +146,7 @@ console.log(Xillith);
             //Assuming crystals in slots 10-13
 		    var rarity = GetRarity();
 		    //((floor+2)/3)^2
-		    var amount =10* Math.pow((rarity + 2) / 3, 2);
+		    var amount =9* Math.pow((rarity + 3) / 4, 2);
 		    amount = Math.round(amount);
 		    var CrystalType = Math.floor((Math.random() * 4) +10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
@@ -200,6 +200,7 @@ console.log(Xillith);
 		}
         
 		if (command == 'DistanceToPlayer') {
+		    if ($gameTemp.isStopMapEventMovement()) { return 0;}
 		    var thisx = $gameMap._events[this._eventId]._x;
 		    var thisy = $gameMap._events[this._eventId]._y;
 		    var playerposx = $gamePlayer.x;
