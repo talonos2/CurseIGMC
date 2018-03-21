@@ -613,17 +613,43 @@ console.log(Xillith);
 	    MonsterFacing = MonsterFace;
 	}
 
-	var BestRunTimes = [];
-	
+  
+    var BestRunTimes = [];
+
+	var _Game_System_prototype_initilize = Game_System.prototype.initialize;
+	Game_System.prototype.initialize = function () {
+	    console.log("Hmm. Inputting bestRunTimesz variable");
+	    _Game_System_prototype_initilize.call(this); // Makes sure to do the stuff that was in the function before 
+	    this.BestRunTimesz = [];
+	    this._myNum = 25;
+	    console.log("Hmm. Inputting bestRunTimesz variable 2");
+	    // Adds in our own array. 
+	    //   this._myObject = {}; // Adds in a JS Object. 
+	    //  this._myNum = 0; // Adds in a Number. 
+	    //  this._myStr = ""; // Adds in a String. 
+	    //  this._myBool = true;// Adds in a boolean (true/false). 
+	};
+
+	Game_System.prototype.myNum = function () {
+	    return this._myNum;
+	};
+
+
+
 
 	function UpdateBestTimes() {
+	    console.log("DidIgethere");
+	    console.log("Hmm number here: " + $gameSystem.myNum());
+	    //var BestRunTimes = $gameSystem.BestRunTimesz();
+	    
+
 	    var CurrentMapVar = Number(parameters['CurrentMapVar']);
 	    var CurrentFloor = $gameVariables.value(CurrentMapVar);
 	    console.log("Current Floor: " + CurrentFloor);
-	   
+	    //var BestRunTimes = Game_System.BestRunTimesz;
 
 	    var TotalTime = $gameTimer.getFrames();
-	    if (BestRunTimes[0] == null || CurrentFloor==1) BestRunTimes[0] = 36000;
+	    if (BestRunTimes[0] == null || CurrentFloor == 1) BestRunTimes[0] = 36000;
 	    var CurrentRunTime = BestRunTimes[0] - TotalTime;
        
 	    if (BestRunTimes[CurrentFloor] == null) BestRunTimes[CurrentFloor] = CurrentRunTime;
@@ -636,7 +662,6 @@ console.log(Xillith);
 	    console.log("Best RunTime " + (CurrentRunTime / 60));
 
 
-	    //var CurrentRunTime=
 
 	}
 
@@ -644,6 +669,10 @@ console.log(Xillith);
 	Xillith.GetMonsterFaceing = GetMonsterFaceing;
 	Xillith.receiveItems = receiveItems;
 	Xillith.CalculateMonsterDirection = CalculateMonsterDirection;
+
+
+	
+
 
     /*
     *Section for Managing the End of a Battle
