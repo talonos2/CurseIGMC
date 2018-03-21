@@ -613,35 +613,33 @@ console.log(Xillith);
 	    MonsterFacing = MonsterFace;
 	}
 
-  
-    var BestRunTimes = [];
 
+    /*
+    *
+    *Puts the Timer Array for best Run Times into System so that it can be saved when you save/load
+    *
+    */
 	var _Game_System_prototype_initilize = Game_System.prototype.initialize;
 	Game_System.prototype.initialize = function () {
-	    console.log("Hmm. Inputting bestRunTimesz variable");
 	    _Game_System_prototype_initilize.call(this); // Makes sure to do the stuff that was in the function before 
-	    this.BestRunTimesz = [];
-	    this._myNum = 25;
-	    console.log("Hmm. Inputting bestRunTimesz variable 2");
-	    // Adds in our own array. 
-	    //   this._myObject = {}; // Adds in a JS Object. 
-	    //  this._myNum = 0; // Adds in a Number. 
-	    //  this._myStr = ""; // Adds in a String. 
-	    //  this._myBool = true;// Adds in a boolean (true/false). 
+	    this._BestRunTimesz = [];
 	};
 
-	Game_System.prototype.myNum = function () {
-	    return this._myNum;
+    //Getters and Setters for retreiving the BestRunTimes array
+	Game_System.prototype.GetBestRunTimes = function () {
+	    return this._BestRunTimesz;
 	};
 
+	Game_System.prototype.SetBestRunTimes = function (runTimer) {
+	    this._BestRunTimesz = runTimer;
+	};
 
 
 
 	function UpdateBestTimes() {
-	    console.log("DidIgethere");
-	    console.log("Hmm number here: " + $gameSystem.myNum());
-	    //var BestRunTimes = $gameSystem.BestRunTimesz();
 	    
+	    var BestRunTimes = [];
+	    BestRunTimes = $gameSystem.GetBestRunTimes();  
 
 	    var CurrentMapVar = Number(parameters['CurrentMapVar']);
 	    var CurrentFloor = $gameVariables.value(CurrentMapVar);
@@ -659,9 +657,9 @@ console.log(Xillith);
             //implement message update for new best run time
 	    }
 	    BestRunTimes[0] = TotalTime;
-	    console.log("Best RunTime " + (CurrentRunTime / 60));
+	    console.log("Best RunTime " + (BestRunTimes[CurrentFloor] / 60));
 
-
+	    $gameSystem.SetBestRunTimes(BestRunTimes);
 
 	}
 
