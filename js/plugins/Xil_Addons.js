@@ -574,6 +574,7 @@ console.log(Xillith);
 	        }
 	    }
 	    console.log(" ");
+	    ShowRareDatabase();
 	}
 
 	function GetRarity() {
@@ -667,6 +668,7 @@ console.log(Xillith);
 	Xillith.GetMonsterFaceing = GetMonsterFaceing;
 	Xillith.receiveItems = receiveItems;
 	Xillith.CalculateMonsterDirection = CalculateMonsterDirection;
+	Xillith.ShowDatabase = ShowDatabase;
 
 
 	
