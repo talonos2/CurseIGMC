@@ -574,6 +574,7 @@ console.log(Xillith);
 	        }
 	    }
 	    console.log(" ");
+	    ShowRareDatabase();
 	}
 
 	function GetRarity() {
@@ -613,17 +614,41 @@ console.log(Xillith);
 	    MonsterFacing = MonsterFace;
 	}
 
-	var BestRunTimes = [];
-	
+
+    /*
+    *
+    *Puts the Timer Array for best Run Times into System so that it can be saved when you save/load
+    *
+    */
+	var _Game_System_prototype_initilize = Game_System.prototype.initialize;
+	Game_System.prototype.initialize = function () {
+	    _Game_System_prototype_initilize.call(this); // Makes sure to do the stuff that was in the function before 
+	    this._BestRunTimesz = [];
+	};
+
+    //Getters and Setters for retreiving the BestRunTimes array
+	Game_System.prototype.GetBestRunTimes = function () {
+	    return this._BestRunTimesz;
+	};
+
+	Game_System.prototype.SetBestRunTimes = function (runTimer) {
+	    this._BestRunTimesz = runTimer;
+	};
+
+
 
 	function UpdateBestTimes() {
+	    
+	    var BestRunTimes = [];
+	    BestRunTimes = $gameSystem.GetBestRunTimes();  
+
 	    var CurrentMapVar = Number(parameters['CurrentMapVar']);
 	    var CurrentFloor = $gameVariables.value(CurrentMapVar);
 	    console.log("Current Floor: " + CurrentFloor);
-	   
+	    //var BestRunTimes = Game_System.BestRunTimesz;
 
 	    var TotalTime = $gameTimer.getFrames();
-	    if (BestRunTimes[0] == null || CurrentFloor==1) BestRunTimes[0] = 36000;
+	    if (BestRunTimes[0] == null || CurrentFloor == 1) BestRunTimes[0] = 36000;
 	    var CurrentRunTime = BestRunTimes[0] - TotalTime;
        
 	    if (BestRunTimes[CurrentFloor] == null) BestRunTimes[CurrentFloor] = CurrentRunTime;
@@ -633,10 +658,9 @@ console.log(Xillith);
             //implement message update for new best run time
 	    }
 	    BestRunTimes[0] = TotalTime;
-	    console.log("Best RunTime " + (CurrentRunTime / 60));
+	    console.log("Best RunTime " + (BestRunTimes[CurrentFloor] / 60));
 
-
-	    //var CurrentRunTime=
+	    $gameSystem.SetBestRunTimes(BestRunTimes);
 
 	}
 
@@ -644,6 +668,11 @@ console.log(Xillith);
 	Xillith.GetMonsterFaceing = GetMonsterFaceing;
 	Xillith.receiveItems = receiveItems;
 	Xillith.CalculateMonsterDirection = CalculateMonsterDirection;
+	Xillith.ShowDatabase = ShowDatabase;
+
+
+	
+
 
     /*
     *Section for Managing the End of a Battle
