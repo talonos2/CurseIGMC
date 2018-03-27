@@ -90,7 +90,7 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         if (Xillith.GetMonsterFaceing()==3){targetY+=24}
         //var zoomY = 0;
         //console.log("Zoom is"+(1+(percent*3)))
-        var maxAddedZoom = 3;
+        var maxAddedZoom = 2;
         var tz = maxAddedZoom + 1;
         //var tz = 1+(percent*3);
         var zoomX = (targetX*(tz/(tz-1)))-(1040/((2*tz-2)));
