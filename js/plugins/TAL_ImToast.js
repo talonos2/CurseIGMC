@@ -583,8 +583,8 @@ AudioManager.updateOverlayParameters = function(overlay)
     this.updateBufferParameters(this._overlayBuffer, this._bgmVolume, overlay);
 };
 
-Talonos.crystalTiers = [50,175,425,800,1300,1925,2550,3175,4050,5050]
-Talonos.crystalUpgrades = [50,125,250,375,500,625,625,625,875,1000]
+Talonos.crystalTiers =    [50,175,400,725,1175,1750,2450,3275,4225,5300,6500,7825,9275,10850,12550,14375,16325]
+Talonos.crystalUpgrades = [50,125,225,325,450, 575, 700, 825, 950, 1075,1200,1325,1450,1575, 1700, 1825,1950]  
 Talonos.crystalTiers[-1] = 0;       //lol javascript
 Talonos.crystalUpgrades[-1] = 0;
 

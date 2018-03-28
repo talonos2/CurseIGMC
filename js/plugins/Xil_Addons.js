@@ -148,7 +148,8 @@ console.log(Xillith);
 		    //((floor+2)/3)^2
 		    var amount =9* Math.pow((rarity + 3) / 4, 2);
 		    amount = Math.round(amount);
-		    var CrystalType = Math.floor((Math.random() * 4) +10);
+		    var CrystalType = Math.floor((Math.random() * 4) + 10);
+		    if (CrystalType != 13) CrystalType = Math.floor((Math.random() * 4) + 10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
 		    var CrystalsSoFar = $gameVariables.value(CrystalType);
 		    CrystalsSoFar+=amount;
