@@ -195,8 +195,8 @@ console.log(Xillith);
 		    $gameParty.members()[0]._paramPlus[1] += mana;
 		    $gameParty.members()[0]._paramPlus[2] += atk;
 		    $gameParty.members()[0]._paramPlus[3] += def;
-		    $gameParty.members()[0].gainHp(140);
-		    $gameParty.members()[0].gainMp(140);
+		    $gameParty.members()[0].gainHp(400);
+		    $gameParty.members()[0].gainMp(400);
 		    $gameParty.members()[0].refresh();
 		}
         
