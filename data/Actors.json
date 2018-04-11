@@ -1,6 +1,6 @@
 [
 null,
-{"id":1,"battlerName":"Actor1_3","characterIndex":2,"characterName":"Actor1","classId":1,"equips":[22,0,1,0,0],"faceIndex":2,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Douglass Hiro","nickname":"the hero","note":"","profile":""},
+{"id":1,"battlerName":"Douglass","characterIndex":2,"characterName":"$Douglass [4 4 4 4]","classId":1,"equips":[22,0,1,0,0],"faceIndex":2,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Douglass Hiro","nickname":"the hero","note":"","profile":""},
 {"id":2,"battlerName":"MaidCopy","characterIndex":5,"characterName":"$TestMaid","classId":3,"equips":[1,0,1,0,0],"faceIndex":5,"faceName":"People2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Sara","nickname":"Maid","note":"","profile":""},
 {"id":3,"battlerName":"Em_Guard","characterIndex":7,"characterName":"People3","classId":4,"equips":[1,0,1,0,0],"faceIndex":7,"faceName":"People3","traits":[],"initialLevel":1,"maxLevel":99,"name":"McDermit","nickname":"Guard","note":"","profile":""},
 {"id":4,"battlerName":"Actor3_7","characterIndex":6,"characterName":"Actor3","classId":2,"equips":[1,0,1,0,0],"faceIndex":6,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":99,"name":"Todd","nickname":"Cultist","note":"","profile":""},

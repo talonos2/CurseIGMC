@@ -184,8 +184,16 @@ Sprite_Enemy.prototype.moveToStartPosition = function() {
 
 Sprite_Actor.prototype.updateMove = function() {
     var bitmap = this._mainSprite.bitmap;
-    console.log(this._offsetY+", "+bitmap.isReady());
     if (!bitmap || bitmap.isReady()) {
+        this.setMirror(Xillith.GetMonsterFaceing()==1)
+        Sprite_Battler.prototype.updateMove.call(this);
+    }
+};
+
+Sprite_Enemy.prototype.updateMove = function() {
+    var bitmap = this._mainSprite.bitmap;
+    if (!bitmap || bitmap.isReady()) {
+        this.setMirror(Xillith.GetMonsterFaceing()==1)
         Sprite_Battler.prototype.updateMove.call(this);
     }
 };
@@ -195,6 +203,7 @@ Sprite_Actor.prototype.startEntryMotion = function()
     if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = Talonos.ADJUST_BATTLE_X}
     if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = Talonos.ADJUST_BATTLE_X}
     this.startMove(0, 0, 20);
+    this.setMirror(Xillith.GetMonsterFaceing()==1)
 };
 
 //Commented out most of this. Enemies start in their home position... ALWAYS.
@@ -352,6 +361,37 @@ Game_Actor.prototype.changeExp = function(exp, show) {
 
 //Change Speed
 
+Game_Player.prototype.distancePerFrame = function() 
+{
+    if (this.isStealthMode())
+    {
+        return 16/256; //1x speed, mutually exclusive with haste and dashing.
+    }
+    if (this.moveSpeed()===6)
+    {
+        return 192/256; //12x speed
+    }
+    return 24/256 + (this.isDashing()?24/256:0); //1.5x speed, or 3x when dashing.
+};
+
+//FOR MONSTERS:
+Game_CharacterBase.prototype.distancePerFrame = function() 
+{
+    switch (this.realMoveSpeed())
+    {
+        case 0: return 1/256;
+        case 1: return 2/256;
+        case 2: return 4/256;
+        case 3: return 8/256;
+        case 4: return 16/256;
+        case 5: return 24/256;
+        case 6: return 32/256;
+        case 7: return 48/256;
+    }
+    return Math.pow(2, this.realMoveSpeed()) / 256;
+};
+
+//FOR PLAYERS:
 Game_Player.prototype.distancePerFrame = function() 
 {
     if (this.isStealthMode())
