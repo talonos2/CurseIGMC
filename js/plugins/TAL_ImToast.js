@@ -11,11 +11,13 @@
 
 
 // PLEASE don't look at this code! It will not help you, I promise! I had
-// so little time, it was a game jam, I'm gonna cry, I'm sorry. :( :( :(
+// so little time, it was a game jam etc...
  var Talonos = {}
  Talonos.unsungLevels = 0;
  Talonos.ADJUST_BATTLE_Y = 70;
  Talonos.ADJUST_BATTLE_X = 32;
+ Talonos.storedPlayerScreenPositionX = 0;
+ Talonos.storedPlayerScreenPositionY = 0;
 
 //Copied from RPGScenes 635:
 
@@ -30,7 +32,7 @@ Scene_Map.prototype.launchBattle = function() {
 
 BattleManager.playBattleBgm = function() 
 {
-    console.log("Now playing: MUSIC!")
+    //console.log("Now playing: MUSIC!")
     AudioManager.fadeInOverlay(.1);
 };
 
@@ -53,10 +55,15 @@ Scene_Map.prototype.startEncounterEffect = function() {
     BattleManager.playBattleBgm();
     //this._spriteset.hideCharacters(); //Removed so we can see the chars as we zoom in.
     this._encounterEffectDuration = this.encounterEffectSpeed();
+
+    //Save player position so we can use it in the battle screen.
+    Talonos.storedPlayerScreenPositionX = $gamePlayer.screenX();
+    Talonos.storedPlayerScreenPositionY = $gamePlayer.screenY();
+
 };
 
 //Deprecated: used in the old combat transition.
-Scene_Map.prototype.oldUpdateEncounterEffect = function() {
+Scene_Map.prototype.oldestUpdateEncounterEffect = function() {
     if (this._encounterEffectDuration > 0) {
         this._encounterEffectDuration--;
         var speed = this.encounterEffectSpeed();
@@ -70,13 +77,13 @@ Scene_Map.prototype.oldUpdateEncounterEffect = function() {
         var zoomY = $gamePlayer.screenY() - 48;
         if (n === 2) 
         {
-            this.snapForBattleBackground(); //Take a picture to use as a backdrop
+            this.snapForBattleBackground();  //Take a picture to use as a backdrop
             this.startFlashForEncounter(12); //Flash a little.
         }
     }
 };
 
-Scene_Map.prototype.updateEncounterEffect = function() {
+Scene_Map.prototype.oldUpdateEncounterEffect = function() {
     if (this._encounterEffectDuration > 0) {
         this._encounterEffectDuration--;
         var lengthOfEffect = this.encounterEffectSpeed();
@@ -96,6 +103,17 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var zoomX = (targetX*(tz/(tz-1)))-(1040/((2*tz-2)));
         var zoomY = (targetY*(tz/(tz-1)))-(624/((2*tz-2)));
         $gameScreen.setZoom(zoomX, zoomY, 1+(percent*maxAddedZoom));
+        if (framesPassed === lengthOfEffect) {
+            this.snapForBattleBackground();
+        }
+    }
+};
+
+Scene_Map.prototype.updateEncounterEffect = function() {
+    if (this._encounterEffectDuration > 0) {
+        this._encounterEffectDuration--;
+        var lengthOfEffect = this.encounterEffectSpeed();
+        var framesPassed = lengthOfEffect - this._encounterEffectDuration;
         if (framesPassed === lengthOfEffect) {
             this.snapForBattleBackground();
         }
@@ -123,7 +141,7 @@ Scene_Map.prototype.oldEncounterEffectSpeed = function() {
 
 //Changed
 Scene_Map.prototype.encounterEffectSpeed = function() {
-    return 20;
+    return 5;
 };
 
 //Changed
@@ -145,6 +163,28 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
         if (battler) {
             console.log(battler);
             //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
+            var homex = Talonos.storedPlayerScreenPositionX;
+            var homey = Talonos.storedPlayerScreenPositionY;
+            if (Xillith.GetMonsterFaceing()==1){homex+=48}
+            if (Xillith.GetMonsterFaceing()==2){homex-=48}
+            if (Xillith.GetMonsterFaceing()==0){homey-=48;}//homey+= Talonos.ADJUST_BATTLE_Y;homex-=Talonos.ADJUST_BATTLE_X}
+            if (Xillith.GetMonsterFaceing()==3){homey+=48;}//homey-= Talonos.ADJUST_BATTLE_Y;homex-=Talonos.ADJUST_BATTLE_X}
+            //this.setHome(424, 406);
+            this.setHome(homex, homey);
+        }
+        this.startEntryMotion();
+        this._stateIconSprite.setup(battler);
+    }
+};
+
+Sprite_Enemy.prototype.oldSetBattler = function(battler) {
+    Sprite_Battler.prototype.setBattler.call(this, battler);
+    var changed = (battler !== this._enemy);
+    if (changed) {
+        this._enemy = battler;
+        if (battler) {
+            console.log(battler);
+            //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
             var homex = 520;
             var homey = 504;
         if (Xillith.GetMonsterFaceing()==1){homex+=96}
@@ -155,11 +195,11 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
             this.setHome(homex, homey);
         }
         this.startEntryMotion();
-    	this._stateIconSprite.setup(battler);
+        this._stateIconSprite.setup(battler);
     }
 };
 
-Sprite_Actor.prototype.setActorHome = function(index) {
+Sprite_Actor.prototype.oldSetActorHome = function(index) {
     //Only one guy.
     var homex = 518;
     var homey = 504;
@@ -167,6 +207,13 @@ Sprite_Actor.prototype.setActorHome = function(index) {
     if (Xillith.GetMonsterFaceing()==2){homex+=96}
     if (Xillith.GetMonsterFaceing()==0){homey+=96;homey-= Talonos.ADJUST_BATTLE_Y;homex+=Talonos.ADJUST_BATTLE_X}
     if (Xillith.GetMonsterFaceing()==3){homey-=96;homey+= Talonos.ADJUST_BATTLE_Y;homex+=Talonos.ADJUST_BATTLE_X}
+    this.setHome(homex, homey);
+};
+
+Sprite_Actor.prototype.setActorHome = function(index) {
+    //Only one guy.
+    var homex = Talonos.storedPlayerScreenPositionX;
+    var homey = Talonos.storedPlayerScreenPositionY;
     this.setHome(homex, homey);
 };
 
