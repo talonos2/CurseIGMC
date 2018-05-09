@@ -155,6 +155,38 @@ Scene_Battle.prototype.start = function() {
     $gameSwitches.setValue(91,false);
 };
 
+
+//Copied from RPGSprites, modified as noted.
+Sprite_Actor.prototype.setBattler = function(battler) {
+    Sprite_Battler.prototype.setBattler.call(this, battler);
+    var changed = (battler !== this._actor);
+    if (changed) {
+        this._actor = battler;
+        if (battler) {
+            this.updateBitmapToSpecific()
+            this.setActorHome(battler.index());
+        }
+        this.startEntryMotion();
+        this._stateSprite.setup(battler);
+    }
+};
+
+Sprite_Actor.prototype.updateBitmapToSpecific = function() {
+    Sprite_Battler.prototype.updateBitmap.call(this);
+    console.log(this)
+    var name = this._actor.battlerName();
+    if (name.indexOf('ms_') > -1)
+    {
+        this._battlerName = name;
+        if (Xillith.GetMonsterFaceing()==0){name+="2"}
+        if (Xillith.GetMonsterFaceing()==1){name+="1"}
+        if (Xillith.GetMonsterFaceing()==2){name+="1"}
+        if (Xillith.GetMonsterFaceing()==3){name+="0"}
+        console.log("New Name:"+name)
+        this._mainSprite.bitmap = ImageManager.loadSvActor(name);
+    }
+};
+
 Sprite_Enemy.prototype.setBattler = function(battler) {
     Sprite_Battler.prototype.setBattler.call(this, battler);
     var changed = (battler !== this._enemy);
@@ -172,9 +204,35 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
             //this.setHome(424, 406);
             this.setHome(homex, homey);
         }
-        this.startEntryMotion();
+        //this.startEntryMotion();
         this._stateIconSprite.setup(battler);
     }
+};
+
+Sprite_Actor.prototype.updateFrame = function() {
+    Sprite_Battler.prototype.updateFrame.call(this);
+    var bitmap = this._mainSprite.bitmap;
+    if (bitmap) {
+        var motionIndex = this._motion ? this._motion.index : 0;
+        var pattern = this._pattern < 3 ? this._pattern : 1;
+        var cw = bitmap.width / 9;
+        var ch = bitmap.height;//var ch = bitmap.height / 6;
+        var cx = Math.floor(motionIndex / 6) * 3 + pattern;
+        var cy = 0;//var cy = motionIndex % 6;
+        this._mainSprite.setFrame(cx * cw, cy * ch, cw, ch);
+    }
+    if (!this._mainSprite) return;
+    if (!this._mainSprite.bitmap) return;
+    if (this._mainSprite.bitmap.width > 0 && !this.bitmap) {
+      var sw = this._mainSprite.bitmap.width / 9;
+      var sh = this._mainSprite.bitmap.height;
+      //var sh = this._mainSprite.bitmap.height / 6;
+      this.bitmap = new Bitmap(sw, sh);
+    }
+};
+
+Sprite_Actor.prototype.motionSpeed = function() {
+    return 8;
 };
 
 Sprite_Enemy.prototype.oldSetBattler = function(battler) {
@@ -219,8 +277,8 @@ Sprite_Actor.prototype.setActorHome = function(index) {
 
 Sprite_Enemy.prototype.initialize = function(battler) {
     Sprite_Battler.prototype.initialize.call(this, battler);
-    this.moveToStartPosition();
     this.setBattler(battler);
+    this.moveToStartPosition();
 };
 
 Sprite_Enemy.prototype.moveToStartPosition = function() {
@@ -249,7 +307,7 @@ Sprite_Actor.prototype.startEntryMotion = function()
 {
     if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = Talonos.ADJUST_BATTLE_X}
     if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = Talonos.ADJUST_BATTLE_X}
-    this.startMove(0, 0, 20);
+    this.startMove(0, 0, 4);
     this.setMirror(Xillith.GetMonsterFaceing()==1)
 };
 
