@@ -32,11 +32,11 @@
 *
 *@param HealingMultiplier
 *@desc The amount you multiply each level with for healing
-*@default 15
+*@default 20
 *
 *@param ManaMultiplier
 *@desc The amount you multiply each level with for Mana gained
-*@default 15
+*@default 20
 *
 *@help
 *
@@ -147,7 +147,7 @@ console.log(Xillith);
 		    var rarity = GetRarity();
 		    //((floor+2)/3)^2
 		    var amount =9* Math.pow((rarity + 3) / 4, 2);
-		    amount = Math.round(amount);
+		    amount = Math.round(amount)+2;
 		    var CrystalType = Math.floor((Math.random() * 4) + 10);
 		    if (CrystalType != 13) CrystalType = Math.floor((Math.random() * 4) + 10);
 		    var outputTxt = ["" + amount + " \\ii[" + CrystalType + "] obtained and sent to town."];
@@ -161,14 +161,14 @@ console.log(Xillith);
 		if (command == 'HealPlayer') {
 		    var rarity = GetRarity();
 		    var HealingParam = Number(parameters['HealingMultiplier']);
-		    var healing = 15+ rarity * HealingParam;
+		    var healing = 20+ rarity * HealingParam;
 		    $gameParty.members()[0].gainHp(Number(healing));
 		}
 
 		if (command == 'GainMana') {
 		    var rarity = GetRarity();
 		    var ManaParam = Number(parameters['ManaMultiplier']);
-		    var ManaGained = 15+rarity * ManaParam;
+		    var ManaGained = 20+rarity * ManaParam;
 		    $gameParty.members()[0].gainMp(Number(ManaGained));
 		}
 
