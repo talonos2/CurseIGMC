@@ -323,14 +323,62 @@ Game_CharacterBase.prototype.distancePerFrame = function()
     {
         case 0: return 1/256;
         case 1: return 2/256;
-        case 2: return 4/256;
-        case 3: return 8/256;
-        case 4: return 16/256;
-        case 5: return 24/256;
-        case 6: return 32/256;
-        case 7: return 48/256;
+        case 2: return 5/256;
+        case 3: return 10/256;
+        case 4: return 20/256;
+        case 5: return 30/256;
+        case 6: return 40/256;
+        case 7: return 60/256;
     }
     return Math.pow(2, this.realMoveSpeed()) / 256;
+};
+
+//Pause before chasing people.
+Game_Event.prototype.startEventChase = function() {
+    this._chasePlayer = true;
+    if (this.alertConditions())
+    {
+        this._staggerCount = 24;
+    }
+    this.setMoveSpeed(this._chaseSpeed);
+};
+
+//Baloon faster when chasing people:
+
+Sprite_Balloon.prototype.speed = function() {
+    return 3;
+};
+
+//For some reason, Yanfly's code has monsters sometimes move randomly when returning...?
+//This fixes that.
+//TODO: Have the monster pathfind or something.
+
+Game_Event.prototype.updateMoveReturnAfter = function() {
+    if (this._returnFrames > 0) return;
+    var sx = this.deltaXFrom(this._startLocationX);
+    var sy = this.deltaYFrom(this._startLocationY);
+    if (Math.abs(sx) > Math.abs(sy)) 
+    {
+        this.moveStraight(sx > 0 ? 4 : 6);
+        if (!this.isMovementSucceeded() && sy !== 0) 
+        {
+          this.moveStraight(sy > 0 ? 8 : 2);
+        }
+    } 
+    else if (sy !== 0) 
+    {
+        this.moveStraight(sy > 0 ? 8 : 2);
+        if (!this.isMovementSucceeded() && sx !== 0) 
+        {
+          this.moveStraight(sx > 0 ? 4 : 6);
+        }
+    }
+    if (sx === 0 && sy === 0) 
+    {
+      this._returnPhase = false;
+      this._returnFrames = 0;
+      this._direction = this._startLocationDir;
+    }
 };
 
 //FOR PLAYERS:
