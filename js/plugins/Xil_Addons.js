@@ -27,7 +27,7 @@
 *@default 10
 *
 *@param GoldChests
-*@desc Not actual value. Remainder of 3 above.
+*@desc Make sure all above add up to 100 total
 *@default 5
 *
 *@param HealingMultiplier
