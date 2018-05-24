@@ -67,9 +67,27 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var lengthOfEffect = this.encounterEffectSpeed();
         var framesPassed = lengthOfEffect - this._encounterEffectDuration;
         if (framesPassed === lengthOfEffect) {
+            $gameScreen.hideAllPictures();
             this.snapForBattleBackground();
+            $gameScreen.unhideAllPictures();
         }
     }
+};
+
+Game_Screen.prototype.hideAllPictures = function() {
+    this._pictures.forEach(function(picture) {
+        if (picture) {
+            picture._opacity = 1;
+        }
+    });
+};
+
+Game_Screen.prototype.unhideAllPictures = function() {
+    this._pictures.forEach(function(picture) {
+        if (picture) {
+            picture._opacity = 255;
+        }
+    });
 };
 
 Scene_Map.prototype.updateMain = function() {
@@ -409,21 +427,39 @@ BattleManager.endTurn = function() {
     BattleManager.refreshAllMembers();
 };
 
-//Here for reference:
-/*
-Game_Actor.prototype.makeActionList = function() {
-    var list = [];
-    var action = new Game_Action(this);
-    action.setAttack();
-    list.push(action);
-    this.usableSkills().forEach(function(skill) {
-        action = new Game_Action(this);
-        action.setSkill(skill.id);
-        list.push(action);
-    }, this);
-    return list;
+Talonos.oldSceneBattleUpdate = Scene_Battle.prototype.update;
+Scene_Battle.prototype.update = function() 
+{
+    Talonos.oldSceneBattleUpdate.call(this);
+    if (Input.isTriggered("pageUp"))
+    {
+        BattleManager.actionCommonEvent(8);
+    }
+    if (Input.isTriggered("pageDown"))
+    {
+        BattleManager.actionCommonEvent(7);
+    }
+    if (Input.isTriggered("1"))
+    {
+        BattleManager.actionCommonEvent(61);
+    }
+    if (Input.isTriggered("2"))
+    {
+        BattleManager.actionCommonEvent(27);
+    }
+    if (Input.isTriggered("3"))
+    {
+        BattleManager.actionCommonEvent(28);
+    }
+    if (Input.isTriggered("4"))
+    {
+        BattleManager.actionCommonEvent(29);
+    }
+    if (Input.isTriggered("5"))
+    {
+        BattleManager.actionCommonEvent(30);
+    }
 };
-*/
 
 //Check if a thing was pressed recently: Used by some action sequences:
 
