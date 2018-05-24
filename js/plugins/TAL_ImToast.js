@@ -151,6 +151,7 @@ Sprite_Enemy.prototype.startEntryMotion = function() {
 
 //Victory is super fast.
 BattleManager.processVictory = function() {
+    $gameTemp.reserveCommonEvent(9);//refresh pictures so element transistion looks normal
     $gameParty.removeBattleStates();
     $gameParty.performVictory();
     //this.playVictoryMe();
@@ -160,6 +161,7 @@ BattleManager.processVictory = function() {
     //this.displayRewards();
     this.gainRewards();
     this.endBattle(0);
+
 };
 
 //Map needs no fadein on battles.
