@@ -1,3 +1,715 @@
 {
-    "text.test": "This is a test text"
+
+	"text": {
+		"test": "\\af[2]\\n<\\N[2]><WordWrap>I am sure Sir Meyster will save us.  Eventually.  And again.  Really there's just too much text.\\af[1]",
+		"test2": "Also this"
+	},
+
+
+
+	"01douglass": {
+
+
+
+		"getice": "\\af[1]\\n<\\N[1]><WordWrap>Well, that's one down.  And now his power is mine!",
+		"getearth": "\\af[1]\\n<\\N[1]><WordWrap>This is easy, but something seems weird.",
+		"getfire": "\\af[1]\\n<\\N[1]><WordWrap>Okay, you are definitely cheating.",
+		"getair: "\\af[1]\\n<\\N[1]><WordWrap>Seriously?  Did you edit the code or something?"
+
+	},
+
+
+	"02maid": {
+		"day02": "\\af[2]\\n<\\N[2]><WordWrap>I am sure Sir Meyster will save us.  Eventually.  And again.  Really there's just too much text.\\af[1]"
+
+		"getice": "\\af[2]\\n<\\N[2]><WordWrap>",
+		"getearth": "\\af[2]\\n<\\N[2]><WordWrap>",
+		"getfire": "\\af[2]\\n<\\N[2]><WordWrap>",
+		"getair: "\\af[2]\\n<\\N[2]><WordWrap>"
+
+	},
+
+
+	"03guard": {
+		"day02": "",
+		"day03": "",
+
+		"getice": "\\af[3]\\n<\\N[3]><WordWrap>",
+		"getearth": "\\af[3]\\n<\\N[3]><WordWrap>",
+		"getfire": "\\af[3]\\n<\\N[3]><WordWrap>",
+		"getair: "\\af[3]\\n<\\N[3]><WordWrap>"
+	},
+
+	"04Cultist": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+	},
+
+	"05miller": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+	},
+
+	"06blacksmith": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"07priest": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"08bartender": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"09trapper": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"10squire": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"11looter": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"12adventuress": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"13drunk": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"14son": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"15merchant": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"16sage": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"17woodcutter": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"18teacher": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"19paladin": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"20pillager": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"21butler": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"22prisoner": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"23doctor": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"24soldier": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"25midwife": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"26mayor": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+		"day26": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"27crone": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+		"day26": "",
+		"day27": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"28teamster": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+		"day26": "",
+		"day27": "",
+		"day28": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+	},
+
+	"29journalist": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+		"day26": "",
+		"day27": "",
+		"day28": "",
+		"day29": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+
+	},
+
+	"30elder": {
+		"day02": "",
+		"day03": "",
+		"day04": "",
+		"day05": "",
+		"day06": "",
+		"day07": "",
+		"day08": "",
+		"day09": "",
+		"day10": "",
+		"day11": "",
+		"day12": "",
+		"day13": "",
+		"day14": "",
+		"day15": "",
+		"day16": "",
+		"day17": "",
+		"day18": "",
+		"day19": "",
+		"day20": "",
+		"day21": "",
+		"day22": "",
+		"day23": "",
+		"day24": "",
+		"day25": "",
+		"day26": "",
+		"day27": "",
+		"day28": "",
+		"day29": "",
+		"day30": "",
+
+		"getice": "",
+		"getearth": "",
+		"getfire": "",
+		"getair: ""
+	}
+
+
 }
