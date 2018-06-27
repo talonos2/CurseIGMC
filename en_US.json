@@ -1,5 +1,13 @@
 {
 
+"text": {
+	"test1c1": "\\af[1]\\n<\\N[1]><WordWrap>I'm douglass.",
+	"test2c2": "\\af[2]\\n<\\N[2]><WordWrap>Now I'm Sera and I \\. wait.",
+	"test3c3": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad. "
+
+},
+
+
 "01douglass": {
 
          "thirdFloor": "\\af[1]\\n<\\N[1]><WordWrap>So far so good.",
@@ -43,7 +51,10 @@
 
          "day02": "\\af[4]\\n<\\N[4]><WordWrap>Don't worry.  I'm sure you'll serve in the new world as well.",
          "day03": "\\af[4]\\n<\\N[4]><WordWrap>You're watching the animals right?  Could I borrow a goat?",
-         "day04": "\\af[4]\\n<\\N[4]><WordWrap>",
+         "day04c1": "\\af[18]\\n<\\N[18]><WordWrap>You should have paid more attention in history.  I don't think your runes mean what you think.",
+         "day04c2": "\\af[4]\\n<\\N[4]><WordWrap>They say \"death to the unworthy\"",
+         "day04c3": "\\af[18]\\n<\\N[18]><WordWrap>That's not \"death\" it's \"phase\". ",
+         "day04c4": "\\af[4]\\n<\\N[4]><WordWrap>It's not phase!",
 
          "getIce": "\\af[4]\\n<\\N[4]><WordWrap>",
          "getEarth": "\\af[4]\\n<\\N[4]><WordWrap>",
@@ -82,10 +93,12 @@
 
          "day02": "\\af[7]\\n<\\N[7]><WordWrap>I see we both do what we can to provide comfort in these troubled times.",
          "day03": "\\af[7]\\n<\\N[7]><WordWrap>It is good to see you again Mrs Miller.",
-         "day04": "\\af[7]\\n<\\N[7]><WordWrap>Is there anything I can do for you?  - Not unless you're handy with a ",
+         "day04c1": "\\af[7]\\n<\\N[7]><WordWrap>Is there anything I can do for you?",
+         "day04c2": "\\af[5]\\n<\\N[5]><WordWrap>Not unless you're handy with a hammer.",
          "day05": "\\af[7]\\n<\\N[7]><WordWrap>I wonder if the beasts of the field are better off for not knowing fear as we do.",
          "day06": "\\af[7]\\n<\\N[7]><WordWrap>Good afternoon young squire.",
-         "day07": "\\af[7]\\n<\\N[7]><WordWrap>",
+         "day07c1": "\\af[10]\\n<\\N[10]><WordWrap>I worry about Sir Meister sometimes",
+         "day07c2": "\\af[7]\\n<\\N[7]><WordWrap>Do you worry for his future or his past?",
 
          "getIce": "\\af[7]\\n<\\N[7]><WordWrap>",
          "getEarth": "\\af[7]\\n<\\N[7]><WordWrap>",
@@ -95,13 +108,13 @@
 
 "08bartender": {
 
-         "day02": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day03": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day04": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day05": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day06": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day07": "\\af[8]\\n<\\N[8]><WordWrap>",
-         "day08": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day02": "\\af[8]\\n<\\N[8]><WordWrap>It may be cynical, but the impending doom has been great for business.",
+         "day03": "\\af[8]\\n<\\N[8]><WordWrap>My mother always said despair is the best seasoning... which is why I left home at such a young age.",
+         "day04": "\\af[8]\\n<\\N[8]><WordWrap>I'm gald to see you're taking a break.  It can't be healthy working like you do all day.",
+         "day05": "\\af[8]\\n<\\N[8]><WordWrap>I swear, if that junk peddler asks for another discount...",
+         "day06": "\\af[8]\\n<\\N[8]><WordWrap>You even old enough to drink hon? -of course I am!  We might have to change the game's rating otherwise.",
+         "day07": "\\af[8]\\n<\\N[8]><WordWrap>Sometimes I wonder if that knight of yours is sneaking a drink now and then...",
+         "day08": "\\af[8]\\n<\\N[8]><WordWrap>Hey kid.  You really look up to that old man don'tcha?",
 
          "getIce": "\\af[8]\\n<\\N[8]><WordWrap>",
          "getEarth": "\\af[8]\\n<\\N[8]><WordWrap>",
@@ -111,15 +124,6 @@
 
 "09trapper": {
 
-         "day02": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day03": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day04": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day05": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day06": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day07": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day08": "\\af[9]\\n<\\N[9]><WordWrap>",
-         "day09": "\\af[9]\\n<\\N[9]><WordWrap>",
-
          "getIce": "\\af[9]\\n<\\N[9]><WordWrap>",
          "getEarth": "\\af[9]\\n<\\N[9]><WordWrap>",
          "getFire": "\\af[9]\\n<\\N[9]><WordWrap>",
@@ -128,11 +132,12 @@
 
 "10squire": {
 
-         "day02": "\\af[10]\\n<\\N[10]><WordWrap>",
-         "day03": "\\af[10]\\n<\\N[10]><WordWrap>",
-         "day04": "\\af[10]\\n<\\N[10]><WordWrap>",
-         "day05": "\\af[10]\\n<\\N[10]><WordWrap>",
-         "day06": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day02": "\\af[10]\\n<\\N[10]><WordWrap>Don't worry, I'm sure Sir Meister will save us,\\. eventually.",
+         "day03": "\\af[10]\\n<\\N[10]><WordWrap>Thank you for looking after Sir Meister's steed.  He will need it.\\.  Eventually.",
+         "day04c1": "\\af[10]\\n<\\N[10]><WordWrap>Perhaps I could be of service?  I am trained to look after horses.",
+	 "day04c2": "\\af[10]\\n<\\N[10]><WordWrap>Though I am sure Sir meister will call for me.\\.  Eventually.",
+         "day05": "\\af[10]\\n<\\N[10]><WordWrap>His biggest regret is that he never slew a dragon.",
+         "day06": "\\af[10]\\n<\\N[10]><WordWrap>Why did he have to hear about this curse?",
          "day07": "\\af[10]\\n<\\N[10]><WordWrap>",
          "day08": "\\af[10]\\n<\\N[10]><WordWrap>",
          "day09": "\\af[10]\\n<\\N[10]><WordWrap>",
@@ -146,16 +151,17 @@
 
 "11looter": {
 
-         "day02": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day03": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day04": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day05": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day06": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day07": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day08": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day09": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day10": "\\af[11]\\n<\\N[11]><WordWrap>",
-         "day11": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day02": "\\af[11]\\n<\\N[11]><WordWrap>Hey, don't you have plates to polish or something?",
+         "day03": "\\af[11]\\n<\\N[11]><WordWrap>Windows sure are getting dirty without someone to clean them huh?",
+         "day04": "\\af[11]\\n<\\N[11]><WordWrap>Hey, I hear your fence broke.  Here, take these boards I...found.  Just don't tell anyone where you got them.",
+         "day05": "\\af[11]\\n<\\N[11]><WordWrap>Hey, I ain't bugging your animals am I?  So don't bug me.",
+         "day06": "\\af[11]\\n<\\N[11]><WordWrap>I don't like the way you keep looking at me.  Buzz off.",
+         "day07c1": "\\af[29]\\n<\\N[29]><WordWrap>What do you think of the current crisis?",
+         "day07c2": "\\af[11]\\n<\\N[11]><WordWrap>Would you people just leave me alone!",
+         "day08": "\\af[11]\\n<\\N[11]><WordWrap>Why would I take a sword?  Especially one with some guy's crest on it.  That just hurts resale value.",
+         "day09": "\\af[11]\\n<\\N[11]><WordWrap>I haven't seen your boss lately, because I hear him first.  That parade armor is ridiculous.",
+         "day10": "\\af[11]\\n<\\N[11]><WordWrap>You know, guy your height could get into a lot of palces...",
+         "day11": "\\af[11]\\n<\\N[11]><WordWrap>Yeah, get on out there and make evil fear to tread, lady.",
 
          "getIce": "\\af[11]\\n<\\N[11]><WordWrap>",
          "getEarth": "\\af[11]\\n<\\N[11]><WordWrap>",
@@ -165,17 +171,19 @@
 
 "12adventuress": {
 
-         "day02": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day03": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day04": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day05": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day06": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day07": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day02": "\\af[12]\\n<\\N[12]><WordWrap>Isn't it exciting having all these warriors in town?",
+         "day03": "\\af[12]\\n<\\N[12]><WordWrap>Need help seeing to the horses? - Not after last time I don't.",
+         "day04c1": "\\af[12]\\n<\\N[12]><WordWrap>Do you think more adventurers are going to arrive?",
+         "day04c2": "\\af[5]\\n<\\N[5]><WordWrap>If Patric got the word out, mabye.",
+         "day05": "\\af[12]\\n<\\N[12]><WordWrap>I hear Ms Smythe is starting a boot camp?!",
+         "day06c1": "\\af[12]\\n<\\N[12]><WordWrap>So, Sir Meister isnt... What I expected.",
+	 "day06c2": "\\af[10]\\n<\\N[10]><WordWrap>We can hardly blam him for that now can we?",
+         "day07": "\\af[12]\\n<\\N[12]><WordWrap>Where'd you learn to fight?  You're pretty good for a squire.",
          "day08": "\\af[12]\\n<\\N[12]><WordWrap>",
          "day09": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day10": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day11": "\\af[12]\\n<\\N[12]><WordWrap>",
-         "day12": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day10": "\\af[12]\\n<\\N[12]><WordWrap>Why do you make excuses for that old man?",
+         "day11": "\\af[12]\\n<\\N[12]><WordWrap>S-so what if the others failed?  I've got more heart than all of them together!",
+         "day12": "\\af[12]\\n<\\N[12]><WordWrap>We can't fail.",
 
          "getIce": "\\af[12]\\n<\\N[12]><WordWrap>",
          "getEarth": "\\af[12]\\n<\\N[12]><WordWrap>",
@@ -185,18 +193,20 @@
 
 "13drunk": {
 
-         "day02": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day03": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day04": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day05": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day06": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day02": "\\af[13]\\n<\\N[13]><WordWrap>Doesn't matter anyway...",
+         "day03": "\\af[13]\\n<\\N[13]><WordWrap>Wonder if this is how cows think, when one'a them disappears.",
+         "day04": "\\af[13]\\n<\\N[13]><WordWrap>Oh no... \\.-hic-\\. the sheep giving you trouble?",
+         "day05": "\\af[13]\\n<\\N[13]><WordWrap>Dun worry boss \\.-hic-\\. doin' what I always do.",
+         "day06": "\\af[13]\\n<\\N[13]><WordWrap>I may be a loser \\.-hic-\\. but at least I'll admit it.",
          "day07": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day08": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day09": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day10": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day11": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day12": "\\af[13]\\n<\\N[13]><WordWrap>",
-         "day13": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day08": "\\af[13]\\n<\\N[13]><WordWrap>Y'think I could be a paladin? \\.-hic-",
+         "day09": "\\af[13]\\n<\\N[13]><WordWrap>So, someday you'll be a big hero too huh?  \\.-hic- \\.ain't what it's cracked up to be.",
+         "day10c1": "\\af[13]\\n<\\N[13]><WordWrap>Nobody knew what they were doing alright?  It's not like I wanted thing t' end up like... with all of them...",
+         "day10c2": "\\af[22]\\n<\\N[22]><WordWrap>I can't hear you very well. <br> \\| Take a step closer.",
+         "day11c1": "\\af[13]\\n<\\N[13]><WordWrap>That's it?  You've just been here since?",
+         "day11c2": "\\af[29]\\n<\\N[29]><WordWrap>What else is there to say?  Some came back from the war better, some didn't.",
+         "day12": "\\af[13]\\n<\\N[13]><WordWrap>Ya learned the fifty bajillion spider toenail technique yet? \\. -hic-",
+         "day13": "\\af[13]\\n<\\N[13]><WordWrap>Yeah, make sure to run the town real good like.  Maybe then it'll look pretty when some kids in uniform burn it down.",
 
          "getIce": "\\af[13]\\n<\\N[13]><WordWrap>",
          "getEarth": "\\af[13]\\n<\\N[13]><WordWrap>",
@@ -206,12 +216,13 @@
 
 "14son": {
 
-         "day02": "\\af[14]\\n<\\N[14]><WordWrap>",
-         "day03": "\\af[14]\\n<\\N[14]><WordWrap>",
-         "day04": "\\af[14]\\n<\\N[14]><WordWrap>",
-         "day05": "\\af[14]\\n<\\N[14]><WordWrap>",
-         "day06": "\\af[14]\\n<\\N[14]><WordWrap>",
-         "day07": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day02": "\\af[14]\\n<\\N[14]><WordWrap>If my father is staying, I'm staying!",
+         "day03": "\\af[14]\\n<\\N[14]><WordWrap>We can overcome this together!",
+         "day04": "\\af[14]\\n<\\N[14]><WordWrap>Thank you for doing your part to keep everyone strong.",
+         "day05": "\\af[14]\\n<\\N[14]><WordWrap>Sorry we, I mean, my dad's been taking Todd's dea- disappearance a little hard.  Please give us some time.",
+         "day06c1": "\\af[29]\\n<\\N[29]><WordWrap>So, you know mayorship isn't heritable right?",
+         "day06c2": "\\af[14]\\n<\\N[14]><WordWrap>Okay, I'm pretty sure you're making fun of me now.",
+         "day07": "\\af[14]\\n<\\N[14]><WordWrap>I can do this!  I know it!",
          "day08": "\\af[14]\\n<\\N[14]><WordWrap>",
          "day09": "\\af[14]\\n<\\N[14]><WordWrap>",
          "day10": "\\af[14]\\n<\\N[14]><WordWrap>",
@@ -302,7 +313,10 @@
 
          "day02": "\\af[18]\\n<\\N[18]><WordWrap>",
          "day03": "\\af[18]\\n<\\N[18]><WordWrap>",
-         "day04": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day04c1": "\\af[18]\\n<\\N[18]><WordWrap>You should have paid more attention in history.  I don't think your runes mean what you think.",
+         "day04c2": "\\af[4]\\n<\\N[4]><WordWrap>They say \"death to the unworthy\"",
+         "day04c3": "\\af[18]\\n<\\N[18]><WordWrap>That's not \"death\" it's \"phase\". ",
+         "day04c4": "\\af[4]\\n<\\N[4]><WordWrap>It's not phase!",
          "day05": "\\af[18]\\n<\\N[18]><WordWrap>",
          "day06": "\\af[18]\\n<\\N[18]><WordWrap>",
          "day07": "\\af[18]\\n<\\N[18]><WordWrap>",
