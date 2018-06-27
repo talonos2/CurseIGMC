@@ -1,3 +1,717 @@
 {
-    "text.test": "This is a test text"
+
+"01douglass": {
+
+         "thirdFloor": "\\af[1]\\n<\\N[1]><WordWrap>So far so good.",
+         "eigthVictory": "\\af[1]\\n<\\N[1]><WordWrap>Crystals are nice I guess, but no gold?",
+
+         "getIce": "\\af[1]\\n<\\N[1]><WordWrap>",
+         "getEarth": "\\af[1]\\n<\\N[1]><WordWrap>",
+         "getFire": "\\af[1]\\n<\\N[1]><WordWrap>",
+         "getAir": "\\af[1]\\n<\\N[1]><WordWrap>"
+},
+
+"02maid": {
+
+         "day02": "\\af[2]\\n<\\N[2]><WordWrap>I don't even have sick days yet!  Can you even take disaster days?",
+
+	 "firstVictory": "\\af[2]\\n<\\N[2]><WordWrap>I can do this...",
+	 "secondFloor": "\\af[2]\\n<\\N[2]><WordWrap>These bugs are s-so much bigger in person.",
+
+
+         "getIce": "\\af[2]\\n<\\N[2]><WordWrap>",
+         "getEarth": "\\af[2]\\n<\\N[2]><WordWrap>",
+         "getFire": "\\af[2]\\n<\\N[2]><WordWrap>",
+         "getAir": "\\af[2]\\n<\\N[2]><WordWrap>"
+},
+
+"03guard": {
+
+         "day02": "\\af[3]\\n<\\N[3]><WordWrap>Don't worry Ma'm, we'll take care of things.",
+         "day03": "\\af[3]\\n<\\N[3]><WordWrap>Maybe if we stand closer to the entrance? - No... Sara was quite far off.",
+
+	 "firstVictory": "\\af[3]\\n<\\N[3]><WordWrap>I can do this...",
+	 "secondFloor": "\\af[3]\\n<\\N[3]><WordWrap>These bugs are s-so much bigger in person.",
+
+         "getIce": "\\af[3]\\n<\\N[3]><WordWrap>",
+         "getEarth": "\\af[3]\\n<\\N[3]><WordWrap>",
+         "getFire": "\\af[3]\\n<\\N[3]><WordWrap>",
+         "getAir": "\\af[3]\\n<\\N[3]><WordWrap>"
+},
+
+"04cultist": {
+
+         "day02": "\\af[4]\\n<\\N[4]><WordWrap>Don't worry.  I'm sure you'll serve in the new world as well.",
+         "day03": "\\af[4]\\n<\\N[4]><WordWrap>You're watching the animals right?  Could I borrow a goat?",
+         "day04": "\\af[4]\\n<\\N[4]><WordWrap>",
+
+         "getIce": "\\af[4]\\n<\\N[4]><WordWrap>",
+         "getEarth": "\\af[4]\\n<\\N[4]><WordWrap>",
+         "getFire": "\\af[4]\\n<\\N[4]><WordWrap>",
+         "getAir": "\\af[4]\\n<\\N[4]><WordWrap>"
+},
+
+"05miller": {
+
+         "day02": "\\af[5]\\n<\\N[5]><WordWrap>I drew the short straw, why are you still here?",
+         "day03": "\\af[5]\\n<\\N[5]><WordWrap>You killed a wolf when you were twelve, you got this.",
+         "day04": "\\af[5]\\n<\\N[5]><WordWrap>I'm not looking forward to sorting the animals back out when people come back.",
+         "day05": "\\af[5]\\n<\\N[5]><WordWrap>Maybe we can spare a few steaks to get spirits up a bit.",
+
+         "getIce": "\\af[5]\\n<\\N[5]><WordWrap>",
+         "getEarth": "\\af[5]\\n<\\N[5]><WordWrap>",
+         "getFire": "\\af[5]\\n<\\N[5]><WordWrap>",
+         "getAir": "\\af[5]\\n<\\N[5]><WordWrap>"
+},
+
+"06blacksmith": {
+
+         "day02": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't any goods for the mayor today.",
+         "day03": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I don't have time to fix bits and bridles at the moment.",
+         "day04": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I'm a bit behind on my regular tasks.  What with all these armor and weapon jobs.",
+         "day05": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid that fence isn't going to fix itself.  I can spare some nails though. (divergence point?)",
+         "day06": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't seen Sir Meister's sword lately",
+
+         "getIce": "\\af[6]\\n<\\N[6]><WordWrap>",
+         "getEarth": "\\af[6]\\n<\\N[6]><WordWrap>",
+         "getFire": "\\af[6]\\n<\\N[6]><WordWrap>",
+         "getAir": "\\af[6]\\n<\\N[6]><WordWrap>"
+},
+
+"07priest": {
+
+         "day02": "\\af[7]\\n<\\N[7]><WordWrap>I see we both do what we can to provide comfort in these troubled times.",
+         "day03": "\\af[7]\\n<\\N[7]><WordWrap>It is good to see you again Mrs Miller.",
+         "day04": "\\af[7]\\n<\\N[7]><WordWrap>Is there anything I can do for you?  - Not unless you're handy with a ",
+         "day05": "\\af[7]\\n<\\N[7]><WordWrap>I wonder if the beasts of the field are better off for not knowing fear as we do.",
+         "day06": "\\af[7]\\n<\\N[7]><WordWrap>Good afternoon young squire.",
+         "day07": "\\af[7]\\n<\\N[7]><WordWrap>",
+
+         "getIce": "\\af[7]\\n<\\N[7]><WordWrap>",
+         "getEarth": "\\af[7]\\n<\\N[7]><WordWrap>",
+         "getFire": "\\af[7]\\n<\\N[7]><WordWrap>",
+         "getAir": "\\af[7]\\n<\\N[7]><WordWrap>"
+},
+
+"08bartender": {
+
+         "day02": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day03": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day04": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day05": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day06": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day07": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "day08": "\\af[8]\\n<\\N[8]><WordWrap>",
+
+         "getIce": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "getEarth": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "getFire": "\\af[8]\\n<\\N[8]><WordWrap>",
+         "getAir": "\\af[8]\\n<\\N[8]><WordWrap>"
+},
+
+"09trapper": {
+
+         "day02": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day03": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day04": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day05": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day06": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day07": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day08": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "day09": "\\af[9]\\n<\\N[9]><WordWrap>",
+
+         "getIce": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "getEarth": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "getFire": "\\af[9]\\n<\\N[9]><WordWrap>",
+         "getAir": "\\af[9]\\n<\\N[9]><WordWrap>"
+},
+
+"10squire": {
+
+         "day02": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day03": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day04": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day05": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day06": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day07": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day08": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day09": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "day10": "\\af[10]\\n<\\N[10]><WordWrap>",
+
+         "getIce": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "getEarth": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "getFire": "\\af[10]\\n<\\N[10]><WordWrap>",
+         "getAir": "\\af[10]\\n<\\N[10]><WordWrap>"
+},
+
+"11looter": {
+
+         "day02": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day03": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day04": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day05": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day06": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day07": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day08": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day09": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day10": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "day11": "\\af[11]\\n<\\N[11]><WordWrap>",
+
+         "getIce": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "getEarth": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "getFire": "\\af[11]\\n<\\N[11]><WordWrap>",
+         "getAir": "\\af[11]\\n<\\N[11]><WordWrap>"
+},
+
+"12adventuress": {
+
+         "day02": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day03": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day04": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day05": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day06": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day07": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day08": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day09": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day10": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day11": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "day12": "\\af[12]\\n<\\N[12]><WordWrap>",
+
+         "getIce": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "getEarth": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "getFire": "\\af[12]\\n<\\N[12]><WordWrap>",
+         "getAir": "\\af[12]\\n<\\N[12]><WordWrap>"
+},
+
+"13drunk": {
+
+         "day02": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day03": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day04": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day05": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day06": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day07": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day08": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day09": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day10": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day11": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day12": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "day13": "\\af[13]\\n<\\N[13]><WordWrap>",
+
+         "getIce": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "getEarth": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "getFire": "\\af[13]\\n<\\N[13]><WordWrap>",
+         "getAir": "\\af[13]\\n<\\N[13]><WordWrap>"
+},
+
+"14son": {
+
+         "day02": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day03": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day04": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day05": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day06": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day07": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day08": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day09": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day10": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day11": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day12": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day13": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "day14": "\\af[14]\\n<\\N[14]><WordWrap>",
+
+         "getIce": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "getEarth": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "getFire": "\\af[14]\\n<\\N[14]><WordWrap>",
+         "getAir": "\\af[14]\\n<\\N[14]><WordWrap>"
+},
+
+"15merchant": {
+
+         "day02": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day03": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day04": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day05": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day06": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day07": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day08": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day09": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day10": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day11": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day12": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day13": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day14": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "day15": "\\af[15]\\n<\\N[15]><WordWrap>",
+
+         "getIce": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "getEarth": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "getFire": "\\af[15]\\n<\\N[15]><WordWrap>",
+         "getAir": "\\af[15]\\n<\\N[15]><WordWrap>"
+},
+
+"16sage": {
+
+         "day02": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day03": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day04": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day05": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day06": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day07": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day08": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day09": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day10": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day11": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day12": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day13": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day14": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day15": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "day16": "\\af[16]\\n<\\N[16]><WordWrap>",
+
+         "getIce": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "getEarth": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "getFire": "\\af[16]\\n<\\N[16]><WordWrap>",
+         "getAir": "\\af[16]\\n<\\N[16]><WordWrap>"
+},
+
+"17woodcutter": {
+
+         "day02": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day03": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day04": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day05": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day06": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day07": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day08": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day09": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day10": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day11": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day12": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day13": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day14": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day15": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day16": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "day17": "\\af[17]\\n<\\N[17]><WordWrap>",
+
+         "getIce": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "getEarth": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "getFire": "\\af[17]\\n<\\N[17]><WordWrap>",
+         "getAir": "\\af[17]\\n<\\N[17]><WordWrap>"
+},
+
+"18teacher": {
+
+         "day02": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day03": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day04": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day05": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day06": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day07": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day08": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day09": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day10": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day11": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day12": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day13": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day14": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day15": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day16": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day17": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "day18": "\\af[18]\\n<\\N[18]><WordWrap>",
+
+         "getIce": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "getEarth": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "getFire": "\\af[18]\\n<\\N[18]><WordWrap>",
+         "getAir": "\\af[18]\\n<\\N[18]><WordWrap>"
+},
+
+"19paladin": {
+
+         "day02": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day03": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day04": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day05": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day06": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day07": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day08": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day09": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day10": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day11": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day12": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day13": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day14": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day15": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day16": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day17": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day18": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "day19": "\\af[19]\\n<\\N[19]><WordWrap>",
+
+         "getIce": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "getEarth": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "getFire": "\\af[19]\\n<\\N[19]><WordWrap>",
+         "getAir": "\\af[19]\\n<\\N[19]><WordWrap>"
+},
+
+"20pillager": {
+
+         "day02": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day03": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day04": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day05": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day06": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day07": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day08": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day09": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day10": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day11": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day12": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day13": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day14": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day15": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day16": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day17": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day18": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day19": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "day20": "\\af[20]\\n<\\N[20]><WordWrap>",
+
+         "getIce": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "getEarth": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "getFire": "\\af[20]\\n<\\N[20]><WordWrap>",
+         "getAir": "\\af[20]\\n<\\N[20]><WordWrap>"
+},
+
+"21butler": {
+
+         "day02": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day03": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day04": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day05": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day06": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day07": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day08": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day09": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day10": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day11": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day12": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day13": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day14": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day15": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day16": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day17": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day18": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day19": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day20": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "day21": "\\af[21]\\n<\\N[21]><WordWrap>",
+
+         "getIce": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "getEarth": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "getFire": "\\af[21]\\n<\\N[21]><WordWrap>",
+         "getAir": "\\af[21]\\n<\\N[21]><WordWrap>"
+},
+
+"22prisoner": {
+
+         "day02": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day03": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day04": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day05": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day06": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day07": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day08": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day09": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day10": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day11": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day12": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day13": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day14": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day15": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day16": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day17": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day18": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day19": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day20": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day21": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "day22": "\\af[22]\\n<\\N[22]><WordWrap>",
+
+         "getIce": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "getEarth": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "getFire": "\\af[22]\\n<\\N[22]><WordWrap>",
+         "getAir": "\\af[22]\\n<\\N[22]><WordWrap>"
+},
+
+"23doctor": {
+
+         "day02": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day03": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day04": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day05": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day06": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day07": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day08": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day09": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day10": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day11": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day12": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day13": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day14": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day15": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day16": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day17": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day18": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day19": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day20": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day21": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day22": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "day23": "\\af[23]\\n<\\N[23]><WordWrap>",
+
+         "getIce": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "getEarth": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "getFire": "\\af[23]\\n<\\N[23]><WordWrap>",
+         "getAir": "\\af[23]\\n<\\N[23]><WordWrap>"
+},
+
+"24soldier": {
+
+         "day02": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day03": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day04": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day05": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day06": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day07": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day08": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day09": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day10": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day11": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day12": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day13": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day14": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day15": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day16": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day17": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day18": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day19": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day20": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day21": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day22": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day23": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "day24": "\\af[24]\\n<\\N[24]><WordWrap>",
+
+         "getIce": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "getEarth": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "getFire": "\\af[24]\\n<\\N[24]><WordWrap>",
+         "getAir": "\\af[24]\\n<\\N[24]><WordWrap>"
+},
+
+"25midwife": {
+
+         "day02": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day03": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day04": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day05": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day06": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day07": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day08": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day09": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day10": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day11": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day12": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day13": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day14": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day15": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day16": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day17": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day18": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day19": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day20": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day21": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day22": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day23": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day24": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "day25": "\\af[25]\\n<\\N[25]><WordWrap>",
+
+         "getIce": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "getEarth": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "getFire": "\\af[25]\\n<\\N[25]><WordWrap>",
+         "getAir": "\\af[25]\\n<\\N[25]><WordWrap>"
+},
+
+"26mayor": {
+
+         "day02": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day03": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day04": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day05": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day06": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day07": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day08": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day09": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day10": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day11": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day12": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day13": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day14": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day15": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day16": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day17": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day18": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day19": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day20": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day21": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day22": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day23": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day24": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day25": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "day26": "\\af[26]\\n<\\N[26]><WordWrap>",
+
+         "getIce": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "getEarth": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "getFire": "\\af[26]\\n<\\N[26]><WordWrap>",
+         "getAir": "\\af[26]\\n<\\N[26]><WordWrap>"
+},
+
+"27crone": {
+
+         "day02": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day03": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day04": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day05": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day06": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day07": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day08": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day09": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day10": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day11": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day12": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day13": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day14": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day15": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day16": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day17": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day18": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day19": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day20": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day21": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day22": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day23": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day24": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day25": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day26": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "day27": "\\af[27]\\n<\\N[27]><WordWrap>",
+
+         "getIce": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "getEarth": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "getFire": "\\af[27]\\n<\\N[27]><WordWrap>",
+         "getAir": "\\af[27]\\n<\\N[27]><WordWrap>"
+},
+
+"28teamster": {
+
+         "day02": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day03": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day04": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day05": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day06": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day07": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day08": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day09": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day10": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day11": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day12": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day13": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day14": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day15": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day16": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day17": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day18": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day19": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day20": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day21": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day22": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day23": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day24": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day25": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day26": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day27": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "day28": "\\af[28]\\n<\\N[28]><WordWrap>",
+
+         "getIce": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "getEarth": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "getFire": "\\af[28]\\n<\\N[28]><WordWrap>",
+         "getAir": "\\af[28]\\n<\\N[28]><WordWrap>"
+},
+
+"29journalist": {
+
+         "day02": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day03": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day04": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day05": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day06": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day07": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day08": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day09": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day10": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day11": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day12": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day13": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day14": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day15": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day16": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day17": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day18": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day19": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day20": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day21": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day22": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day23": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day24": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day25": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day26": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day27": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day28": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "day29": "\\af[29]\\n<\\N[29]><WordWrap>",
+
+         "getIce": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "getEarth": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "getFire": "\\af[29]\\n<\\N[29]><WordWrap>",
+         "getAir": "\\af[29]\\n<\\N[29]><WordWrap>"
+},
+
+"30elder": {
+
+         "day02": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day03": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day04": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day05": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day06": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day07": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day08": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day09": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day10": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day11": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day12": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day13": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day14": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day15": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day16": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day17": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day18": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day19": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day20": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day21": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day22": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day23": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day24": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day25": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day26": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day27": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day28": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day29": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "day30": "\\af[30]\\n<\\N[30]><WordWrap>",
+
+         "getIce": "\\af[30]\\n<\\N[30]><WordWrap>I worry that this may be too little too late.",
+         "getEarth": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "getFire": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "getAir": "\\af[30]\\n<\\N[30]><WordWrap>If I hurry... maybe I can still make it."
+}
+
 }
