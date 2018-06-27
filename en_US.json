@@ -13,7 +13,7 @@
 
 "02maid": {
 
-         "day02": "\\af[2]\\n<\\N[2]><WordWrap>",
+         "day02": "\\af[2]\\n<\\N[2]><WordWrap>I don't even have sick days yet!  Can you even take disaster days?",
 
 	 "firstVictory": "\\af[2]\\n<\\N[2]><WordWrap>I can do this...",
 	 "secondFloor": "\\af[2]\\n<\\N[2]><WordWrap>These bugs are s-so much bigger in person.",
@@ -27,8 +27,8 @@
 
 "03guard": {
 
-         "day02": "\\af[3]\\n<\\N[3]><WordWrap>",
-         "day03": "\\af[3]\\n<\\N[3]><WordWrap>",
+         "day02": "\\af[3]\\n<\\N[3]><WordWrap>Don't worry Ma'm, we'll take care of things.",
+         "day03": "\\af[3]\\n<\\N[3]><WordWrap>Maybe if we stand closer to the entrance? - No... Sara was quite far off.",
 
 	 "firstVictory": "\\af[3]\\n<\\N[3]><WordWrap>I can do this...",
 	 "secondFloor": "\\af[3]\\n<\\N[3]><WordWrap>These bugs are s-so much bigger in person.",
@@ -41,8 +41,8 @@
 
 "04cultist": {
 
-         "day02": "\\af[4]\\n<\\N[4]><WordWrap>",
-         "day03": "\\af[4]\\n<\\N[4]><WordWrap>",
+         "day02": "\\af[4]\\n<\\N[4]><WordWrap>Don't worry.  I'm sure you'll serve in the new world as well.",
+         "day03": "\\af[4]\\n<\\N[4]><WordWrap>You're watching the animals right?  Could I borrow a goat?",
          "day04": "\\af[4]\\n<\\N[4]><WordWrap>",
 
          "getIce": "\\af[4]\\n<\\N[4]><WordWrap>",
@@ -53,10 +53,10 @@
 
 "05miller": {
 
-         "day02": "\\af[5]\\n<\\N[5]><WordWrap>",
-         "day03": "\\af[5]\\n<\\N[5]><WordWrap>",
-         "day04": "\\af[5]\\n<\\N[5]><WordWrap>",
-         "day05": "\\af[5]\\n<\\N[5]><WordWrap>",
+         "day02": "\\af[5]\\n<\\N[5]><WordWrap>I drew the short straw, why are you still here?",
+         "day03": "\\af[5]\\n<\\N[5]><WordWrap>You killed a wolf when you were twelve, you got this.",
+         "day04": "\\af[5]\\n<\\N[5]><WordWrap>I'm not looking forward to sorting the animals back out when people come back.",
+         "day05": "\\af[5]\\n<\\N[5]><WordWrap>Maybe we can spare a few steaks to get spirits up a bit.",
 
          "getIce": "\\af[5]\\n<\\N[5]><WordWrap>",
          "getEarth": "\\af[5]\\n<\\N[5]><WordWrap>",
@@ -66,11 +66,11 @@
 
 "06blacksmith": {
 
-         "day02": "\\af[6]\\n<\\N[6]><WordWrap>",
-         "day03": "\\af[6]\\n<\\N[6]><WordWrap>",
-         "day04": "\\af[6]\\n<\\N[6]><WordWrap>",
-         "day05": "\\af[6]\\n<\\N[6]><WordWrap>",
-         "day06": "\\af[6]\\n<\\N[6]><WordWrap>",
+         "day02": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't any goods for the mayor today.",
+         "day03": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I don't have time to fix bits and bridles at the moment.",
+         "day04": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I'm a bit behind on my regular tasks.  What with all these armor and weapon jobs.",
+         "day05": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid that fence isn't going to fix itself.  I can spare some nails though. (divergence point?)",
+         "day06": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't seen Sir Meister's sword lately",
 
          "getIce": "\\af[6]\\n<\\N[6]><WordWrap>",
          "getEarth": "\\af[6]\\n<\\N[6]><WordWrap>",
@@ -80,11 +80,11 @@
 
 "07priest": {
 
-         "day02": "\\af[7]\\n<\\N[7]><WordWrap>",
-         "day03": "\\af[7]\\n<\\N[7]><WordWrap>",
-         "day04": "\\af[7]\\n<\\N[7]><WordWrap>",
-         "day05": "\\af[7]\\n<\\N[7]><WordWrap>",
-         "day06": "\\af[7]\\n<\\N[7]><WordWrap>",
+         "day02": "\\af[7]\\n<\\N[7]><WordWrap>I see we both do what we can to provide comfort in these troubled times.",
+         "day03": "\\af[7]\\n<\\N[7]><WordWrap>It is good to see you again Mrs Miller.",
+         "day04": "\\af[7]\\n<\\N[7]><WordWrap>Is there anything I can do for you?  - Not unless you're handy with a ",
+         "day05": "\\af[7]\\n<\\N[7]><WordWrap>I wonder if the beasts of the field are better off for not knowing fear as we do.",
+         "day06": "\\af[7]\\n<\\N[7]><WordWrap>Good afternoon young squire.",
          "day07": "\\af[7]\\n<\\N[7]><WordWrap>",
 
          "getIce": "\\af[7]\\n<\\N[7]><WordWrap>",
@@ -708,10 +708,10 @@
          "day29": "\\af[30]\\n<\\N[30]><WordWrap>",
          "day30": "\\af[30]\\n<\\N[30]><WordWrap>",
 
-         "getIce": "\\af[30]\\n<\\N[30]><WordWrap>",
+         "getIce": "\\af[30]\\n<\\N[30]><WordWrap>I worry that this may be too little too late.",
          "getEarth": "\\af[30]\\n<\\N[30]><WordWrap>",
          "getFire": "\\af[30]\\n<\\N[30]><WordWrap>",
-         "getAir": "\\af[30]\\n<\\N[30]><WordWrap>"
+         "getAir": "\\af[30]\\n<\\N[30]><WordWrap>If I hurry... maybe I can still make it."
 }
 
 }
