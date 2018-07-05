@@ -1,9 +1,12 @@
 audio/
 fonts/
 icon/
-img/
-!img/tilesets/
-!img/overlays/
-!img/sv_actors/
-!img/ultimate_title/
+img/animations/
+img/battlebacks1/
+img/battlebacks2/
+img/enemies/
+img/faces/
+img/parallaxes/
+img/titles1/
+img/titles2/
 save/
