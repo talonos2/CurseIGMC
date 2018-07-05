@@ -35,6 +35,8 @@
 
 	"03guard": {
 
+		"filler": "I'm no hero, but maybe I can do something...",
+
 		"day02": "\\af[3]\\n<\\N[3]><WordWrap>Don't worry Ma'm, we'll take care of things.",
 		"day03": "\\af[3]\\n<\\N[3]><WordWrap>Maybe if we stand closer to the entrance? - No... Sara was quite far off.",
 
@@ -48,6 +50,8 @@
 	},
 
 	"04cultist": {
+
+		"filler": "the cave will devour you all",
 
 		"day02": "\\af[4]\\n<\\N[4]><WordWrap>Don't worry.  I'm sure you'll serve in the new world as well.",
 		"day03": "\\af[4]\\n<\\N[4]><WordWrap>You're watching the animals right?  Could I borrow a goat?",
@@ -64,6 +68,8 @@
 
 	"05miller": {
 
+		"filler": "The winter is usually when I get to relax, but now?",
+
 		"day02": "\\af[5]\\n<\\N[5]><WordWrap>I drew the short straw, why are you still here?",
 		"day03": "\\af[5]\\n<\\N[5]><WordWrap>You killed a wolf when you were twelve, you got this.",
 		"day04": "\\af[5]\\n<\\N[5]><WordWrap>I'm not looking forward to sorting the animals back out when people come back.",
@@ -76,6 +82,8 @@
 	},
 
 	"06blacksmith": {
+
+		"filler": "Not open for business I'm afraid.  Been working overtime on tools for the cave.",
 
 		"day02": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't any goods for the mayor today.",
 		"day03": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I don't have time to fix bits and bridles at the moment.",
@@ -90,6 +98,8 @@
 	},
 
 	"07priest": {
+
+		"filler": "",
 
 		"day02": "\\af[7]\\n<\\N[7]><WordWrap>I see we both do what we can to provide comfort in these troubled times.",
 		"day03": "\\af[7]\\n<\\N[7]><WordWrap>It is good to see you again Mrs Miller.",
@@ -107,6 +117,8 @@
 	},
 
 	"08bartender": {
+
+		"filler": "",
 
 		"day02": "\\af[8]\\n<\\N[8]><WordWrap>It may be cynical, but the impending doom has been great for business.",
 		"day03": "\\af[8]\\n<\\N[8]><WordWrap>My mother always said despair is the best seasoning... which is why I left home at such a young age.",
@@ -132,6 +144,8 @@
 
 	"10squire": {
 
+		"filler": "",
+
 		"day02": "\\af[10]\\n<\\N[10]><WordWrap>Don't worry, I'm sure Sir Meister will save us,\\. eventually.",
 		"day03": "\\af[10]\\n<\\N[10]><WordWrap>Thank you for looking after Sir Meister's steed.  He will need it.\\.  Eventually.",
 		"day04c1": "\\af[10]\\n<\\N[10]><WordWrap>Perhaps I could be of service?  I am trained to look after horses.",
@@ -152,6 +166,8 @@
 
 	"11looter": {
 
+		"filler": "",
+
 		"day02": "\\af[11]\\n<\\N[11]><WordWrap>Hey, don't you have plates to polish or something?",
 		"day03": "\\af[11]\\n<\\N[11]><WordWrap>Windows sure are getting dirty without someone to clean them huh?",
 		"day04": "\\af[11]\\n<\\N[11]><WordWrap>Hey, I hear your fence broke.  Here, take these boards I...found.  Just don't tell anyone where you got them.",
@@ -171,6 +187,8 @@
 	},
 
 	"12adventuress": {
+
+		"filler": "",
 
 		"day02": "\\af[12]\\n<\\N[12]><WordWrap>Isn't it exciting having all these warriors in town?",
 		"day03": "\\af[12]\\n<\\N[12]><WordWrap>Need help seeing to the horses? - Not after last time I don't.",
@@ -193,6 +211,8 @@
 	},
 
 	"13drunk": {
+
+		"filler": "",
 
 		"day02": "\\af[13]\\n<\\N[13]><WordWrap>Doesn't matter anyway...",
 		"day03": "\\af[13]\\n<\\N[13]><WordWrap>Wonder if this is how cows think, when one'a them disappears.",
@@ -217,6 +237,8 @@
 
 	"14son": {
 
+		"filler": "",
+
 		"day02": "\\af[14]\\n<\\N[14]><WordWrap>If my father is staying, I'm staying!",
 		"day03": "\\af[14]\\n<\\N[14]><WordWrap>We can overcome this together!",
 		"day04": "\\af[14]\\n<\\N[14]><WordWrap>Thank you for doing your part to keep everyone strong.",
@@ -239,6 +261,8 @@
 	},
 
 	"15merchant": {
+
+		"filler": "",
 
 		"day02": "\\af[15]\\n<\\N[15]><WordWrap>Well somebody's got to eat this food before it goes bad!",
 		"day03c1": "\\af[15]\\n<\\N[15]><WordWrap>The stuff they've found down there is pretty good so far, but it gets better the deeper you go!",
@@ -268,6 +292,8 @@
 
 	"16sage": {
 
+		"filler": "",
+
 		"day02": "\\af[16]\\n<\\N[16]><WordWrap>There isn't much to see right now.  Without someone to follow I can't see beyond the entrance.",
 		"day03": "\\af[16]\\n<\\N[16]><WordWrap>The spell is difficult to maintain, but I will endure.",
 		"day04": "\\af[16]\\n<\\N[16]><WordWrap>I almost saw something at the end that time...",
@@ -292,6 +318,8 @@
 	},
 
 	"17woodcutter": {
+
+		"filler": "",
 
 		"day02": "\\af[17]\\n<\\N[17]><WordWrap>You don't need to be here.",
 		"day03c1": "\\af[5]\\n<\\N[5]><WordWrap>Hey, could I get some wood to fix a fence?",
@@ -321,6 +349,8 @@
 	},
 
 	"18teacher": {
+
+		"filler": "",
 
 		"day02": "\\af[18]\\n<\\N[18]><WordWrap>We had to send the children away- at least now I don't need to hide my drinking.",
 		"day03": "\\af[18]\\n<\\N[18]><WordWrap>Why am I here?...\\|  Shoot, why am I here?",
@@ -358,6 +388,8 @@
 
 	"19paladin": {
 
+		"filler": "",
+
 		"day02": "\\af[19]\\n<\\N[19]><WordWrap>I would charge into that cave right now, but someone needs to keep an eye on that cultist!",
 		"day03c1": "\\af[19]\\n<\\N[19]><WordWrap>A young lad like that ought to be reading books.",
 		"day03c2": "\\af[19]\\n<\\N[19]><WordWrap>Well, I suppose he is.",
@@ -392,6 +424,8 @@
 
 	"20pillager": {
 
+		"filler": "",
+
 		"day02": "\\af[20]\\n<\\N[20]><WordWrap>",
 		"day03": "\\af[20]\\n<\\N[20]><WordWrap>",
 		"day04": "\\af[20]\\n<\\N[20]><WordWrap>",
@@ -419,6 +453,8 @@
 	},
 
 	"21butler": {
+
+		"filler": "",
 
 		"day02": "\\af[21]\\n<\\N[21]><WordWrap>The dishes aren't quite ready yet.  We have only just served dinner.",
 		"day03": "\\af[21]\\n<\\N[21]><WordWrap>Cooking for this many people.  It almost reminds me of home.",
@@ -448,6 +484,8 @@
 	},
 
 	"22prisoner": {
+
+		"filler": "",
 
 		"day02": "\\af[22]\\n<\\N[22]><WordWrap>Buzz off lady.",
 		"day03c1": "\\af[29]\\n<\\N[29]><WordWrap>So, how did you end up here?",
@@ -481,6 +519,8 @@
 	},
 
 	"23doctor": {
+
+		"filler": "",
 
 		"day02": "\\af[23]\\n<\\N[23]><WordWrap>I'm trying to prep for the injuries Douglass will have when he comes back.  Did you see what that last gooey thing did?  I kinda closed my eyes...",
 		"day03": "\\af[23]\\n<\\N[23]><WordWrap>Don't get me wrong, as a doctor I have to deal with all kinds of, um... goo, but those slimes give me the willies.",
@@ -517,6 +557,8 @@
 
 	"24soldier": {
 
+		"filler": "",
+
 		"day02": "\\af[24]\\n<\\N[24]><WordWrap>Douglass had spirit alright, but he held his arm a bit stiff when he swung.  I should've called him out on that...",
 		"day03": "\\af[24]\\n<\\N[24]><WordWrap>That poor girl, she had no idea what she was doing...",
 		"day04c1": "\\af[29]\\n<\\N[29]><WordWrap>What inspired you to stay when you are too old to contribute?",
@@ -551,6 +593,8 @@
 	},
 
 	"25midwife": {
+
+		"filler": "",
 
 		"day02": "\\af[25]\\n<\\N[25]><WordWrap>I know Douglass is alive, I just know it.",
 		"day03": "\\af[25]\\n<\\N[25]><WordWrap>",
@@ -589,6 +633,8 @@
 
 	"26mayor": {
 
+		"filler": "",
+
 		"day02c1": "\\af[26]\\n<\\N[26]><WordWrap>I intend to stay here, but I won't hold you to the same.",
 		"day02c2": "\\af[2]\\n<\\N[2]><WordWrap>Oh t-that's fine sir, not looking for any preferential treatment.",
 		"day03": "\\af[26]\\n<\\N[26]><WordWrap>",
@@ -624,6 +670,8 @@
 	},
 
 	"27crone": {
+
+		"filler": "",
 
 		"day02": "\\af[27]\\n<\\N[27]><WordWrap>Aye, keep your distance or I'll show you a curse of my own!",
 		"day03": "\\af[27]\\n<\\N[27]><WordWrap>",
@@ -661,6 +709,8 @@
 
 	"28teamster": {
 
+		"filler": "",
+
 		"day06": "\\af[28]\\n<\\N[28]><WordWrap>There were so many sick...  So quickly.",
 		"day07": "\\af[28]\\n<\\N[28]><WordWrap>",
 		"day08c1": "\\af[28]\\n<\\N[28]><WordWrap>What do you do when everything you've done to help just makes things worse?",
@@ -695,6 +745,8 @@
 	},
 
 	"29journalist": {
+
+		"filler": "",
 
 		"day02c1": "\\af[29]\\n<\\N[29]><WordWrap>Oh hey!  So, what is it about the mayor that has inspired you to be so faithful?",
 		"day02c2": "\\af[2]\\n<\\N[2]><WordWrap>Well, I guess it's because he really took a chance hiring me.",
@@ -738,6 +790,8 @@
 	},
 
 	"30elder": {
+
+		"filler": "",
 
 		"day02": "\\af[30]\\n<\\N[30]><WordWrap>",
 		"day03": "\\af[30]\\n<\\N[30]><WordWrap>",
