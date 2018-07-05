@@ -924,6 +924,7 @@ Bitmap.load = function(url) {
 Bitmap.snap = function(stage) {
     var width = Graphics.width;
     var height = Graphics.height;
+    console.log("Snap: "+width+", "+height);
     var bitmap = new Bitmap(width, height);
     var context = bitmap._context;
     var renderTexture = PIXI.RenderTexture.create(width, height);

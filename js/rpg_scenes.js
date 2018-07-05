@@ -551,8 +551,13 @@ Scene_Map.prototype.createMapNameWindow = function() {
     this.addChild(this._mapNameWindow);
 };
 
-Scene_Map.prototype.createMessageWindow = function() {
-    this._messageWindow = new Window_Message();
+Scene_Map.prototype.createMessageWindow = function() 
+{
+    if (!Talonos.mapMessageWindow)
+    {
+        Talonos.mapMessageWindow = new Window_Message()
+    }
+    this._messageWindow = Talonos.mapMessageWindow;
     this.addWindow(this._messageWindow);
     this._messageWindow.subWindows().forEach(function(window) {
         this.addWindow(window);
@@ -2157,14 +2162,14 @@ Scene_Battle.prototype.createSpriteset = function() {
 
 Scene_Battle.prototype.createAllWindows = function() {
     this.createLogWindow();
-    this.createStatusWindow();
+    //this.createStatusWindow();
     //this.createPartyCommandWindow();
     //this.createActorCommandWindow();
     //this.createHelpWindow();
     //this.createSkillWindow();
     //this.createItemWindow();
-    this.createActorWindow();
-    this.createEnemyWindow();
+    //this.createActorWindow();
+    //this.createEnemyWindow();
     //this.createMessageWindow();
     //this.createScrollTextWindow();
 };

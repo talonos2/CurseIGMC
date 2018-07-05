@@ -3264,7 +3264,7 @@ Yanfly.Credits.Scene_Map_createAllWindows =
   Scene_Map.prototype.createAllWindows;
 Scene_Map.prototype.createAllWindows = function() {
   Yanfly.Credits.Scene_Map_createAllWindows.call(this);
-  this.createCreditsWindow();
+  //this.createCreditsWindow();
 };
 
 Scene_Map.prototype.createCreditsWindow = function() {

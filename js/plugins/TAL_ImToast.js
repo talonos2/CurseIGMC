@@ -101,7 +101,6 @@ Scene_Battle.prototype.start = function() {
     Scene_Base.prototype.start.call(this);
     //this.startFadeIn(this.fadeSpeed(), false);
     BattleManager.startBattle();
-    this._statusWindow.visible = false
     $gamePlayer.setStealthMode(false);
     $gamePlayer.dashSpellOn = false;
     $gameSwitches.setValue(91,false);
@@ -315,6 +314,23 @@ Sprite_Enemy.prototype.updateSVBitmap = function()
       this._mainSprite = new Sprite_Base();
       this._mainSprite.anchor.x = 0.5;
       this._mainSprite.anchor.y = 1;
+    }
+};
+
+Game_Enemy.prototype.performCollapse = function() {
+    Game_Battler.prototype.performCollapse.call(this);
+    switch (this.collapseType()) {
+    case 0:
+        //this.requestEffect('collapse');
+        SoundManager.playEnemyCollapse();
+        break;
+    case 1:
+        //this.requestEffect('bossCollapse');
+        SoundManager.playBossCollapse1();
+        break;
+    case 2:
+        //this.requestEffect('instantCollapse');
+        break;
     }
 };
 

@@ -2398,7 +2398,7 @@ BattleManager.selectPreviousCommand = function() {
 };
 
 BattleManager.refreshStatus = function() {
-    this._statusWindow.refresh();
+    //this._statusWindow.refresh();
 };
 
 BattleManager.startTurn = function() {
