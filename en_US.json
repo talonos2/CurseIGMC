@@ -1,6 +1,11 @@
 {
 
+
+
+
+
 	"text": {
+		"test": "\\af[1]\\n<\\N[1]><WordWrap>I'm douglass.",
 		"test1c1": "\\af[1]\\n<\\N[1]><WordWrap>I'm douglass.",
 		"test2c2": "\\af[2]\\n<\\N[2]><WordWrap>Now I'm Sera and I \\. wait.",
 		"test3c3": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged "
@@ -99,7 +104,7 @@
 
 	"07priest": {
 
-		"filler": "",
+		"filler": "I cannot stand by while souls are in danger, but I do not know what I can do.",
 
 		"day02": "\\af[7]\\n<\\N[7]><WordWrap>I see we both do what we can to provide comfort in these troubled times.",
 		"day03": "\\af[7]\\n<\\N[7]><WordWrap>It is good to see you again Mrs Miller.",
@@ -136,6 +141,8 @@
 
 	"09trapper": {
 
+		"day02": "\\af[8]\\n<\\N[8]><WordWrap>",
+
 		"getIce": "\\af[9]\\n<\\N[9]><WordWrap>",
 		"getEarth": "\\af[9]\\n<\\N[9]><WordWrap>",
 		"getFire": "\\af[9]\\n<\\N[9]><WordWrap>",
@@ -166,7 +173,7 @@
 
 	"11looter": {
 
-		"filler": "",
+		"filler": "Hey, you didn't see nothin'",
 
 		"day02": "\\af[11]\\n<\\N[11]><WordWrap>Hey, don't you have plates to polish or something?",
 		"day03": "\\af[11]\\n<\\N[11]><WordWrap>Windows sure are getting dirty without someone to clean them huh?",
@@ -188,7 +195,7 @@
 
 	"12adventuress": {
 
-		"filler": "",
+		"filler": "That brother of mine, fussing over vegetables while the world comes to an end.  He shaves his head you know, he's not even that old.",
 
 		"day02": "\\af[12]\\n<\\N[12]><WordWrap>Isn't it exciting having all these warriors in town?",
 		"day03": "\\af[12]\\n<\\N[12]><WordWrap>Need help seeing to the horses? - Not after last time I don't.",
@@ -212,7 +219,7 @@
 
 	"13drunk": {
 
-		"filler": "",
+		"filler": "I'm sure -hic- somebody'll figure it out.",
 
 		"day02": "\\af[13]\\n<\\N[13]><WordWrap>Doesn't matter anyway...",
 		"day03": "\\af[13]\\n<\\N[13]><WordWrap>Wonder if this is how cows think, when one'a them disappears.",
@@ -237,7 +244,7 @@
 
 	"14son": {
 
-		"filler": "",
+		"filler": "I'm not going to run away.",
 
 		"day02": "\\af[14]\\n<\\N[14]><WordWrap>If my father is staying, I'm staying!",
 		"day03": "\\af[14]\\n<\\N[14]><WordWrap>We can overcome this together!",
@@ -262,7 +269,7 @@
 
 	"15merchant": {
 
-		"filler": "",
+		"filler": "somebody's got to eat this food before it goes bad.",
 
 		"day02": "\\af[15]\\n<\\N[15]><WordWrap>Well somebody's got to eat this food before it goes bad!",
 		"day03c1": "\\af[15]\\n<\\N[15]><WordWrap>The stuff they've found down there is pretty good so far, but it gets better the deeper you go!",
@@ -292,7 +299,7 @@
 
 	"16sage": {
 
-		"filler": "",
+		"filler": "That... could have gone better.",
 
 		"day02": "\\af[16]\\n<\\N[16]><WordWrap>There isn't much to see right now.  Without someone to follow I can't see beyond the entrance.",
 		"day03": "\\af[16]\\n<\\N[16]><WordWrap>The spell is difficult to maintain, but I will endure.",
@@ -319,7 +326,7 @@
 
 	"17woodcutter": {
 
-		"filler": "",
+		"filler": "When my time comes I'll be ready.",
 
 		"day02": "\\af[17]\\n<\\N[17]><WordWrap>You don't need to be here.",
 		"day03c1": "\\af[5]\\n<\\N[5]><WordWrap>Hey, could I get some wood to fix a fence?",
@@ -454,7 +461,7 @@
 
 	"21butler": {
 
-		"filler": "",
+		"filler": "Dinner is not quite ready yet, please be patient.",
 
 		"day02": "\\af[21]\\n<\\N[21]><WordWrap>The dishes aren't quite ready yet.  We have only just served dinner.",
 		"day03": "\\af[21]\\n<\\N[21]><WordWrap>Cooking for this many people.  It almost reminds me of home.",
@@ -594,7 +601,7 @@
 
 	"25midwife": {
 
-		"filler": "",
+		"filler": "No doctor should have to work alone.",
 
 		"day02": "\\af[25]\\n<\\N[25]><WordWrap>I know Douglass is alive, I just know it.",
 		"day03": "\\af[25]\\n<\\N[25]><WordWrap>",
@@ -633,7 +640,7 @@
 
 	"26mayor": {
 
-		"filler": "",
+		"filler": "Don't worry, we'll get through this.",
 
 		"day02c1": "\\af[26]\\n<\\N[26]><WordWrap>I intend to stay here, but I won't hold you to the same.",
 		"day02c2": "\\af[2]\\n<\\N[2]><WordWrap>Oh t-that's fine sir, not looking for any preferential treatment.",
@@ -671,7 +678,7 @@
 
 	"27crone": {
 
-		"filler": "",
+		"filler": "I'd go if these old bones could make the trip.--Lady I still think it's weird that you carry bones in your purse.",
 
 		"day02": "\\af[27]\\n<\\N[27]><WordWrap>Aye, keep your distance or I'll show you a curse of my own!",
 		"day03": "\\af[27]\\n<\\N[27]><WordWrap>",
@@ -746,7 +753,7 @@
 
 	"29journalist": {
 
-		"filler": "",
+		"filler": "So how did you end up in this cell?  (prisoner) I strangled an obnoxious journalist.",
 
 		"day02c1": "\\af[29]\\n<\\N[29]><WordWrap>Oh hey!  So, what is it about the mayor that has inspired you to be so faithful?",
 		"day02c2": "\\af[2]\\n<\\N[2]><WordWrap>Well, I guess it's because he really took a chance hiring me.",
