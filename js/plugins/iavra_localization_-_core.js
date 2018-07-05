@@ -238,6 +238,7 @@
          */
         var alias_convertEscapeCharacters = $.prototype.convertEscapeCharacters;
         $.prototype.convertEscapeCharacters = function(text) {
+            text = Yanfly.Message.Window_Base_convertEscapeCharacters.call(this, text);
             text = text.replace(/\x1bV\[(\d+)\]/gi, function() {return $gameVariables.value(parseInt(arguments[1]));}.bind(this));
             return _replace(alias_convertEscapeCharacters.call(this, _replace(text)));
         };

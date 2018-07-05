@@ -341,9 +341,9 @@ Scene_Map.prototype.needsFadeIn = function() {
 Scene_Battle.prototype.stop = function() {
     Scene_Base.prototype.stop.call(this);
 	//this.startFadeOut(10, true);
-    this._statusWindow.close();
-    this._partyCommandWindow.close();
-    this._actorCommandWindow.close();
+    //this._statusWindow.close();
+    //this._partyCommandWindow.close();
+    //this._actorCommandWindow.close();
 };
 
 

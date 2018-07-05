@@ -2030,7 +2030,9 @@ Scene_Battle.prototype.initialize = function() {
     Scene_Base.prototype.initialize.call(this);
 };
 
-Scene_Battle.prototype.create = function() {
+Scene_Battle.prototype.create = function() 
+{
+    console.log("Created");
     Scene_Base.prototype.create.call(this);
     this.createDisplayObjects();
 };
@@ -2063,12 +2065,12 @@ Scene_Battle.prototype.updateBattleProcess = function() {
 };
 
 Scene_Battle.prototype.isAnyInputWindowActive = function() {
-    return (this._partyCommandWindow.active ||
+    return false; /*(this._partyCommandWindow.active ||
             this._actorCommandWindow.active ||
             this._skillWindow.active ||
             this._itemWindow.active ||
             this._actorWindow.active ||
-            this._enemyWindow.active);
+            this._enemyWindow.active);*/
 };
 
 Scene_Battle.prototype.changeInputWindow = function() {
@@ -2119,7 +2121,7 @@ Scene_Battle.prototype.updateStatusWindow = function() {
 
 Scene_Battle.prototype.updateWindowPositions = function() {
     var statusX = 0;
-    if (BattleManager.isInputting()) {
+    /*if (BattleManager.isInputting()) {
         statusX = this._partyCommandWindow.width;
     } else {
         statusX = this._partyCommandWindow.width / 2;
@@ -2135,7 +2137,7 @@ Scene_Battle.prototype.updateWindowPositions = function() {
         if (this._statusWindow.x < statusX) {
             this._statusWindow.x = statusX;
         }
-    }
+    }*/
 };
 
 Scene_Battle.prototype.createDisplayObjects = function() {
@@ -2156,15 +2158,15 @@ Scene_Battle.prototype.createSpriteset = function() {
 Scene_Battle.prototype.createAllWindows = function() {
     this.createLogWindow();
     this.createStatusWindow();
-    this.createPartyCommandWindow();
-    this.createActorCommandWindow();
-    this.createHelpWindow();
-    this.createSkillWindow();
-    this.createItemWindow();
+    //this.createPartyCommandWindow();
+    //this.createActorCommandWindow();
+    //this.createHelpWindow();
+    //this.createSkillWindow();
+    //this.createItemWindow();
     this.createActorWindow();
     this.createEnemyWindow();
     this.createMessageWindow();
-    this.createScrollTextWindow();
+    //this.createScrollTextWindow();
 };
 
 Scene_Battle.prototype.createLogWindow = function() {
@@ -2412,9 +2414,9 @@ Scene_Battle.prototype.onSelectAction = function() {
 };
 
 Scene_Battle.prototype.endCommandSelection = function() {
-    this._partyCommandWindow.close();
-    this._actorCommandWindow.close();
-    this._statusWindow.deselect();
+    //this._partyCommandWindow.close();
+    //this._actorCommandWindow.close();
+    //this._statusWindow.deselect();
 };
 
 //-----------------------------------------------------------------------------
