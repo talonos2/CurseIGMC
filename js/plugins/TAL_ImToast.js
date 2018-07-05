@@ -32,7 +32,6 @@ Scene_Map.prototype.launchBattle = function() {
 
 BattleManager.playBattleBgm = function() 
 {
-    //console.log("Now playing: MUSIC!")
     AudioManager.fadeInOverlay(.1);
 };
 
@@ -58,7 +57,7 @@ Scene_Map.prototype.startEncounterEffect = function() {
 
     //Save player position so we can use it in the battle screen.
     Talonos.storedPlayerScreenPositionX = $gamePlayer.screenX();
-    Talonos.storedPlayerScreenPositionY = $gamePlayer.screenY();
+    Talonos.storedPlayerScreenPositionY = $gamePlayer.screenY()+6;
 
 };
 
@@ -126,7 +125,6 @@ Sprite_Actor.prototype.setBattler = function(battler) {
 
 Sprite_Actor.prototype.updateBitmapToSpecific = function() {
     Sprite_Battler.prototype.updateBitmap.call(this);
-    console.log(this)
     var name = this._actor.battlerName();
     if (name.indexOf('ms_') > -1)
     {
@@ -135,7 +133,6 @@ Sprite_Actor.prototype.updateBitmapToSpecific = function() {
         if (Xillith.GetMonsterFaceing()==1){name+="0"}
         if (Xillith.GetMonsterFaceing()==2){name+="2"}
         if (Xillith.GetMonsterFaceing()==3){name+="0"}
-        console.log("New Name:"+name)
         this._mainSprite.bitmap = ImageManager.loadSvActor(name);
     }
 };
@@ -190,9 +187,11 @@ Sprite_Actor.prototype.updateMove = function() {
 
 Sprite_Actor.prototype.startEntryMotion = function() 
 {
-    /*if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = Talonos.ADJUST_BATTLE_X}
-    if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = Talonos.ADJUST_BATTLE_X}
-    this.startMove(0, 0, 4);*/
+    if (Xillith.GetMonsterFaceing()==1){this._offsetX-=Talonos.mapSyncPosition;this._offsetY+=Talonos.mapSyncPosition}
+    if (Xillith.GetMonsterFaceing()==2){this._offsetX+=Talonos.mapSyncPosition;this._offsetY-=Talonos.mapSyncPosition}
+    if (Xillith.GetMonsterFaceing()==0){this._offsetX-=Talonos.mapSyncPosition;this._offsetY+=Talonos.mapSyncPosition}
+    if (Xillith.GetMonsterFaceing()==3){this._offsetX+=Talonos.mapSyncPosition;this._offsetY-=Talonos.mapSyncPosition}
+    this.startMove(0, 0, 20);
 };
 
 Sprite_Actor.prototype.updateShadow = function() {
@@ -209,20 +208,12 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
     if (changed) {
         this._enemy = battler;
         if (battler) {
-            console.log(battler);
-            //OVERRIDE the position of the sprite. Not sure how to do this quite yet, hardcoding for now.
             var homex = Talonos.storedPlayerScreenPositionX;
             var homey = Talonos.storedPlayerScreenPositionY;
-            //This puts the monster on top of the player. The following offsets the monster so he's in the square the player is facing.
-            if (Xillith.GetMonsterFaceing()==1){homex+=48}
-            if (Xillith.GetMonsterFaceing()==2){homex-=48}
-            if (Xillith.GetMonsterFaceing()==0){homey-=48}
-            if (Xillith.GetMonsterFaceing()==3){homey+=48}
-            //But that's the position the monster is at on the map; the STARTING position. Now, we need to move the monster's home to where he FIGHTS from.
-            if (Xillith.GetMonsterFaceing()==1){homex-=Talonos.mapSyncPosition;homey+=Talonos.mapSyncPosition}
-            if (Xillith.GetMonsterFaceing()==2){homex+=Talonos.mapSyncPosition;homey-=Talonos.mapSyncPosition}
-            if (Xillith.GetMonsterFaceing()==0){homex-=Talonos.mapSyncPosition;homey+=Talonos.mapSyncPosition}
-            if (Xillith.GetMonsterFaceing()==3){homex+=Talonos.mapSyncPosition;homey-=Talonos.mapSyncPosition}
+            if (Xillith.GetMonsterFaceing()==1){homey+=12;homex+=36}
+            if (Xillith.GetMonsterFaceing()==2){homey-=12;homex-=36}
+            if (Xillith.GetMonsterFaceing()==0){homey-=36;homex-=12}
+            if (Xillith.GetMonsterFaceing()==3){homey+=36;homex+=12}
             this.setHome(homex, homey);
         }
         this.startEntryMotion();
@@ -268,13 +259,16 @@ Sprite_Enemy.prototype.adjustMainBitmapSettings = function(bitmap) {
 Sprite_Enemy.prototype.initialize = function(battler) {
     Sprite_Battler.prototype.initialize.call(this, battler);
     this.setBattler(battler);
-    //this.moveToStartPosition();
+    this.moveToStartPosition();
 };
 
-Sprite_Enemy.prototype.moveToStartPosition = function() {
-    if (Xillith.GetMonsterFaceing()==0) {this._offsetY = Talonos.ADJUST_BATTLE_Y*-1;this._offsetX = -Talonos.ADJUST_BATTLE_X}
-    if (Xillith.GetMonsterFaceing()==3) {this._offsetY = Talonos.ADJUST_BATTLE_Y;this._offsetX = -Talonos.ADJUST_BATTLE_X}
-    this.startMove(0, 0, 20);
+Sprite_Enemy.prototype.moveToStartPosition = function() 
+{
+    /*if (Xillith.GetMonsterFaceing()==1){this._offsetY+=12;this._offsetX+=36}
+    if (Xillith.GetMonsterFaceing()==2){this._offsetY-=12;this._offsetX-=36}
+    if (Xillith.GetMonsterFaceing()==0){this._offsetY-=36;this._offsetX-=12}
+    if (Xillith.GetMonsterFaceing()==3){this._offsetY+=36;this._offsetX+=12}
+    this.startMove(0, 0, 20);*/
 };
 
 Talonos.mapSyncPosition = 12;
@@ -282,23 +276,46 @@ Talonos.mapSyncPosition = 12;
 Sprite_Enemy.prototype.updateMove = function() {
     var bitmap = this._mainSprite.bitmap;
     if (!bitmap || bitmap.isReady()) {
-        this.setMirror(Xillith.GetMonsterFaceing()==1);
+        //this.setMirror(Xillith.GetMonsterFaceing()==1);
+        this.setMirror(true);
         Sprite_Battler.prototype.updateMove.call(this);
     }
 };
 
 Sprite_Enemy.prototype.startEntryMotion = function() 
 {
-    var startx=0; var starty=0;
-    //The home position is where the monster fights from. The monser starts at is map position:
-    if (Xillith.GetMonsterFaceing()==1){startx+=Talonos.mapSyncPosition;starty-=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==2){startx-=Talonos.mapSyncPosition;starty+=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==0){startx+=Talonos.mapSyncPosition;starty-=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==3){startx-=Talonos.mapSyncPosition;starty+=Talonos.mapSyncPosition}
-    this._offsetX = startx;
-    this._offsetY = starty;
-    console.log(this._offsetX+", "+this._offsetY);
-    this.startMove(0, 0, 20);
+    /*if (Xillith.GetMonsterFaceing()==1){this._offsetY+=12;this._offsetX+=36}
+    if (Xillith.GetMonsterFaceing()==2){this._offsetY-=12;this._offsetX-=36}
+    if (Xillith.GetMonsterFaceing()==0){this._offsetY-=36;this._offsetX-=12}
+    if (Xillith.GetMonsterFaceing()==3){this._offsetY+=36;this._offsetX+=12}
+    this.startMove(0, 0, 20);*/
+};
+
+//Replaces YEP_X_AnimatedSVEnemies.js:
+Sprite_Enemy.prototype.updateSVBitmap = function() 
+{
+    Sprite_Battler.prototype.updateBitmap.call(this);
+    var name = this._enemy.svBattlerName();
+    if (this._svBattlerEnabled && this._svBattlerName !== name) {
+      this._createdDummyMainSprite = false;
+      this._svBattlerName = name;
+      if (Xillith.GetMonsterFaceing()==0){name+="0"}
+      if (Xillith.GetMonsterFaceing()==1){name+="2"}
+      if (Xillith.GetMonsterFaceing()==2){name+="0"}
+      if (Xillith.GetMonsterFaceing()==3){name+="2"}
+      this._mainSprite.bitmap = ImageManager.loadSvActor(name);
+      this.adjustAnchor();
+      this.refreshMotion();
+      this.updateScale();
+    } else if (this._svBattlerName === '') {
+      this._svBattlerName = '';
+      this._svBattlerEnabled = false;
+      if (this._createdDummyMainSprite) return;
+      this._createdDummyMainSprite = true;
+      this._mainSprite = new Sprite_Base();
+      this._mainSprite.anchor.x = 0.5;
+      this._mainSprite.anchor.y = 1;
+    }
 };
 
 //Victory is super fast.
