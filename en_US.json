@@ -8,7 +8,10 @@
 		"test": "\\af[1]\\n<\\N[1]><WordWrap>I'm douglass.",
 		"test1c1": "\\af[1]\\n<\\N[1]><WordWrap>I'm douglass.",
 		"test2c2": "\\af[2]\\n<\\N[2]><WordWrap>Now I'm Sera and I \\. wait.",
-		"test3c3": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged "
+		"test3c3": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
+
+
+		"prognotes": "yanfly message core 698, rpgwindows 278, iavra 239"
 
 	},
 
