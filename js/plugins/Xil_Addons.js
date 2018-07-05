@@ -281,6 +281,10 @@ console.log(Xillith);
 	   
 	    if (itemType == "trinket" && !Item2) ItemInUse = "\\>Found \\ia[" + item.id + "]" + item1Special;
 	    if (itemType == "trinket" && Item2) {
+	        if (item.id == Item2.id) {
+	            SendToTown(item, itemType);
+	            return 0;
+	            }
 	        ItemInUse = "\\>Found   \\ia[" + item.id + "]" + item1Special;
 	        ItemInUse += "\n\\>Current \\ia[" + Item2.id + "]" + item2Special;
 	    }
