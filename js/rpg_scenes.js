@@ -2110,13 +2110,13 @@ Scene_Battle.prototype.needsSlowFadeOut = function() {
 };
 
 Scene_Battle.prototype.updateStatusWindow = function() {
-    if ($gameMessage.isBusy()) {
+    /*if ($gameMessage.isBusy()) {
         this._statusWindow.close();
         this._partyCommandWindow.close();
         this._actorCommandWindow.close();
     } else if (this.isActive() && !this._messageWindow.isClosing()) {
         this._statusWindow.open();
-    }
+    }*/
 };
 
 Scene_Battle.prototype.updateWindowPositions = function() {
@@ -2165,7 +2165,7 @@ Scene_Battle.prototype.createAllWindows = function() {
     //this.createItemWindow();
     this.createActorWindow();
     this.createEnemyWindow();
-    this.createMessageWindow();
+    //this.createMessageWindow();
     //this.createScrollTextWindow();
 };
 

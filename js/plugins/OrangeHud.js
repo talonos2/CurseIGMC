@@ -385,12 +385,24 @@ if (Imported["MVCommons"] === undefined) {
       for (var i = 0; i < groups.length; i++) {
         var group = groups[i];
 
-        var newWindow = new Window_OrangeHud(group);
-        newWindow.x = group.HudX;
-        newWindow.y = group.HudY;
-        newWindow.opacity = group.HudOpacity;
-        newWindow.padding = group.WindowPadding;
-        newWindow.margin = group.WindowMargin;
+        if (!Talonos.groups)
+        {
+          Talonos.groups = [];
+        }
+
+        if (!Talonos.groups[group])
+        {
+          var newWindow = new Window_OrangeHud(group);
+          newWindow.x = group.HudX;
+          newWindow.y = group.HudY;
+          newWindow.opacity = group.HudOpacity;
+          newWindow.padding = group.WindowPadding;
+          newWindow.margin = group.WindowMargin;
+
+          Talonos.groups[group] = newWindow;
+        }
+
+        var newWindow = Talonos.groups[group]
 
         this._hudWindows[key].push(newWindow);
 
