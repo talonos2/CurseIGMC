@@ -17,4 +17,4 @@ Map 5-1: shadow22
 Map 5-2: shadow19
 Map 5-S: shadow42
 Map 5-3: shadow8
-Final Boss: shadow
+Final Boss: shadow23
