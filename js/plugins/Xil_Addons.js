@@ -715,6 +715,8 @@ console.log(Xillith);
 	Scene_Map.prototype.snapForBattleBackground = function () {
 	    $gamePlayer.setTransparent(true);
 	    $gameMap._events[battleEventID].setTransparent(true);
+
+	    SceneManager._scene._spriteset.removeEmissiveSprite(battleEventID);
 	   
 	    this.children.forEach(function (child) {
 	        if (child.update) {

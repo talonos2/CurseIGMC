@@ -277,11 +277,11 @@ Hudell.OrangeOverlay = Hudell.OrangeOverlay || {};
   };
 
   Spriteset_Map.prototype.createParallaxLayer = function() {
-    this._parallaxLayer = this.createLayer('pars', $.Param.parallaxLayerFileName, 'par', 20, $.Param.parallaxSwitchId);
+    this._parallaxLayer = this.createLayer('pars', $.Param.parallaxLayerFileName, 'par', 21, $.Param.parallaxSwitchId);
   };
 
   Spriteset_Map.prototype.createShadowLayer = function() {
-    this._shadowLayer = this.createLayer('shadows', $.Param.shadowLayerFileName, 'shadow', 21, $.Param.shadowSwitchId);
+    this._shadowLayer = this.createLayer('shadows', $.Param.shadowLayerFileName, 'shadow', 20, $.Param.shadowSwitchId);
     //Okay so here's where TALONOS is adding his ugly hacks...
     if (this._shadowLayer)
     {
