@@ -52,11 +52,6 @@ Scene_Map.prototype.startEncounterEffect = function() {
     BattleManager.playBattleBgm();
     //this._spriteset.hideCharacters(); //Removed so we can see the chars as we zoom in.
     this._encounterEffectDuration = this.encounterEffectSpeed();
-
-    //Save player position so we can use it in the battle screen.
-    Talonos.storedPlayerScreenPositionX = $gamePlayer.screenX();
-    Talonos.storedPlayerScreenPositionY = $gamePlayer.screenY()+6;
-
 };
 
 Scene_Map.prototype.updateEncounterEffect = function() {
@@ -65,10 +60,29 @@ Scene_Map.prototype.updateEncounterEffect = function() {
         var lengthOfEffect = this.encounterEffectSpeed();
         var framesPassed = lengthOfEffect - this._encounterEffectDuration;
         if (framesPassed === lengthOfEffect) {
+            $gameScreen.hideAllPictures();
             this.snapForBattleBackground();
+            $gameScreen.unhideAllPictures();
         }
     }
 };
+
+Game_Screen.prototype.hideAllPictures = function() {        
+    this._pictures.forEach(function(picture) {      
+        if (picture) {      
+            picture._opacity = 1;       
+        }       
+    });     
+};      
+        
+Game_Screen.prototype.unhideAllPictures = function() {      
+    this._pictures.forEach(function(picture) {      
+        if (picture) {      
+            picture._opacity = 255;     
+        }       
+    });     
+};      
+
 
 Scene_Map.prototype.updateMain = function() {
     var active = this.isActive();
@@ -104,48 +118,6 @@ Scene_Battle.prototype.start = function() {
     $gameSwitches.setValue(91,false);
 };
 
-//SPRITE ACTIOR
-
-Sprite_Actor.prototype.setBattler = function(battler) {
-    Sprite_Battler.prototype.setBattler.call(this, battler);
-    var changed = (battler !== this._actor);
-    if (changed) {
-        this._actor = battler;
-        if (battler) {
-            this.updateBitmapToSpecific()
-            this.setActorHome(battler.index());
-        }
-        this.startEntryMotion();
-        this._stateSprite.setup(battler);
-    }
-};
-
-Sprite_Actor.prototype.updateBitmapToSpecific = function() {
-    Sprite_Battler.prototype.updateBitmap.call(this);
-    var name = this._actor.battlerName();
-    if (name.indexOf('ms_') > -1)
-    {
-        this._battlerName = name;
-        if (Xillith.GetMonsterFaceing()==0){name+="2"}
-        if (Xillith.GetMonsterFaceing()==1){name+="0"}
-        if (Xillith.GetMonsterFaceing()==2){name+="2"}
-        if (Xillith.GetMonsterFaceing()==3){name+="0"}
-        this._mainSprite.bitmap = ImageManager.loadSvActor(name);
-    }
-};
-
-Sprite_Actor.prototype.setActorHome = function(index) {
-    //Only one guy.
-    var homex = Talonos.storedPlayerScreenPositionX;
-    var homey = Talonos.storedPlayerScreenPositionY;
-    //But that's the position the player is at on the map; the STARTING position. Now, we need to move the players's home to where he FIGHTS from.
-    if (Xillith.GetMonsterFaceing()==1){homex+=Talonos.mapSyncPosition;homey-=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==2){homex-=Talonos.mapSyncPosition;homey+=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==0){homex+=Talonos.mapSyncPosition;homey-=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==3){homex-=Talonos.mapSyncPosition;homey+=Talonos.mapSyncPosition}
-    this.setHome(homex, homey);
-};
-
 //Overwritten to reduce file size of SV Battler
 Sprite_Actor.prototype.updateFrame = function() {
     Sprite_Battler.prototype.updateFrame.call(this);
@@ -169,28 +141,6 @@ Sprite_Actor.prototype.updateFrame = function() {
     }
 };
 
-Sprite_Actor.prototype.motionSpeed = function() {
-    return 8;
-};
-
-//Never mirror sprite.
-Sprite_Actor.prototype.updateMove = function() {
-    var bitmap = this._mainSprite.bitmap;
-    if (!bitmap || bitmap.isReady()) {
-        this.setMirror(false);
-        Sprite_Battler.prototype.updateMove.call(this);
-    }
-};
-
-Sprite_Actor.prototype.startEntryMotion = function() 
-{
-    if (Xillith.GetMonsterFaceing()==1){this._offsetX-=Talonos.mapSyncPosition;this._offsetY+=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==2){this._offsetX+=Talonos.mapSyncPosition;this._offsetY-=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==0){this._offsetX-=Talonos.mapSyncPosition;this._offsetY+=Talonos.mapSyncPosition}
-    if (Xillith.GetMonsterFaceing()==3){this._offsetX+=Talonos.mapSyncPosition;this._offsetY-=Talonos.mapSyncPosition}
-    this.startMove(0, 0, 20);
-};
-
 Sprite_Actor.prototype.updateShadow = function() {
     this._shadowSprite.visible = false;
 };
@@ -205,18 +155,20 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
     if (changed) {
         this._enemy = battler;
         if (battler) {
-            var homex = Talonos.storedPlayerScreenPositionX;
-            var homey = Talonos.storedPlayerScreenPositionY;
-            if (Xillith.GetMonsterFaceing()==1){homey+=15;homex+=45}
-            if (Xillith.GetMonsterFaceing()==2){homey-=15;homex-=45}
-            if (Xillith.GetMonsterFaceing()==0){homey-=45;homex-=15}
-            if (Xillith.GetMonsterFaceing()==3){homey+=45;homex+=15}
-            this.setHome(homex, homey);
+            this.setHome(battler.screenX(), battler.screenY());
         }
-        this.startEntryMotion();
+        //this.startEntryMotion();
         this._stateIconSprite.setup(battler);
     }
     this.setSVBattler(battler);
+}
+
+Sprite_Enemy.prototype.updateMove = function() {
+    if (!bitmap || bitmap.isReady()) {
+        //this.setMirror(Xillith.GetMonsterFaceing()==1);
+        this.setMirror(true);
+        Sprite_Battler.prototype.updateMove.call(this);
+    }
 };
 
 //Overwritten to reduce file size of SV Battler
@@ -255,63 +207,22 @@ Sprite_Enemy.prototype.adjustMainBitmapSettings = function(bitmap) {
 
 Sprite_Enemy.prototype.initialize = function(battler) {
     Sprite_Battler.prototype.initialize.call(this, battler);
-    this.setBattler(battler);
     this.moveToStartPosition();
+    this.setBattler(battler);
 };
 
 Sprite_Enemy.prototype.moveToStartPosition = function() 
 {
-    /*if (Xillith.GetMonsterFaceing()==1){this._offsetY+=12;this._offsetX+=36}
-    if (Xillith.GetMonsterFaceing()==2){this._offsetY-=12;this._offsetX-=36}
-    if (Xillith.GetMonsterFaceing()==0){this._offsetY-=36;this._offsetX-=12}
-    if (Xillith.GetMonsterFaceing()==3){this._offsetY+=36;this._offsetX+=12}
-    this.startMove(0, 0, 20);*/
 };
 
 Talonos.mapSyncPosition = 15;
 
-Sprite_Enemy.prototype.updateMove = function() {
-    var bitmap = this._mainSprite.bitmap;
-    if (!bitmap || bitmap.isReady()) {
-        //this.setMirror(Xillith.GetMonsterFaceing()==1);
-        this.setMirror(true);
-        Sprite_Battler.prototype.updateMove.call(this);
-    }
-};
-
-Sprite_Enemy.prototype.startEntryMotion = function() 
-{
-    /*if (Xillith.GetMonsterFaceing()==1){this._offsetY+=12;this._offsetX+=36}
-    if (Xillith.GetMonsterFaceing()==2){this._offsetY-=12;this._offsetX-=36}
-    if (Xillith.GetMonsterFaceing()==0){this._offsetY-=36;this._offsetX-=12}
-    if (Xillith.GetMonsterFaceing()==3){this._offsetY+=36;this._offsetX+=12}
-    this.startMove(0, 0, 20);*/
-};
-
-//Replaces YEP_X_AnimatedSVEnemies.js:
-Sprite_Enemy.prototype.updateSVBitmap = function() 
-{
-    Sprite_Battler.prototype.updateBitmap.call(this);
-    var name = this._enemy.svBattlerName();
-    if (this._svBattlerEnabled && this._svBattlerName !== name) {
-      this._createdDummyMainSprite = false;
-      this._svBattlerName = name;
-      if (Xillith.GetMonsterFaceing()==0){name+="0"}
-      if (Xillith.GetMonsterFaceing()==1){name+="2"}
-      if (Xillith.GetMonsterFaceing()==2){name+="0"}
-      if (Xillith.GetMonsterFaceing()==3){name+="2"}
-      this._mainSprite.bitmap = ImageManager.loadSvActor(name);
-      this.adjustAnchor();
-      this.refreshMotion();
-      this.updateScale();
-    } else if (this._svBattlerName === '') {
-      this._svBattlerName = '';
-      this._svBattlerEnabled = false;
-      if (this._createdDummyMainSprite) return;
-      this._createdDummyMainSprite = true;
-      this._mainSprite = new Sprite_Base();
-      this._mainSprite.anchor.x = 0.5;
-      this._mainSprite.anchor.y = 1;
+Sprite_Enemy.prototype.startEntryMotionSpri  = function() {
+    if (this._enemy && this._enemy.canMove()) {
+        this.startMove(-300, 0, 0);
+        this.startMove(0, 0, 20);
+    } else {
+        this.startMove(0, 0, 0);
     }
 };
 
@@ -355,9 +266,6 @@ Scene_Map.prototype.needsFadeIn = function() {
 Scene_Battle.prototype.stop = function() {
     Scene_Base.prototype.stop.call(this);
 	//this.startFadeOut(10, true);
-    //this._statusWindow.close();
-    //this._partyCommandWindow.close();
-    //this._actorCommandWindow.close();
 };
 
 
@@ -494,6 +402,54 @@ Game_CharacterBase.prototype.distancePerFrame = function()
         case 7: return 48/256;
     }
     return Math.pow(2, this.realMoveSpeed()) / 256;
+};      
+        
+//Pause before chasing people.      
+Game_Event.prototype.startEventChase = function() {     
+    this._chasePlayer = true;       
+    if (this.alertConditions())     
+    {       
+        this._staggerCount = 24;        
+    }       
+    this.setMoveSpeed(this._chaseSpeed);        
+};      
+        
+//Baloon faster when chasing people:        
+        
+Sprite_Balloon.prototype.speed = function() {       
+    return 3;       
+};      
+        
+//For some reason, Yanfly's code has monsters sometimes move randomly when returning...?        
+//This fixes that.      
+//TODO: Have the monster pathfind or something.     
+        
+Game_Event.prototype.updateMoveReturnAfter = function() {       
+    if (this._returnFrames > 0) return;     
+    var sx = this.deltaXFrom(this._startLocationX);     
+    var sy = this.deltaYFrom(this._startLocationY);     
+    if (Math.abs(sx) > Math.abs(sy))        
+    {       
+        this.moveStraight(sx > 0 ? 4 : 6);      
+        if (!this.isMovementSucceeded() && sy !== 0)        
+        {       
+          this.moveStraight(sy > 0 ? 8 : 2);        
+        }       
+    }       
+    else if (sy !== 0)      
+    {       
+        this.moveStraight(sy > 0 ? 8 : 2);      
+        if (!this.isMovementSucceeded() && sx !== 0)        
+        {       
+          this.moveStraight(sx > 0 ? 4 : 6);        
+        }       
+    }       
+    if (sx === 0 && sy === 0)       
+    {       
+      this._returnPhase = false;        
+      this._returnFrames = 0;       
+      this._direction = this._startLocationDir;     
+    }       
 };
 
 //FOR PLAYERS:
@@ -728,8 +684,8 @@ AudioManager.updateOverlayParameters = function(overlay)
     this.updateBufferParameters(this._overlayBuffer, this._bgmVolume, overlay);
 };
 
-Talonos.crystalTiers =    [50,175,400,725,1175,1750,2450,3275,4225,5300,6500,7825,9275,10850,12550,14375,16325,18400,20600,22925]
-Talonos.crystalUpgrades = [50,125,225,325,450, 575, 700, 825, 950, 1075,1200,1325,1450,1575, 1700, 1825, 1950, 2075, 2200, 2325]  
+Talonos.crystalTiers =    [50,150,350,650,1075,1625,2300,3100,4025,5075,6250,7550,8975,10525,12200,14000,15925,17975,20150,22450, 31451];
+Talonos.crystalUpgrades = [50,100,200,300,425, 550, 675, 800, 925, 1050,1175,1300,1425,1550, 1675, 1800, 1925, 2050, 2175, 2300, 9001];
 Talonos.crystalTiers[-1] = 0;       //lol javascript
 Talonos.crystalUpgrades[-1] = 0;
 
