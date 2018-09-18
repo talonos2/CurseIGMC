@@ -14,8 +14,6 @@
 // so little time, it was a game jam etc...
  var Talonos = {}
  Talonos.unsungLevels = 0;
- Talonos.ADJUST_BATTLE_Y = 70;
- Talonos.ADJUST_BATTLE_X = 32;
  Talonos.storedPlayerScreenPositionX = 0;
  Talonos.storedPlayerScreenPositionY = 0;
 
@@ -209,10 +207,10 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
         if (battler) {
             var homex = Talonos.storedPlayerScreenPositionX;
             var homey = Talonos.storedPlayerScreenPositionY;
-            if (Xillith.GetMonsterFaceing()==1){homey+=12;homex+=36}
-            if (Xillith.GetMonsterFaceing()==2){homey-=12;homex-=36}
-            if (Xillith.GetMonsterFaceing()==0){homey-=36;homex-=12}
-            if (Xillith.GetMonsterFaceing()==3){homey+=36;homex+=12}
+            if (Xillith.GetMonsterFaceing()==1){homey+=15;homex+=45}
+            if (Xillith.GetMonsterFaceing()==2){homey-=15;homex-=45}
+            if (Xillith.GetMonsterFaceing()==0){homey-=45;homex-=15}
+            if (Xillith.GetMonsterFaceing()==3){homey+=45;homex+=15}
             this.setHome(homex, homey);
         }
         this.startEntryMotion();
@@ -270,7 +268,7 @@ Sprite_Enemy.prototype.moveToStartPosition = function()
     this.startMove(0, 0, 20);*/
 };
 
-Talonos.mapSyncPosition = 12;
+Talonos.mapSyncPosition = 15;
 
 Sprite_Enemy.prototype.updateMove = function() {
     var bitmap = this._mainSprite.bitmap;
