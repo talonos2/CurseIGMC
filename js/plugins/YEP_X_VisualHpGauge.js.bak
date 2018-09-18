@@ -564,7 +564,7 @@ Window_VisualHPGauge.prototype.makeWindowBoundaries = function() {
     this._maxX = Graphics.boxWidth - this.width + this.standardPadding();
     this._minY = -1 * this.standardPadding();
     this._maxY = Graphics.boxHeight - this.height + this.standardPadding();
-    //this._maxY -= SceneManager._scene._statusWindow.height;
+    this._maxY -= SceneManager._scene._statusWindow.height;
 };
 
 Window_VisualHPGauge.prototype.updateWindowPosition = function() {

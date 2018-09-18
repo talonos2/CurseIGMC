@@ -27,6 +27,7 @@ Scene_Map.prototype.launchBattle = function() {
 
 BattleManager.playBattleBgm = function() 
 {
+    //console.log("Now playing: MUSIC!")
     AudioManager.fadeInOverlay(.1);
 };
 
@@ -109,6 +110,7 @@ Scene_Battle.prototype.start = function() {
     Scene_Base.prototype.start.call(this);
     //this.startFadeIn(this.fadeSpeed(), false);
     BattleManager.startBattle();
+    this._statusWindow.visible = false
     $gamePlayer.setStealthMode(false);
     $gamePlayer.dashSpellOn = false;
     $gameSwitches.setValue(91,false);
@@ -159,6 +161,7 @@ BattleManager.processVictory = function() {
     //this.displayRewards();
     this.gainRewards();
     this.endBattle(0);
+
 };
 
 //Map needs no fadein on battles.
@@ -171,9 +174,9 @@ Scene_Map.prototype.needsFadeIn = function() {
 Scene_Battle.prototype.stop = function() {
     Scene_Base.prototype.stop.call(this);
 	//this.startFadeOut(10, true);
-    //this._statusWindow.close();
-    //this._partyCommandWindow.close();
-    //this._actorCommandWindow.close();
+    this._statusWindow.close();
+    this._partyCommandWindow.close();
+    this._actorCommandWindow.close();
 };
 
 
