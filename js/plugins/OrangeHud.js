@@ -390,7 +390,7 @@ if (Imported["MVCommons"] === undefined) {
           Talonos.groups = [];
         }
 
-        if (!Talonos.groups[group])
+        if (!Talonos.groups[group.GroupName])
         {
           var newWindow = new Window_OrangeHud(group);
           newWindow.x = group.HudX;
@@ -399,10 +399,16 @@ if (Imported["MVCommons"] === undefined) {
           newWindow.padding = group.WindowPadding;
           newWindow.margin = group.WindowMargin;
 
-          Talonos.groups[group] = newWindow;
+          Talonos.groups[group.GroupName] = newWindow;
+          console.log("Group made: "+group);
+          console.log(group);
+          console.log(newWindow);
         }
 
-        var newWindow = Talonos.groups[group]
+        var newWindow = Talonos.groups[group.GroupName]
+          console.log("Group accessed: "+group);
+          console.log(group);
+          console.log(newWindow);
 
         this._hudWindows[key].push(newWindow);
 
