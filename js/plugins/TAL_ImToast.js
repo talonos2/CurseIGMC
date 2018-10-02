@@ -164,11 +164,11 @@ Sprite_Enemy.prototype.setBattler = function(battler) {
 }
 
 Sprite_Enemy.prototype.updateMove = function() {
-    if (!bitmap || bitmap.isReady()) {
+    //if (!bitmap || bitmap.isReady()) {
         //this.setMirror(Xillith.GetMonsterFaceing()==1);
         this.setMirror(true);
         Sprite_Battler.prototype.updateMove.call(this);
-    }
+    //}
 };
 
 //Overwritten to reduce file size of SV Battler
