@@ -18,10 +18,10 @@
 		"thirdFloor": "\\af[1]\\n<\\N[1]><WordWrap>So far so good.",
 		"eigthVictory": "\\af[1]\\n<\\N[1]><WordWrap>Crystals are nice I guess, but no gold?",
 
-		"getIce": "\\af[1]\\n<\\N[1]><WordWrap>",
+		"getIce": "\\af[1]\\n<\\N[1]><WordWrap>That...<br>That wasn't it?",
 		"getEarth": "\\af[1]\\n<\\N[1]><WordWrap>",
 		"getFire": "\\af[1]\\n<\\N[1]><WordWrap>",
-		"getAir": "\\af[1]\\n<\\N[1]><WordWrap>"
+		"getAir": "\\af[1]\\n<\\N[1]><WordWrap>Hah!  This is so easy it almost feels like I'm cheating!<br>Almost."
 	},
 
 	"02maid": {
@@ -869,7 +869,7 @@
 		"day17": "\\af[30]\\n<\\N[30]><WordWrap>It happens so slow, it's hard to notice anyone's gone at first...",
 		"day18": "\\af[30]\\n<\\N[30]><WordWrap>Why don't we head back sir?  I can help with whatever you need.",
 		"day19": "\\af[30]\\n<\\N[30]><WordWrap>Well, be carefull what you wish for.",
-		"day20": "\\af[30]\\n<\\N[30]><WordWrap>Have you seen anyone else come from outside?",
+		"day20v1": "\\af[30]\\n<\\N[30]><WordWrap>Have you seen anyone else come from outside?",
 		"day20": "\\af[30]\\n<\\N[30]><WordWrap>I mean, it's not unusual...<br>But I'd feel better if we heard from the other towns.",
 		"day21": "\\af[30]\\n<\\N[30]><WordWrap>Not much to see right now.",
 		"day22": "\\af[30]\\n<\\N[30]><WordWrap>Oh?  Not looking for gossip now?",
@@ -890,6 +890,220 @@
 
 	"IntroCutscene": {
 		"01": "\\af[1]\\n<\\N[1]><WordWrap>Were you expecting it to say this?"
+	},
+
+
+	"01Cutscene": {
+		"01": "\\af[1]\\n<\\N[1]><WordWrap>Were you expecting it to say this?"
+
+	},
+
+	"02Cutscene": {
+		"01": "\\af[2]\\n<\\N[2]><WordWrap>The hero is gone...  What will we do now?",
+		"02": "\\af[19]\\n<\\N[19]><WordWrap>Fear not fair maiden!  He was not the only one who knew how to swing a blade!",
+		"03": "\\af[17]\\n<\\N[17]><WordWrap>We may not have guild cards, but we have our spirit.",
+		"04": "\\af[3]\n<\\N[3]><WordWrap>Bandits or curses, we will do our duty.<br>All of us are ready to be chosen.",
+		"05": "\\af[24]\\n<\\N[24]><WordWrap>Hear hear!",
+		"06": "\\af[2]\\n<\\N[2]><WordWrap>Aaaaah!  The weapons!<br>Where did we put the weapons?!",
+		"07": "\\af[19]\\n<\\N[19]><WordWrap>Well then..."
+	},
+
+	"03Cutscene": {
+		"01": "\\af[3]\\n<\\N[3]><WordWrap>Is this how it's going to end?<br>We just stand here and watch as the civilians are sent to their doom?",
+		"02": "\\af[24]\\n<\\N[24]><WordWrap>I guess not."
+
+	},
+
+	"04Cutscene": {
+		"01": "\\af[19]\\n<\\N[19]><WordWrap>You waste your time.<br>Ever since the quake, only the cursed may enter.",
+		"02": "\\af[19]\\n<\\N[19]><WordWrap>Go on squire, tell him he is wasting his time!",
+		"03": "\\af[10]\\n<\\N[10]><WordWrap>You are wasting your time.",
+		"04": "\\af[4]\\n<\\N[4]><WordWrap>It does not matter.  When my time comes I will find my way to the leader of this place, and join in his dark pact.",
+		"05": "\\af[19]\\n<\\N[19]><WordWrap>Not if we have anything to say about it!",
+		"06": "\\af[19]\\n<\\N[19]><WordWrap>Squire! Apprehend that man!",
+		"07": "\\af[4]\\n<\\N[4]><WordWrap>Mwahaha!"
+
+	},
+
+	"05Cutscene": {
+		"01": "\\af[24]\\n<\\N[24]><WordWrap>Again!",
+		"02": "\\af[24]\\n<\\N[24]><WordWrap>Again!",
+		"03": "\\af[24]\\n<\\N[24]><WordWrap>Ugh, take five.",
+		"04": "\\af[24]\\n<\\N[24]><WordWrap>On second thought, get up!"
+
+
+	},
+
+	"06Cutscene": {
+		"01": "\\af[12]\\n<\\N[12]><WordWrap>Is it nearly done?",
+		"02": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid these things take time.<br>I can't risk cracking the blade.",
+		"03": "\\af[12]\\n<\\N[12]><WordWrap>How much longer will it take?",
+		"04": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid it's longer than ten minutes.",
+		"05": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I must be going."
+
+
+	},
+
+	"07Cutscene": {
+
+		"01": "\\af[25]\\n<\\N[25]><WordWrap>Why is this happening?<br>Why is evil allowed to run rampant?",
+		"02": "\\af[7]\\n<\\N[7]><WordWrap>Look into the pool.  What do you see?",
+		"03": "\\af[25]\\n<\\N[25]><WordWrap>I see a few coins.<br>They were tossed in by devotees I suppose.",
+		"04": "\\af[7]\\n<\\N[7]><WordWrap>I see the image of Cedeej the mighty.",
+		"05": "\\af[25]\\n<\\N[25]><WordWrap>That is just the reflection of his statue.",
+		"06": "\\af[7]\\n<\\N[7]><WordWrap>There are many ways to look at a thing.<br>Some only see the darkness of the curse, but I wonder about the light.",
+		"07": "\\af[25]\\n<\\N[25]><WordWrap>I'm not sure I see the light in all this.",
+		"08": "\\af[7]\\n<\\N[7]><WordWrap>Did you see it that time?"
+
+
+
+
+	},
+
+	"08Cutscene": {
+
+		"01": "\\af[17]\\n<\\N[17]><WordWrap>It was two years ago ya-know, back when it only grabbed people foolish enough to get close.",
+		"02": "\\af[8]\\n<\\N[8]><WordWrap>Uh huh.",
+		"03": "\\af[17]\\n<\\N[17]><WordWrap>Sometimes I still think he'll be coming home any second, calling to show me a funny bug he found.",
+		"04": "\\af[8]\\n<\\N[8]><WordWrap>Uh huh.",
+		"05": "\\af[17]\\n<\\N[17]><WordWrap>But now's my chance! I won't let anything stop me! When I see whatever fiend is causing this I'm gonna-",
+		"06": "\\af[8]\\n<\\N[8]><WordWrap>Woah there sugar, don't go tempting fate like that, remember what happened to Douglass?",
+		"07": "\\af[17]\\n<\\N[17]><WordWrap>So what!? I don't care! In fact, I want the curse! Do you hear me?! Paul Dodger is here! Take your best shot!...",
+		"08": "\\af[17]\\n<\\N[17]><WordWrap>I'm pretty handy with an ax.  I'll fell you just like a tree!  Trees are pretty tough.",
+		"09": "\\af[17]\\n<\\N[17]><WordWrap>They don't move around much... but they can't be too different right?",
+		"10": "\\af[17]\\n<\\N[17]><WordWrap>Maybe the evil is a tree.  You never know.  That'd be pretty conveniant.  I mean, Douglass didn't bring an axe did he?",
+		"11": "\\af[17]\\n<\\N[17]><WordWrap>I think I saw someone bring a hatchet.  They probably didn't know how to use it though.",
+		"12": "\\af[17]\\n<\\N[17]><WordWrap>Not to be rude of course.  But there's a reason I'm the woodsman in this town."
+
+	},
+
+	"09Cutscene": {
+
+		"01": "\\af[9]\\n<\\N[9]><WordWrap>Furs for sale!  Get your furs!",
+		"02": "\\af[9]\\n<\\N[9]><WordWrap>Man, quiet town.",
+		"03": "\\af[9]\\n<\\N[9]><WordWrap>Huh?",
+		"04": "\\af[10]\\n<\\N[10]><WordWrap>Get in the cave!",
+		"05": "\\af[10]\\n<\\N[10]><WordWrap>Get in the cave! GET IN THE CAVE! GETINTHECAVE!"
+	},
+
+	"10Cutscene": {
+		"01": "\\af[19]\\n<\\N[19]><WordWrap>Take a look squire.  The den of evil.",
+		"02": "\\af[10]\\n<\\N[10]><WordWrap>Yes sire.",
+		"03": "\\af[19]\\n<\\N[19]><WordWrap>I would purge it right now, if only there were not so much evil in the town itself.",
+		"04": "\\af[10]\\n<\\N[10]><WordWrap>Of course sire.",
+		"05": "\\af[19]\\n<\\N[19]><WordWrap>Do not worry frail squire.<br>Soon a hero will save this town.",
+		"06": "\\af[10]\\n<\\N[10]><WordWrap>We shall see sire."
+
+	},
+
+	"11Cutscene": {
+
+		"01": "\\af[15]\\n<\\N[15]><WordWrap>No! stop! Please don't hurt me!",
+		"02": "\\af[20]\\n<\\N[20]><WordWrap>you know how this goes, give me your valuables before I-",
+		"03": "\\af[20]\\n<\\N[20]><WordWrap>Hey!  What do you think you're doing?",
+		"04": "\\af[11]\\n<\\N[11]><WordWrap>What? I'm looting this place, same as you.",
+		"05": "\\af[20]\\n<\\N[20]><WordWrap>Look here you lowlife, don't you dare compare what you do to what I do! I'm Pillaging!<br>You see this sword?",
+		"06": "\\af[15]\\n<\\N[15]><WordWrap>Yes...?",
+		"07": "\\af[20]\\n<\\N[20]><WordWrap>Quiet! I'm not talking to you!",
+		"08": "\\af[11]\\n<\\N[11]><WordWrap>Look, I'm trying not to call attention to myself.",
+		"09": "\\af[20]\\n<\\N[20]><WordWrap>That's my point! We may be ruining these people's lives, but if I'm going to stab someone in the back at least I'm going to do it to their face!",
+		"10": "\\af[20]\\n<\\N[20]><WordWrap>Hey, maybe you can sneak by when the monster's backs are turned! Loot-ser!"
+
+
+	},
+
+	"12Cutscene": {
+
+		"01": "\\af[21]\\n<\\N[21]><WordWrap>Come inside, you'll catch your death of cold.",
+		"02": "\\af[12]\\n<\\N[12]><WordWrap>I will catch death,",
+		"03": "\\af[12]\\n<\\N[12]><WordWrap>and put an end to it.",
+		"04": "\\af[21]\\n<\\N[21]><WordWrap>It is not becoming of a young lady to play with swords.",
+		"05": "\\af[12]\\n<\\N[12]><WordWrap>What will become of any of us if I do not?",
+		"06": "\\af[12]\\n<\\N[12]><WordWrap>Still going to try to talk me out of it?",
+		"07": "\\af[21]\\n<\\N[21]><WordWrap>No.  Here, take this."
+
+	},
+
+	"13Cutscene": {
+
+		"01": "\\af[28]\\n<\\N[28]><WordWrap>This is hopeless.  We can still evacuate.",
+		"02": "\\af[26]\\n<\\N[26]><WordWrap>We are staying.  You won't talk us out of it.",
+		"03": "\\af[26]\\n<\\N[26]><WordWrap>We all have great and noble reasons for standing against evil.",
+		"04": "\\af[13]\\n<\\N[13]><WordWrap>Except me.",
+		"05": "\\af[26]\\n<\\N[26]><WordWrap>Yes, except him.",
+		"06": "\\af[13]\\n<\\N[13]><WordWrap>Figures."
+
+	},
+
+	"14Cutscene": {
+
+	},
+
+	"15Cutscene": {
+
+	},
+
+	"16Cutscene": {
+
+	},
+
+	"17Cutscene": {
+
+	},
+
+	"18Cutscene": {
+
+	},
+
+	"19Cutscene": {
+
+	},
+
+	"20Cutscene": {
+
+	},
+
+	"21Cutscene": {
+
+	},
+
+	"22Cutscene": {
+
+	},
+
+	"23Cutscene": {
+
+	},
+
+	"24Cutscene": {
+
+	},
+
+	"25Cutscene": {
+
+	},
+
+	"26Cutscene": {
+
+	},
+
+	"27Cutscene": {
+
+	},
+
+	"28Cutscene": {
+
+	},
+
+	"29Cutscene": {
+
+	},
+
+	"30Cutscene": {
+
 	}
+
+
+
 
 }
