@@ -48,6 +48,18 @@ RESOURCE LIST - DO NOT MODIFY BELOW THIS LINE
  * @requiredAssets img/parallaxes/DarkSpace2
  * @requiredAssets img/parallaxes/DarkSpace4
  * @requiredAssets img/parallaxes/StarlitSky
+ * @requiredAssets img/bigtilesets/Inside_C
+ * @requiredAssets img/bigtilesets/Inside_B
+ * @requiredAssets img/bigtilesets/Inside_A5
+ * @requiredAssets img/bigtilesets/Inside_A4
+ * @requiredAssets img/bigtilesets/Inside_A2
+ * @requiredAssets img/bigtilesets/Inside_A1
+ * @requiredAssets img/bigtilesets/Dungeon_C
+ * @requiredAssets img/bigtilesets/Dungeon_B
+ * @requiredAssets img/bigtilesets/Dungeon_A5
+ * @requiredAssets img/bigtilesets/Dungeon_A4
+ * @requiredAssets img/bigtilesets/Dungeon_A2
+ * @requiredAssets img/bigtilesets/Dungeon_A1
  * @requiredAssets img/bigtilesets/Outside_C
  * @requiredAssets img/bigtilesets/Outside_B
  * @requiredAssets img/bigtilesets/Outside_A5
@@ -55,12 +67,6 @@ RESOURCE LIST - DO NOT MODIFY BELOW THIS LINE
  * @requiredAssets img/bigtilesets/Outside_A3
  * @requiredAssets img/bigtilesets/Outside_A2
  * @requiredAssets img/bigtilesets/Outside_A1
- * @requiredAssets img/bigtilesets/Dungeon_C
- * @requiredAssets img/bigtilesets/Dungeon_B
- * @requiredAssets img/bigtilesets/Dungeon_A5
- * @requiredAssets img/bigtilesets/Dungeon_A4
- * @requiredAssets img/bigtilesets/Dungeon_A2
- * @requiredAssets img/bigtilesets/Dungeon_A1
  * @requiredAssets img/bigtilesets/World_C
  * @requiredAssets img/bigtilesets/World_B
  * @requiredAssets img/bigtilesets/World_A2
