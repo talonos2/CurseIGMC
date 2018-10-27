@@ -7,6 +7,11 @@
 		"test2c2": "\\af[2]\\n<\\N[2]><WordWrap>Now I'm Sera and I \\. wait.",
 		"test3c3": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
 
+		"genericice": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
+		"genericearth": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
+		"genericfire": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
+		"genericair": "\\af[1]\\n<\\N[1]><WordWrap>One second wait is bad  \\| but not too bad.  chaanged ",
+
 
 		"prognotes": "yanfly message core 698, rpgwindows 278, iavra 239"
 
@@ -19,8 +24,8 @@
 		"eigthVictory": "\\af[1]\\n<\\N[1]><WordWrap>Crystals are nice I guess, but no gold?",
 
 		"getIce": "\\af[1]\\n<\\N[1]><WordWrap>That...<br>That wasn't it?",
-		"getEarth": "\\af[1]\\n<\\N[1]><WordWrap>",
-		"getFire": "\\af[1]\\n<\\N[1]><WordWrap>",
+		"getEarth": "\\af[1]\\n<\\N[1]><WordWrap>This still isn't the end?<br>I didn't think I'd make it this far.",
+		"getFire": "\\af[1]\\n<\\N[1]><WordWrap>Another one down...",
 		"getAir": "\\af[1]\\n<\\N[1]><WordWrap>Hah!  This is so easy it almost feels like I'm cheating!<br>Almost."
 	},
 
@@ -32,10 +37,10 @@
 		"secondFloor": "\\af[2]\\n<\\N[2]><WordWrap>These bugs are s-so much bigger in person.",
 
 
-		"getIce": "\\af[2]\\n<\\N[2]><WordWrap>",
-		"getEarth": "\\af[2]\\n<\\N[2]><WordWrap>",
-		"getFire": "\\af[2]\\n<\\N[2]><WordWrap>",
-		"getAir": "\\af[2]\\n<\\N[2]><WordWrap>"
+		"getIce": "\\af[2]\\n<\\N[2]><WordWrap>W-why does it feel so cold?",
+		"getEarth": "\\af[2]\\n<\\N[2]><WordWrap>I've got to keep moving... but so heavy.",
+		"getFire": "\\af[2]\\n<\\N[2]><WordWrap>I feel like I'm on fire... but I can handle it.",
+		"getAir": "\\af[2]\\n<\\N[2]><WordWrap>I made it!  Didn't I?"
 	},
 
 	"03guard": {
@@ -49,9 +54,9 @@
 		"firstVictory": "\\af[3]\\n<\\N[3]><WordWrap>I can do this...",
 		"secondFloor": "\\af[3]\\n<\\N[3]><WordWrap>These bugs are s-so much bigger in person.",
 
-		"getIce": "\\af[3]\\n<\\N[3]><WordWrap>",
+		"getIce": "\\af[3]\\n<\\N[3]><WordWrap>It feels like my armor is frosting over...",
 		"getEarth": "\\af[3]\\n<\\N[3]><WordWrap>",
-		"getFire": "\\af[3]\\n<\\N[3]><WordWrap>",
+		"getFire": "\\af[3]\\n<\\N[3]><WordWrap>At first it was too cold<br>Now it's too hot.",
 		"getAir": "\\af[3]\\n<\\N[3]><WordWrap>"
 	},
 
@@ -63,10 +68,10 @@
 		"day3": "\\af[4]\\n<\\N[4]><WordWrap>You're watching the animals right?  Could I borrow a goat?",
 		"day4": "\\af[4]\\n<\\N[4]><WordWrap>What does she know...",
 
-		"getIce": "\\af[4]\\n<\\N[4]><WordWrap>",
-		"getEarth": "\\af[4]\\n<\\N[4]><WordWrap>",
-		"getFire": "\\af[4]\\n<\\N[4]><WordWrap>",
-		"getAir": "\\af[4]\\n<\\N[4]><WordWrap>"
+		"getIce": "\\af[4]\\n<\\N[4]><WordWrap>Yes, a dark gift!",
+		"getEarth": "\\af[4]\\n<\\N[4]><WordWrap>The shadows are my ally.<br>... And the earth too I guess.",
+		"getFire": "\\af[4]\\n<\\N[4]><WordWrap>With this they'll pay!  They'll all pay!",
+		"getAir": "\\af[4]\\n<\\N[4]><WordWrap>The brighter the light, the darker the shadow."
 	},
 
 	"05miller": {
@@ -78,10 +83,10 @@
 		"day4": "\\af[5]\\n<\\N[5]><WordWrap>I'm not looking forward to sorting the animals back out when people come back.",
 		"day5": "\\af[5]\\n<\\N[5]><WordWrap>Maybe we can spare a few steaks to get spirits up a bit.",
 
-		"getIce": "\\af[5]\\n<\\N[5]><WordWrap>",
-		"getEarth": "\\af[5]\\n<\\N[5]><WordWrap>",
-		"getFire": "\\af[5]\\n<\\N[5]><WordWrap>",
-		"getAir": "\\af[5]\\n<\\N[5]><WordWrap>"
+		"getIce": "\\af[5]\\n<\\N[5]><WordWrap>I feel like I should be numb, but I feel more alive than ever.",
+		"getEarth": "\\af[5]\\n<\\N[5]><WordWrap>The force is crushing.  I just need to make sure it crushes them.",
+		"getFire": "\\af[5]\\n<\\N[5]><WordWrap>I've got to keep this under controll.",
+		"getAir": "\\af[5]\\n<\\N[5]><WordWrap>If I'm not carefull I'll fly right out of here."
 	},
 
 	"06blacksmith": {
@@ -94,10 +99,10 @@
 		"day5": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid that fence isn't going to fix itself.  I can spare some nails though. (divergence point?)",
 		"day6": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I haven't seen Sir Meister's sword lately",
 
-		"getIce": "\\af[6]\\n<\\N[6]><WordWrap>",
-		"getEarth": "\\af[6]\\n<\\N[6]><WordWrap>",
-		"getFire": "\\af[6]\\n<\\N[6]><WordWrap>",
-		"getAir": "\\af[6]\\n<\\N[6]><WordWrap>"
+		"getIce": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid this power will corrupt.",
+		"getEarth": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I'll smash them too small.",
+		"getFire": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid I may not need my forge after this.",
+		"getAir": "\\af[6]\\n<\\N[6]><WordWrap>I'm afraid steel will channel this too well!"
 	},
 
 	"07priest": {
@@ -113,10 +118,10 @@
 		"day7c1": "\\af[10]\\n<\\N[10]><WordWrap>I worry about Sir Meister sometimes",
 		"day7c2": "\\af[7]\\n<\\N[7]><WordWrap>Do you worry for his future or his past?",
 
-		"getIce": "\\af[7]\\n<\\N[7]><WordWrap>",
-		"getEarth": "\\af[7]\\n<\\N[7]><WordWrap>",
-		"getFire": "\\af[7]\\n<\\N[7]><WordWrap>",
-		"getAir": "\\af[7]\\n<\\N[7]><WordWrap>"
+		"getIce": "\\af[7]\\n<\\N[7]><WordWrap>The cold is intense, but less so than the grave.",
+		"getEarth": "\\af[7]\\n<\\N[7]><WordWrap>Though the weight of the world rest upon me, I will endure.",
+		"getFire": "\\af[7]\\n<\\N[7]><WordWrap>To think, I rarely spoke of fire.",
+		"getAir": "\\af[7]\\n<\\N[7]><WordWrap>Judgement will be swift."
 	},
 
 	"08bartender": {
@@ -132,20 +137,22 @@
 		"day7": "\\af[8]\\n<\\N[8]><WordWrap>Sometimes I wonder if that knight of yours is sneaking a drink now and then...",
 		"day8": "\\af[8]\\n<\\N[8]><WordWrap>Hey kid.  You really look up to that old man don'tcha?",
 
-		"getIce": "\\af[8]\\n<\\N[8]><WordWrap>",
-		"getEarth": "\\af[8]\\n<\\N[8]><WordWrap>",
-		"getFire": "\\af[8]\\n<\\N[8]><WordWrap>",
-		"getAir": "\\af[8]\\n<\\N[8]><WordWrap>"
+		"getIce": "\\af[8]\\n<\\N[8]><WordWrap>Feels like my fingers are gonna freeze off...",
+		"getEarth": "\\af[8]\\n<\\N[8]><WordWrap>Feel like I'm becomin' a rock monster myself.",
+		"getFire": "\\af[8]\\n<\\N[8]><WordWrap>Belly full of fire ain't nothing new.",
+		"getAir": "\\af[8]\\n<\\N[8]><WordWrap>Heh, makes my hair stand on end."
 	},
 
 	"09trapper": {
 
 		"day2": "\\af[8]\\n<\\N[8]><WordWrap>",
 
-		"getIce": "\\af[9]\\n<\\N[9]><WordWrap>",
+		"Entering": "\\af[8]\\n<\\N[8]><WordWrap>This... this is a hazing ritual right?",
+
+		"getIce": "\\af[9]\\n<\\N[9]><WordWrap>The darkest nights have nothing on this.",
 		"getEarth": "\\af[9]\\n<\\N[9]><WordWrap>",
-		"getFire": "\\af[9]\\n<\\N[9]><WordWrap>",
-		"getAir": "\\af[9]\\n<\\N[9]><WordWrap>"
+		"getFire": "\\af[9]\\n<\\N[9]><WordWrap>I feel like I can hardly contain it.",
+		"getAir": "\\af[9]\\n<\\N[9]><WordWrap>Will I ever be normal again?"
 	},
 
 	"10squire": {
@@ -163,10 +170,10 @@
 		"day9": "\\af[10]\\n<\\N[10]><WordWrap>",
 		"day10": "\\af[29]\\n<\\N[29]><WordWrap>",
 
-		"getIce": "\\af[10]\\n<\\N[10]><WordWrap>",
-		"getEarth": "\\af[10]\\n<\\N[10]><WordWrap>",
-		"getFire": "\\af[10]\\n<\\N[10]><WordWrap>",
-		"getAir": "\\af[10]\\n<\\N[10]><WordWrap>"
+		"getIce": "\\af[10]\\n<\\N[10]><WordWrap>Nothing will stand in my way.",
+		"getEarth": "\\af[10]\\n<\\N[10]><WordWrap>Strength and subtlety.",
+		"getFire": "\\af[10]\\n<\\N[10]><WordWrap>Evil will wilt before the purifying...<br>Okay, that was a bit much.",
+		"getAir": "\\af[10]\\n<\\N[10]><WordWrap>I don't know if I can handle this,<br>but I have to."
 	},
 
 	"11looter": {
@@ -187,7 +194,7 @@
 
 		"getIce": "\\af[11]\\n<\\N[11]><WordWrap>",
 		"getEarth": "\\af[11]\\n<\\N[11]><WordWrap>",
-		"getFire": "\\af[11]\\n<\\N[11]><WordWrap>",
+		"getFire": "\\af[11]\\n<\\N[11]><WordWrap>Maybe if I can take some of these magic tricks out of here it'll be worth it.",
 		"getAir": "\\af[11]\\n<\\N[11]><WordWrap>"
 	},
 
