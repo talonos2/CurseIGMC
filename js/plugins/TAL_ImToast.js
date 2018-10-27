@@ -727,3 +727,12 @@ Game_CharacterBase.prototype.extendedJump = function(xPlus, yPlus, height) {
     this.resetStopCount();
     this.straighten();
 };
+
+Sprite_Animation.prototype.setupRate = function() {
+    console.log(this)
+  this._rate = Yanfly.Param.AnimationRate;
+  if (this._animation.name === "PRESS SOON!")
+  {
+    this._rate = 2;
+  }
+};
