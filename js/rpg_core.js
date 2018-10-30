@@ -4995,9 +4995,9 @@ Tilemap.prototype._writeLastTiles = function(i, x, y, tiles) {
 Tilemap.prototype._drawTile = function(bitmap, tileId, dx, dy) {
     if (Tilemap.isVisibleTile(tileId)) {
         if (Tilemap.isAutotile(tileId)) {
-            this._drawAutotile(bitmap, tileId, dx, dy);
+            //this._drawAutotile(bitmap, tileId, dx, dy);
         } else {
-            this._drawNormalTile(bitmap, tileId, dx, dy);
+            //this._drawNormalTile(bitmap, tileId, dx, dy);
         }
     }
 };
