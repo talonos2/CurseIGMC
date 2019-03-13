@@ -647,7 +647,7 @@
 		"day16": "\\af[24]\\n<\\N[24]><WordWrap>The old knight must have been quite formitable in his prime.",
 		"day17c1": "\\af[24]\\n<\\N[24]><WordWrap>I may have to step in.",
 		"day17c2": "\\af[24]\\n<\\N[24]><WordWrap>Even just for the scarecrow's sake.",
-		"day18": "\\af[24]\\n<\\N[24]><WordWrap>Getting a little too real out there for me.",
+		"day18": "\\af[24]\\n<\\N[24]><WordWrap>It was getting a little too intense out there for me.",
 		"day19": "\\af[24]\\n<\\N[24]><WordWrap>",
 		"day20": "\\af[24]\\n<\\N[24]><WordWrap>",
 		"day21": "\\af[24]\\n<\\N[24]><WordWrap>",
@@ -658,7 +658,7 @@
 		"getIce": "\\af[24]\\n<\\N[24]><WordWrap>Slow and steady... will probably get us all killed.",
 		"getEarth": "\\af[24]\\n<\\N[24]><WordWrap>I will stand strong, and never give ground.",
 		"getFire": "\\af[24]\\n<\\N[24]><WordWrap>Strike and fade.",
-		"getAir": "\\af[24]\\n<\\N[24]><WordWrap>We are advancing with leaps and bounds."
+		"getAir": "\\af[24]\\n<\\N[24]><WordWrap>So, we are advance with leaps and bounds."
 	},
 
 	"25midwife": {
@@ -686,8 +686,8 @@
 		"day19c2": "\\af[25]\\n<\\N[25]><WordWrap>Yes, I think so.",
 		"day19c3": "\\af[24]\\n<\\N[24]><WordWrap>I believe you.",
 		"day20c1": "\\af[24]\\n<\\N[24]><WordWrap>Shouldn't you be maintaining the scrying orb?",
-		"day20c2": "\\af[25]\\n<\\N[25]><WordWrap>Nah, I set it up so it runs on its own now.",
-		"day20c3": "\\af[24]\\n<\\N[24]><WordWrap>How...?",
+		"day20c2": "\\af[25]\\n<\\N[25]><WordWrap>Nah, it's okay.",
+		"day20c3": "\\af[24]\\n<\\N[24]><WordWrap>But...",
 		"day21": "\\af[25]\\n<\\N[25]><WordWrap>It's going to work out...  It has to.",
 		"day22": "\\af[25]\\n<\\N[25]><WordWrap>Sheesh, I leave for a few days and everything gets out of order...",
 		"day23": "\\af[25]\\n<\\N[25]><WordWrap>Well it's not like we can just round up everyone in town.",
@@ -1068,7 +1068,7 @@
 
 		"01": "\\af[28]\\n<\\N[28]><WordWrap>This is hopeless.  We can still evacuate.",
 		"02": "\\af[26]\\n<\\N[26]><WordWrap>We are staying.  You won't talk us out of it.",
-		"03": "\\af[26]\\n<\\N[26]><WordWrap>We all have great and noble reasons for standing against evil.",
+		"03": "\\af[26]\\n<\\N[26]><WordWrap>We all have noble and great reasons for standing against evil.",
 		"04": "\\af[13]\\n<\\N[13]><WordWrap>Except me.",
 		"05": "\\af[26]\\n<\\N[26]><WordWrap>Yes, except him.",
 		"06": "\\af[13]\\n<\\N[13]><WordWrap>Figures."
@@ -1077,29 +1077,78 @@
 
 	"14Cutscene": {
 
+
+		"01": "\\af[26]\\n<\\N[26]><WordWrap>I have to stay but you should go son! A mayor always goes down with his town!",
+		"02": "\\af[14]\\n<\\N[14]><WordWrap>I keep telling you you're thinking of a different job! Either way, I'm not leaving your side!",
+		"03": "\\af[14]\\n<\\N[14]><WordWrap>After this!"
+
 	},
 
 	"15Cutscene": {
+
+		"01": "\\af[15]\\n<\\N[15]><WordWrap>Quite a lot of loot coming in from that cave.",
+		"02": "\\af[17]\\n<\\N[17]><WordWrap>I guess, if you need hatchets.",
+		"03": "\\af[15]\\n<\\N[15]><WordWrap>There’s more than that in there.  I bet someone out there would buy monster bones.",
+		"04": "\\af[17]\\n<\\N[17]><WordWrap>There's a pleasant thought.",
+		"05": "\\af[15]\\n<\\N[15]><WordWrap>Hey, if we don’t get something out of this you’re going to be destitute.",
+		"06": "\\af[15]\\n<\\N[15]><WordWrap>You mean we’re going to be destitute.",
+		"07": "\\af[15]\\n<\\N[15]><WordWrap>that’s what I said.",
+		"08": "\\af[15]\\n<\\N[15]><WordWrap>No, I mean... won’t you be destitute too?",
+		"09": "\\af[15]\\n<\\N[15]><WordWrap>I, well... this is difficult to explain... You see—",
+		"10": "\\af[15]\\n<\\N[15]><WordWrap>Oh thank (deity)."
 
 	},
 
 	"16Cutscene": {
 
+		"01": "\\af[16]\\n<\\N[16]><WordWrap>Okay, now try to open your third eye.",
+		"02": "\\af[25]\\n<\\N[25]><WordWrap>I see some bears, looks like they're sleeping.",
+		"03": "\\af[16]\\n<\\N[16]><WordWrap>Oh!  You be seeing another cave...  Wait, are those pandas?",
+		"04": "\\af[25]\\n<\\N[25]><WordWrap>Oh right, those aren't actually bears are they?",
+		"05": "\\af[16]\\n<\\N[16]><WordWrap>No, they are, it's just... Um, try again.",
+		"06": "\\af[25]\\n<\\N[25]><WordWrap>Okay, I see monsters, but it's not a cave.  I can tell because of the three suns.",
+		"07": "\\af[16]\\n<\\N[16]><WordWrap>Yes that's... somewhere else.  Hold on a second, let me have a look in there.",
+		"08": "\\af[16]\\n<\\N[16]><WordWrap>Okay, how about this time, you close your 4th through 17th eye, and trying looking again.",
+		"09": "\\af[25]\\n<\\N[25]><WordWrap>But, but- We aren't done with the lessons!",
+		"10": "\\af[16]\\n<\\N[16]><WordWrap>I think you'll do fine."
+
 	},
 
 	"17Cutscene": {
+
+		"01": "\\af[23]\\n<\\N[23]><WordWrap>You know, I really have to admire your handiwork on these.  They're so richly detailed.",
+		"02": "\\af[17]\\n<\\N[17]><WordWrap>...",
+		"03": "\\af[23]\\n<\\N[23]><WordWrap>You must have spent hours studying how those beasties looked.",
+		"04": "\\af[17]\\n<\\N[17]><WordWrap>...",
+		"05": "\\af[23]\\n<\\N[23]><WordWrap>Well... it um, looks like you're just about done.",
+		"06": "\\af[17]\\n<\\N[17]><WordWrap>Yep, just need to make one last cut"
 
 	},
 
 	"18Cutscene": {
 
+		"01": "\\af[18]\\n<\\N[18]><WordWrap>So cave, how many of my students have you taken over the years?",
+		"02": "\\af[18]\\n<\\N[18]><WordWrap>I did my best to teach them to stay away from you.",
+		"03": "\\af[18]\\n<\\N[18]><WordWrap>Now it's time to teach you a lesson."
+
 	},
 
 	"19Cutscene": {
 
+
+
 	},
 
 	"20Cutscene": {
+
+		"01": "\\af[20]\\n<\\N[20]><WordWrap>I said, give me that blade.",
+		"02": "\\af[24]\\n<\\N[24]><WordWrap>No.",
+		"03": "\\af[20]\\n<\\N[20]><WordWrap>I've seen ya'll take some real shiny loot out of that cave, and I want it.",
+		"04": "\\af[24]\\n<\\N[24]><WordWrap>You'll have to go through me.",
+		"05": "\\af[20]\\n<\\N[20]><WordWrap>Fine, I was getting tired of idle threats.",
+		"06": "\\af[20]\\n<\\N[20]><WordWrap>Take the blade.",
+		"07": "\\af[24]\\n<\\N[24]><WordWrap>I, uh.",
+		"08": "\\af[20]\\n<\\N[20]><WordWrap>You take it, or you'll have to go through me.."
 
 	},
 
@@ -1113,17 +1162,66 @@
 
 	"23Cutscene": {
 
+		"01": "\\af[23]\\n<\\N[23]><WordWrap>What am I going to do?  What if I have to go in next?!",
+		"02": "\\af[23]\\n<\\N[23]><WordWrap>I don't think I could hurt something even if it is a monster!",
+		"03": "\\af[28]\\n<\\N[28]><WordWrap>You?  You reccomend amputations for everything!",
+		"04": "\\af[23]\\n<\\N[23]><WordWrap>No I don't.",
+		"05": "\\af[28]\\n<\\N[28]><WordWrap>You wanted to cut off the mayor's nose to cure his cold!",
+		"06": "\\af[23]\\n<\\N[23]><WordWrap>It would have kept it from being stuffed up.",
+		"07": "\\af[28]\\n<\\N[28]><WordWrap>You named your bonesaw.",
+		"08": "\\af[23]\\n<\\N[23]><WordWrap>You leave Josephine out of this.",
+		"09": "\\af[28]\\n<\\N[28]><WordWrap>And then there's your 'bacterial coliseum' method.",
+		"10": "\\af[23]\\n<\\N[23]><WordWrap>Hey, if you had let me infect you with cholera it would have wiped out that flue!",
+		"11": "\\af[23]\\n<\\N[23]><WordWrap>Oh no!  What am I going to do!?",
+		"12": "\\af[28]\\n<\\N[28]><WordWrap>just pretend they're all patients."
+
+
 	},
 
 	"24Cutscene": {
+
+
+
+		"01": "\\af[24]\\n<\\N[24]><WordWrap>Your form needs work.  You stumble on the follow-through.",
+		"02": "\\af[30]\\n<\\N[26]><WordWrap>I'm not the spry young man I once was.",
+		"03": "\\af[24]\\n<\\N[24]><WordWrap>Oh, okay then.",
+		"04": "\\af[24]\\n<\\N[24]><WordWrap>When you see the flying machine made of knives make sure to let it know that your reflexes used to be better.",
+		"05": "\\af[24]\\n<\\N[24]><WordWrap>I'm sure it'll slow down.",
+		"06": "\\af[30]\\n<\\N[26]><WordWrap>Yes, I understa—",
+		"07": "\\af[24]\\n<\\N[24]><WordWrap>And when the monster tries to scald you with boiling lava, let it know that smoke is bad for your lungs.",
+		"08": "\\af[24]\\n<\\N[24]><WordWrap>I'm sure it will tone that down for you.",
+		"09": "\\af[30]\\n<\\N[26]><WordWrap>Yes, I get—",
+		"10": "\\af[24]\\n<\\N[24]><WordWrap>Oh, when the monster made of stone comes at you, make sure to let it know that your joints ache.",
+		"11": "\\af[24]\\n<\\N[24]><WordWrap>I'm sure it'll take that into account and make sure to crack easier for you.",
+		"12": "\\af[30]\\n<\\N[26]><WordWrap>I GET IT!",
+		"13": "\\af[24]\\n<\\N[24]><WordWrap>DO YOU?!",
+		"14": "\\af[24]\\n<\\N[24]><WordWrap>How many people have gone in there?!  How many have YOU seen come out?!",
+		"15": "\\af[24]\\n<\\N[24]><WordWrap>I taught them everything I know!   Everything!  What was the point of any of it?!",
+		"16": "\\af[24]\\n<\\N[24]><WordWrap>Of anything I ever did?...",
+		"17": "\\af[30]\\n<\\N[26]><WordWrap>You tried... it's all any of us can do.",
+		"18": "\\af[24]\\n<\\N[24]><WordWrap>I'll do more than try."
 
 	},
 
 	"25Cutscene": {
 
+		"01": "\\af[26]\\n<\\N[26]><WordWrap>So, shouldn't you be maintaining the viewing portal?",
+		"02": "\\af[25]\\n<\\N[25]><WordWrap>Hrm?  Oh it's fine.",
+		"03": "\\af[26]\\n<\\N[26]><WordWrap>Larus nearly wore himself out concentrating on keeping the view open.",
+		"04": "\\af[25]\\n<\\N[25]><WordWrap>Really?  I wondered why he always looked so tired.",
+		"05": "\\af[26]\\n<\\N[26]><WordWrap>Oh no... what will we do now?",
+		"06": "\\af[25]\\n<\\N[25]><WordWrap>It's okay!  I set it up to run on its own.",
+		"07": "\\af[26]\\n<\\N[26]><WordWrap>Wait, what?"
+
+
 	},
 
 	"26Cutscene": {
+
+		"01": "\\af[29]\\n<\\N[29]><WordWrap>Here, it's all that I've written so far.",
+		"02": "\\af[26]\\n<\\N[26]><WordWrap>Why are you giving it to me?",
+		"03": "\\af[26]\\n<\\N[26]><WordWrap>Because I know I won't leave without it. And now that I know your stories, I don't want to just leave you behind.",
+		"04": "\\af[26]\\n<\\N[26]><WordWrap>Go on sir, its your turn."
 
 	},
 
