@@ -347,8 +347,8 @@ Scene_Title.prototype.playTitleMusic = function() {
 // The scene class of the map screen.
 
 function Scene_Map() {
-    console.log("I AM GETTING CALLED!")
-    console.trace()
+    //console.log("I AM GETTING CALLED!")
+    //console.trace()
     this.initialize.apply(this, arguments);
 }
 

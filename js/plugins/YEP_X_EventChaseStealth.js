@@ -659,7 +659,7 @@ Window_StealthGauge.prototype.drawStealthTimer = function() {
 Yanfly.ECS.Scene_Map_createAllWindows = Scene_Map.prototype.createAllWindows;
 Scene_Map.prototype.createAllWindows = function() {
     Yanfly.ECS.Scene_Map_createAllWindows.call(this);
-    this.createStealthWindow();
+    //this.createStealthWindow();
 };
 
 Scene_Map.prototype.createStealthWindow = function() {

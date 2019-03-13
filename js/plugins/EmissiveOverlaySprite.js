@@ -1,6 +1,75 @@
 (function () {
 'use strict';
 
+/**
+ * All plugin parameters for this plugin
+ *
+ * @file parameters
+ *
+ * @author LTN Games
+ */
+
+/*:
+ * @pluginname EmissiveOverlaySprite
+ * @plugindesc Add an overlay sprite overtop of an existing event's sprite
+ * @version 0.1.1
+ *
+ * @modulename $emissiveOverlay
+ * @external
+ *
+ * @author LTN Games (https://ltngames.gitlab.io/)
+ *
+ * @help
+--------------------------------------------------------------------------------
+ # TERMS OF USE
+ For use with projects created by Talanos
+
+# INFORMATION
+  EmissiveOverlayEvent allows you to add another sprite over top of another
+event's sprite without interferring with Orange Overlays layers plugin.
+
+## Compatability
+  This plugin changes methods in Spriteset_Map but they should not be ffected
+unless your project includes plugins which overwrite methods in Spriteset_Map.
+
+ # Installation
+  Simply save this plugin file into your projects /js/plugins/ directory.
+  Add it to your projects plugin manager beneath OrangeOverlay and
+  ExtraMovementFrames plugins.
+
+ # GETTING STARTED
+  To start you should make sure all sprites you require are located in your
+ /img/characters/ directory. Then on the event you would like to add an
+ emissive sprite to, you simply include the note-tag below in an event comment.
+
+ # Notetag
+  <EmissiveSprite: FilenameForSprtesheet>
+
+ # Plugin Commands
+ Main Comand: EmissiveEvent
+
+ SubCommand: remove [eventId]
+ Will remove the events emissive sprite
+
+ Example: Emissive event remove 1
+
+ # Script Calls
+ A little more advanced than your average script call you must first obtain the
+ map scene's spriteset.
+
+ var spriteset= SceneManager._scene._spriteset
+
+ Then you can proceed to manipulate the emissiveSprite by adding or removing
+ emissive sprites.
+
+ spriteset.removeEmissiveSprite(eventId)
+ spriteset.createEmissiveSprite({
+   eventId: 0
+   filename: ''
+ })
+
+*/
+
 (function () {
 
   /**
@@ -211,6 +280,32 @@
     setOriginalEvent(event) {
       this._originalEvent = event;
     }
+
+    getOriginalEvent() {
+      return this._originalEvent;
+    }
+  }
+
+  function eventPageComments(event) {
+    return event.list().filter(function (c) {
+      return c.code === 108 || c.code === 408;
+    }).map(function (command) {
+      return command.parameters;
+    });
+  }
+
+  function eventHasComments(event) {
+    return eventPageComments(event).length > 0;
+  }
+
+  function eventPageHasTag(event) {
+    if (eventHasComments(event)) {
+      return eventPageComments(event).some(function (comments) {
+        return comments.some(function (comment) {
+          return comment.toLowerCase().includes('emissivesprite');
+        });
+      });
+    }
   }
 
   function boxesIntersect(a, b) {
@@ -231,9 +326,11 @@
       var emissiveEvent = new EmissiveEvent($gameMap.mapId(), originalEvent.eventId());
       var emissiveSprite = new Sprite_Character(emissiveEvent);
 
-      emissiveEvent.setOriginalEvent(originalEvent);
-      emissiveEvent.setImage(data.filename, 0);
-      this._emissiveSpriteLayer.addChild(emissiveSprite);
+      if (eventPageHasTag(originalEvent)) {
+        emissiveEvent.setOriginalEvent(originalEvent);
+        emissiveEvent.setImage(data.filename, 0);
+        this._emissiveSpriteLayer.addChild(emissiveSprite);
+      }
     }
   };
 
@@ -259,9 +356,15 @@
     oldSpritesetMapUpdate.call(this);
     if (this._emissiveSpriteLayer) {
       this._emissiveSpriteLayer.children.forEach(function (child) {
-        child._character.update();
-        if (boxesIntersect(child, _this.getPlayerSprite())) {
-          _this.getPlayerSprite().z = 20;
+        var originalEvent = child._character.getOriginalEvent();
+
+        if (eventPageHasTag(originalEvent)) {
+          child._character.update();
+          if (boxesIntersect(child, _this.getPlayerSprite())) {
+            _this.getPlayerSprite().z = 20;
+          }
+        } else {
+          child.destroy();
         }
       });
     }
@@ -289,5 +392,6 @@
     this._tilemap.addChildAt(this._emissiveSpriteLayer, index);
   };
 })();
+/* Built By FeniXCLI - Powered by Rollup */
 
 }());

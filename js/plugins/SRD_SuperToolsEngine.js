@@ -2600,7 +2600,8 @@ Scene_Base.prototype.initialize = function() {
 	this._editWindowName = '';
 };
 
-if(_.isPlaytest) {
+//if(_.isPlaytest) {
+	if(false) {
 
 _.Scene_Base_update = Scene_Base.prototype.update;
 Scene_Base.prototype.update = function() {
