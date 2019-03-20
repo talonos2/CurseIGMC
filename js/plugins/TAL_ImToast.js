@@ -128,14 +128,12 @@ Sprite_Actor.prototype.updateFrame = function()
         var pattern = this._pattern < 3 ? this._pattern : 1;
 
         //Override with stuff derived from our action sequences:
-
         if (this._actor&&this._actor.patternOverride)
         {
             motionIndex = this._actor.patternOverride.motion;
             pattern = this._actor.patternOverride.pattern;
         }
 
-        console.log("Index: "+motionIndex+", Pattern: "+pattern);
         var cw = bitmap.width / 9;
         var ch = bitmap.height;//var ch = bitmap.height / 6;
         var cx = Math.floor(motionIndex / 6) * 3 + pattern;
@@ -199,6 +197,13 @@ Sprite_Enemy.prototype.updateSVFrame = function() {
     this._effectTarget = this._mainSprite;
     var motionIndex = this._motion ? this._motion.index : 0;
     var pattern = this._pattern < 3 ? this._pattern : 1;
+
+    if (this._enemy&&this._enemy.patternOverride)
+    {
+        motionIndex = this._enemy.patternOverride.motion;
+        pattern = this._enemy.patternOverride.pattern;
+    }
+
     var cw = bitmap.width / 9;
     var ch = bitmap.height;
     var cx = Math.floor(motionIndex / 6) * 3 + pattern;

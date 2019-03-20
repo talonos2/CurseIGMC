@@ -1904,6 +1904,7 @@ BattleManager.pushPerformedBattler = function(battler) {
 
 BattleManager.update = function() {
     if (!this.isBusy() && !this.updateEvent()) {
+    	console.log("Phase: "+this._phase);
         switch (this._phase) {
         case 'start':
             this.startInput();
@@ -2148,6 +2149,7 @@ BattleManager.updatePhase = function() {
       this.endAction();
       break;
     }
+    BattleManager.update();
 };
 
 BattleManager.createPhaseChanges = function() {
@@ -2200,19 +2202,25 @@ BattleManager.endAction = function() {
 };
 
 BattleManager.updateActionList = function() {
-    for (;;) {
+    for (;;) 
+    {
       this._actSeq = this._actionList.shift();
-      if (this._actSeq) {
+      if (this._actSeq) 
+      {
         if (!this.actionConditionsMet(this._actSeq)) continue;
         var seqName = this._actSeq[0].toUpperCase();
-        if (!this.processActionSequenceCheck(seqName, this._actSeq[1])) {
+        if (!this.processActionSequenceCheck(seqName, this._actSeq[1])) 
+        {
           break;
         }
-      } else {
+      } 
+      else 
+      {
         this._phase = 'phaseChange';
         break;
       }
     }
+    BattleManager.update();
 };
 
 BattleManager.updateActionTargetList = function() {
