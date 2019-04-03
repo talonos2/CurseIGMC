@@ -61,8 +61,8 @@
     var newWindow = new Window_TalonHud();
     newWindow.x = 0;
     newWindow.y = 0;
-    newWindow._width = 1200;
-    newWindow._height = 1200;
+    newWindow._width = 1500;
+    newWindow._height = 1500;
     newWindow.opacity = 0;
     newWindow.padding = 0;
     newWindow.margin = 0;
@@ -70,6 +70,8 @@
     this.addChild(newWindow);
 
     this._talonHudWindow = newWindow;
+    //this.setBackgroundType(1);
+    //this.updateBackground();
   };
 
  /****************************
@@ -84,7 +86,7 @@
   Window_TalonHud.prototype.constructor = Window_TalonHud;
 
   Window_TalonHud.prototype.initialize = function() {
-    Window_Base.prototype.initialize.call(this, 0, 0, 1200, 1200);
+    Window_Base.prototype.initialize.call(this, 0, 0, 1500, 1500);
     this.createContents()
     this.refresh();
   };
@@ -107,10 +109,9 @@
 
   Window_TalonHud.prototype.refresh = function()
   {
-    if (!Window_TalonHud.cache)
+    if (!Talonos.cache)
     {
-      Window_TalonHud.cache = {};
-      Window_TalonHud.cache.elemHolder = ImageManager.loadPicture("ElemPlaceholder");
+        Talonos.loadCache()
     }
     if (this.contents)
     {
@@ -123,6 +124,32 @@
       }
     }
   };
+
+  Talonos.loadCache = function()
+  {
+      Window_TalonHud.cache = {};
+      Window_TalonHud.cache.ElemPlaceholder = ImageManager.loadPicture("ElemPlaceholder");
+      Window_TalonHud.cache.jackknifePlaceholder = ImageManager.loadPicture("jackknifePlaceholder");
+      Window_TalonHud.cache.mapPlaceholder = ImageManager.loadPicture("mapPlaceholder");
+      Window_TalonHud.cache.timerPlaceholder = ImageManager.loadPicture("timerPlaceholder");
+      Window_TalonHud.cache.combatPlaceholder = ImageManager.loadPicture("combatPlaceholder");
+      Window_TalonHud.cache.enemyPlaceholder = ImageManager.loadPicture("enemyPlaceholder");
+      Window_TalonHud.cache.bigOlObfuscation = ImageManager.loadPicture("bigOlObfuscation");
+  }
+
+SceneManager.snapForBackground = function() 
+{
+    if (!Talonos.cache)
+    {
+        Talonos.loadCache()
+    }
+    this._backgroundBitmap = this.snap();
+    this._backgroundBitmap.blur();
+    console.log("Obfuscated!");
+    console.log(this._backgroundBitmap)
+    this._backgroundBitmap.blt(Window_TalonHud.cache.bigOlObfuscation, 0, 0, 780,1300, 0,0)
+    this._backgroundBitmap.blt(Window_TalonHud.cache.jackknifePlaceholder, 0, 0, 404,244, 50,50)
+};
 
 
 /**
@@ -145,6 +172,7 @@
     {
         return;
     }
+    var scene = SceneManager._scene
 
     //Break it down:
 
@@ -155,21 +183,39 @@
     //Draw the face
 
     //Draw the front of the rock
+    if (scene instanceof Scene_Battle)
+    {
+      this.contents.blt(Window_TalonHud.cache.combatPlaceholder, 0, 0, 155,572, 0,155)
+    }
+    else
+    {
+      this.contents.blt(Window_TalonHud.cache.mapPlaceholder, 0, 0, 155,305, 0,445)
+    }
 
     //Draw the back on the enemy rock
 
     //Draw the front of the enemy rock
+    if (scene instanceof Scene_Battle)
+    {
+      console.log("Yes, here.");
+      this.contents.blt(Window_TalonHud.cache.enemyPlaceholder, 0, 0, 132,103, 1187,186)
+    }
 
     //Draw the elemental rock
-    this.contents.blt(Window_TalonHud.cache.elemHolder, 0, 0, 177,177, 559,574)
+    this.contents.blt(Window_TalonHud.cache.ElemPlaceholder, 0, 0, 177,177, 559,574)
 
     //Draw the stuff on the elemental rock
 
     //Draw the bouncing orb
 
     //Draw the orb frame
+    if (scene instanceof Scene_Battle)
+    {
+      this.contents.blt(Window_TalonHud.cache.jackknifePlaceholder, 0, 0, 404,244, 447,505)
+    }
 
     //Draw the back of the timer
+    this.contents.blt(Window_TalonHud.cache.timerPlaceholder, 0, 0, 242,71, 529,0)
 
     //Draw the timer
 

@@ -1904,7 +1904,6 @@ BattleManager.pushPerformedBattler = function(battler) {
 
 BattleManager.update = function() {
     if (!this.isBusy() && !this.updateEvent()) {
-    	console.log("Phase: "+this._phase);
         switch (this._phase) {
         case 'start':
             this.startInput();
