@@ -2420,6 +2420,7 @@ BattleManager.updateTurn = function() {
     } else {
         this.endTurn();
     }
+    BattleManager.update();
 };
 
 BattleManager.processTurn = function() {

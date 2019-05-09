@@ -118,12 +118,22 @@ Scene_Battle.prototype.start = function() {
 };
 
 //Overwritten to reduce file size of SV Battler
-Sprite_Actor.prototype.updateFrame = function() {
+Sprite_Actor.prototype.updateFrame = function() 
+{
     Sprite_Battler.prototype.updateFrame.call(this);
     var bitmap = this._mainSprite.bitmap;
-    if (bitmap) {
+    if (bitmap) 
+    {
         var motionIndex = this._motion ? this._motion.index : 0;
         var pattern = this._pattern < 3 ? this._pattern : 1;
+
+        //Override with stuff derived from our action sequences:
+        if (this._actor&&this._actor.patternOverride)
+        {
+            motionIndex = this._actor.patternOverride.motion;
+            pattern = this._actor.patternOverride.pattern;
+        }
+
         var cw = bitmap.width / 9;
         var ch = bitmap.height;//var ch = bitmap.height / 6;
         var cx = Math.floor(motionIndex / 6) * 3 + pattern;
@@ -132,7 +142,8 @@ Sprite_Actor.prototype.updateFrame = function() {
     }
     if (!this._mainSprite) return;
     if (!this._mainSprite.bitmap) return;
-    if (this._mainSprite.bitmap.width > 0 && !this.bitmap) {
+    if (this._mainSprite.bitmap.width > 0 && !this.bitmap) 
+    {
       var sw = this._mainSprite.bitmap.width / 9;
       var sh = this._mainSprite.bitmap.height;
       //var sh = this._mainSprite.bitmap.height / 6;
@@ -170,6 +181,14 @@ Sprite_Enemy.prototype.updateMove = function() {
     //}
 };
 
+Sprite_Actor.prototype.updateMove = function () {
+    var bitmap = this._mainSprite.bitmap;
+    if (!bitmap || bitmap.isReady()) {
+        this.setMirror(false);
+        Sprite_Battler.prototype.updateMove.call(this);
+    }
+}
+
 //Overwritten to reduce file size of SV Battler
 Sprite_Enemy.prototype.updateSVFrame = function() {
     Sprite_Battler.prototype.updateFrame.call(this);
@@ -178,6 +197,13 @@ Sprite_Enemy.prototype.updateSVFrame = function() {
     this._effectTarget = this._mainSprite;
     var motionIndex = this._motion ? this._motion.index : 0;
     var pattern = this._pattern < 3 ? this._pattern : 1;
+
+    if (this._enemy&&this._enemy.patternOverride)
+    {
+        motionIndex = this._enemy.patternOverride.motion;
+        pattern = this._enemy.patternOverride.pattern;
+    }
+
     var cw = bitmap.width / 9;
     var ch = bitmap.height;
     var cx = Math.floor(motionIndex / 6) * 3 + pattern;
@@ -797,7 +823,6 @@ Game_CharacterBase.prototype.extendedJump = function(xPlus, yPlus, height) {
 };
 
 Sprite_Animation.prototype.setupRate = function() {
-    console.log(this)
   this._rate = Yanfly.Param.AnimationRate;
   if (this._animation.name === "PRESS SOON!")
   {
