@@ -38,7 +38,7 @@
 		"day2": "\\af[2]\\n<\\N[2]><WordWrap>I don't even have sick days yet!  Can you even take disaster days?",
 
 	"comment1": "Defeating first enemy.",
-		"firstVictory": "\\af[2]\\n<\\N[2]><WordWrap>I can do this...",
+		"firstVictory": "\\af[2]\\n<\\N[2]><WordWrap>I can do this... I can... I can...",
 	"comment2": "Entering second floor.",
 		"secondFloor": "\\af[2]\\n<\\N[2]><WordWrap>These bugs are s-so much bigger in person.",
 
@@ -77,11 +77,11 @@
 		"day4": "\\af[4]\\n<\\N[4]><WordWrap>What does she know...",
 
 	"comment1": "three minutes pass",
-		"threeMin": "\\af[4]\\n<\\N[4]><WordWrap>Dark lord, have I not proven myself?",
+		"threeMin": "\\af[4]\\n<\\N[4]><WordWrap>Dark Lord, have I not proven myself?",
 	"comment2": "end of run",
 		"theEnd": "\\af[4]\\n<\\N[4]><WordWrap>Have I finally been accepted?",
 
-		"getIce": "\\af[4]\\n<\\N[4]><WordWrap>Yes, a dark gift!",
+		"getIce": "\\af[4]\\n<\\N[4]><WordWrap>Yes! A dark gift!",
 		"getEarth": "\\af[4]\\n<\\N[4]><WordWrap>The shadows are my ally.<br>... And the earth too I guess.",
 		"getFire": "\\af[4]\\n<\\N[4]><WordWrap>With this they'll pay!  They'll all pay!",
 		"getAir": "\\af[4]\\n<\\N[4]><WordWrap>The brighter the light, the darker the shadow."
