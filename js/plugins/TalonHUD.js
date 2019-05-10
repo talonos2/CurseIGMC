@@ -44,14 +44,14 @@
       return;
     }
 
-    if (SceneManager.isSceneChanging()) 
-    {
-      this._talonHudWindow.visible = false;
-    }
-    else
-    {
+    //if (SceneManager.isSceneChanging()) 
+    //{
+    //  this._talonHudWindow.visible = false;
+    //}
+    //else
+    //{
       this._talonHudWindow.visible = true;
-    }
+    //}
 
     this._talonHudWindow.update();
   };
@@ -109,7 +109,7 @@
 
   Window_TalonHud.prototype.refresh = function()
   {
-    if (!Talonos.cache)
+    if (!Window_TalonHud.cache)
     {
         Talonos.loadCache()
     }
@@ -122,6 +122,10 @@
         this.drawStuff();
         this._isDirty = false;
       }
+      else
+      {
+        console.log("No contents!");
+      }
     }
   };
 
@@ -129,17 +133,23 @@
   {
       Window_TalonHud.cache = {};
       Window_TalonHud.cache.ElemPlaceholder = ImageManager.loadPicture("ElemPlaceholder");
-      Window_TalonHud.cache.jackknifePlaceholder = ImageManager.loadPicture("jackknifePlaceholder");
+      Window_TalonHud.cache.knife = [];
+      for (var i = 0; i < 12; ++i) 
+      {
+        Window_TalonHud.cache.knife[i] = ImageManager.loadPicture("knife"+i);
+      }
       Window_TalonHud.cache.mapPlaceholder = ImageManager.loadPicture("mapPlaceholder");
       Window_TalonHud.cache.timerPlaceholder = ImageManager.loadPicture("timerPlaceholder");
       Window_TalonHud.cache.combatPlaceholder = ImageManager.loadPicture("combatPlaceholder");
       Window_TalonHud.cache.enemyPlaceholder = ImageManager.loadPicture("enemyPlaceholder");
       Window_TalonHud.cache.bigOlObfuscation = ImageManager.loadPicture("bigOlObfuscation");
+      console.log("Cache for Talonhud loaded");
+      Talonos.encounterEffectFrame = 0;
   }
 
 SceneManager.snapForBackground = function() 
 {
-    if (!Talonos.cache)
+    if (!Window_TalonHud.cache)
     {
         Talonos.loadCache()
     }
@@ -147,8 +157,8 @@ SceneManager.snapForBackground = function()
     this._backgroundBitmap.blur();
     console.log("Obfuscated!");
     console.log(this._backgroundBitmap)
-    this._backgroundBitmap.blt(Window_TalonHud.cache.bigOlObfuscation, 0, 0, 780,1300, 0,0)
-    this._backgroundBitmap.blt(Window_TalonHud.cache.jackknifePlaceholder, 0, 0, 404,244, 50,50)
+    this._backgroundBitmap.blt(Window_TalonHud.cache.bigOlObfuscation, 0, 0, 1302,782, 0,0)
+    //this._backgroundBitmap.blt(Window_TalonHud.cache.jackknifePlaceholder, 0, 0, 404,244, 50,50)
 };
 
 
@@ -168,6 +178,7 @@ SceneManager.snapForBackground = function()
 
   Window_TalonHud.prototype.drawStuff = function() 
   {
+    //console.log("Draw.");
     if (!$gameSwitches.value(Talonos.hudOnOff)) 
     {
         return;
@@ -189,7 +200,7 @@ SceneManager.snapForBackground = function()
     }
     else
     {
-      this.contents.blt(Window_TalonHud.cache.mapPlaceholder, 0, 0, 155,305, 0,445)
+      this.contents.blt(Window_TalonHud.cache.mapPlaceholder, 0, 0, 155,304, 0,445)
     }
 
     //Draw the back on the enemy rock
@@ -197,12 +208,8 @@ SceneManager.snapForBackground = function()
     //Draw the front of the enemy rock
     if (scene instanceof Scene_Battle)
     {
-      console.log("Yes, here.");
       this.contents.blt(Window_TalonHud.cache.enemyPlaceholder, 0, 0, 132,103, 1187,186)
     }
-
-    //Draw the elemental rock
-    this.contents.blt(Window_TalonHud.cache.ElemPlaceholder, 0, 0, 177,177, 559,574)
 
     //Draw the stuff on the elemental rock
 
@@ -211,7 +218,20 @@ SceneManager.snapForBackground = function()
     //Draw the orb frame
     if (scene instanceof Scene_Battle)
     {
-      this.contents.blt(Window_TalonHud.cache.jackknifePlaceholder, 0, 0, 404,244, 447,505)
+      //this.contents.blt(Window_TalonHud.cache.knife[6], 0, 0, 450,250, 425,500)
+    }
+    else
+    {
+      //Draw the elemental rock
+      this.contents.blt(Window_TalonHud.cache.knife[Talonos.encounterEffectFrame], 0, 0, 450,250, 425,500);
+      if (!SceneManager.isSceneChanging()&&Talonos.encounterEffectFrame >= 5)
+      {
+        Talonos.encounterEffectFrame += 1;
+        Talonos.encounterEffectFrame %= 12;
+      }
+      //console.log(Talonos.encounterEffectFrame);
+      //this.contents.blt(Window_TalonHud.cache.knife[0], 0, 0, 450,250, 425,500);
+      //console.log(this.visible)
     }
 
     //Draw the back of the timer

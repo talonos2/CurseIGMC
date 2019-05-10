@@ -56,6 +56,9 @@ Scene_Map.prototype.startEncounterEffect = function() {
 
 Scene_Map.prototype.updateEncounterEffect = function() {
     if (this._encounterEffectDuration > 0) {
+        console.log("Updated Encounter Effect: "+this._encounterEffectDuration)
+        Talonos.encounterEffectFrame = 6-this._encounterEffectDuration;
+        console.log("New: "+Talonos.encounterEffectFrame);
         this._encounterEffectDuration--;
         var lengthOfEffect = this.encounterEffectSpeed();
         var framesPassed = lengthOfEffect - this._encounterEffectDuration;

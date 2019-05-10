@@ -720,7 +720,7 @@ console.log(Xillith);
 	    $gamePlayer.setTransparent(true);
 	    $gameMap._events[battleEventID].setTransparent(true);
 
-	    SceneManager._scene._spriteset.removeEmissiveSprite(battleEventID);
+	    //SceneManager._scene._spriteset.removeEmissiveSprite(battleEventID);
 	   
 	    this.children.forEach(function (child) {
 	        if (child.update) {
