@@ -698,9 +698,40 @@ console.log(Xillith);
 	    //$gameTemp.reserveCommonEvent(10);
 	};
 
+    /*
+     * 
+     *Takes over troop setup. Games uses 1300x750 resolution instead of 816/624. 
+     * This adjusts the position of bad guys to more accuratly reflect the troop window
+     * Works on full screen and not full screen mode. 
+     *
+     */
+
+    var _Game_Troop_prototyple_setup = Game_Troop.prototype.setup;
+    Game_Troop.prototype.setup = function (troopId) {
+        this.clear();
+        this._troopId = troopId;
+        this._enemies = [];
+        this.troop().members.forEach(function (member) {
+            if ($dataEnemies[member.enemyId]) {
+                var enemyId = member.enemyId;
+                var x = member.x;
+                var y = member.y;
+                //Adjusts for new screen resolution
+                x = x * Graphics.width / 816+60;
+                y = y * Graphics.height / (2*624/3)+40;
+                var enemy = new Game_Enemy(enemyId, x, y);
+                if (member.hidden) {
+                    enemy.hide();
+                }
+                this._enemies.push(enemy);
+            }
+        }, this);
+        this.makeUniqueNames();
+    };
 
     /*
     *This part is to allow the calculation of monster distance to happen every time a battle is started.
+    * Depricated in new system
     *
     */
 	var _Game_Interpreter_prototype_command301 = Game_Interpreter.prototype.command301;
