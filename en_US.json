@@ -1239,7 +1239,58 @@
 
 	"30Cutscene": {
 
-	}
+	},
+
+
+	"Intro":{
+
+		"01": "\\af[01]\\n<\\N[01]><WordWrap>I hear tell that a dangerous cave has opened in this town.",
+		"02": "\\af[03]\\n<\\N[03]><WordWrap>Yes, each day one of us is sacraficed to the dread-",
+		"03": "\\af[01]\\n<\\N[01]><WordWrap>Excellent!  Take me to your ruler and we will discuss matters.",
+		"04": "\\af[03]\\n<\\N[03]><WordWrap>You mean, the mayor?",
+
+
+		"05": "\\af[01]\\n<\\N[01]><WordWrap>So, just point me towards your weapon shop and I'll get started!",
+		"06": "\\af[26]\\n<\\N[26]><WordWrap>We, don't really have a weapons shop...",
+		"07": "\\af[01]\\n<\\N[01]><WordWrap>Where do the farmers of this town go when they need broadswords or full plate armor?",
+		"08": "\\af[26]\\n<\\N[26]><WordWrap>Where did you come from again?",
+		"09": "\\af[28]\\n<\\N[28]><WordWrap>I say we let him handle it.  The rest of us can evacuate!",
+		"10": "\\af[26]\\n<\\N[26]><WordWrap>And then what? We can abandon the town, but what if the curse spreads to the whole world?",
+		"11": "\\af[01]\\n<\\N[01]><WordWrap>Fear not citizens!  I will vanquis the evil!",
+		"12": "\\af[02]\\n<\\N[02]><WordWrap>But so many have gone in, and none have returned!",
+		"13": "\\af[01]\\n<\\N[01]><WordWrap>Sure, but were they \\fiawesome\\fr?",
+		"14": "\\af[02]\\n<\\N[02]><WordWrap>Well, I kinda liked Jeffrey.",
+		"15": "\\af[01]\\n<\\N[01]><WordWrap>I will rescue him and all the others.  Here, take this.",
+		"16": "\\af[01]\\n<\\N[01]><WordWrap>When I find loot in the cave I will place it in my bag and it will be transported to this chest.",
+		"17": "\\af[01]\\n<\\N[01]><WordWrap>Then you can take the goods to the weapon shop.",
+		"18": "\\af[26]\\n<\\N[26]><WordWrap>Again, no weapons shop.",
+		"19": "\\af[01]\\n<\\N[01]><WordWrap>Then take them to whichever enterprising citizen answers the call to be an arms dealer.",
+		"20": "\\af[16]\\n<\\N[16]><WordWrap>The curse strikes randomly. You cannot expect to-",
+		"21": "\\af[01]\\n<\\N[01]><WordWrap>To glory!",
+		"22": "\\af[26]\\n<\\N[26]><WordWrap>At least he will buy us another day...",
+		"23": "\\af[16]\\n<\\N[16]><WordWrap>Maybe, but let us watch his progress with my scrying (device).",
+		"24": "\\af[16]\\n<\\N[16]><WordWrap>I had not wanted to share before because what I saw was... disheartening.",
+		"25": "\\af[16]\\n<\\N[16]><WordWrap>But now, seeing may just give us hope."
+
+},
+
+
+
+		"FirstDefeat":{
+
+		"01": "\\af[16]\\n<\\N[16]><WordWrap>...well \\fithat\\fr could have gone better.",
+		"02": "\\af[1]\\n<\\N[1]><WordWrap>Douglass Hiro is gone! What... what hope does our town have left?",
+		"03": "\\af[28]\\n<\\N[28]><WordWrap>None! All is lost. We've \\figot\\fr to get out of here!",
+		"04": "\\af[30]\\n<\\N[30]><WordWrap>Perhaps he's not lost forever. Perhaps the curse just... took him somewhere?",
+		"05": "\\af[04]\\n<\\N[04]><WordWrap>We could try sending more people in. Maybe one of them will find something.",
+		"06": "\\af[19]\\n<\\N[19]><WordWrap>My blade is ready! Douglass is not the only brave soul in this village!",
+		"07": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?",
+		"08": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?",
+		"09": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?",
+		"10": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?",
+		"11": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?",
+		"12": "\\af[16]\\n<\\N[16]><WordWrap>Somewhere my scrying can't reach?"
+}
 
 
 
