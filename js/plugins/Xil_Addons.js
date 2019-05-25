@@ -718,7 +718,7 @@ console.log(Xillith);
                 var y = member.y;
                 //Adjusts for new screen resolution
                 x = x * Graphics.width / 816+60;
-                y = y * Graphics.height / (2*624/3)+40;
+                y = y * Graphics.height / (2*624/3)+60;
                 var enemy = new Game_Enemy(enemyId, x, y);
                 if (member.hidden) {
                     enemy.hide();
