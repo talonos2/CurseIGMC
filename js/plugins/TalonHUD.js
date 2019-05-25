@@ -218,7 +218,7 @@ SceneManager.snapForBackground = function()
     //Draw the orb frame
     if (scene instanceof Scene_Battle)
     {
-      //this.contents.blt(Window_TalonHud.cache.knife[6], 0, 0, 450,250, 425,500)
+      this.contents.blt(Window_TalonHud.cache.knife[6], 0, 0, 450,250, 425,500)
     }
     else
     {
