@@ -82,5 +82,5 @@ var $plugins =
 {"name":"ExtraMovementFrames","status":true,"description":"Set sprites with more than 3 frames of animation","parameters":{"Cycle Time":"60","Default Idle Frame":"0","Default Pattern":"[]"}},
 {"name":"change_tile_size_(mv)","status":true,"description":"Allows maps based on a grid size other than 48x48\r\n<ChangeTileSize> v1.1","parameters":{"Tile Size":"60","Tileset Image Folder":"img/bigtilesets/","Parallax Image Folder":"img/parallaxes/"}},
 {"name":"TalonHUD","status":true,"description":"Final WInter Custom HUD","parameters":{"HUD On/Off switch":"67"}},
-{"name":"EmissiveLayerOverOverlay","status":true,"description":"Make glowing effects that appear over the Shadow layer in OrangeOverlay","parameters":{}}
+{"name":"EmissiveLayerOverOverlay","status":false,"description":"Make glowing effects that appear over the Shadow layer in OrangeOverlay","parameters":{}}
 ];

@@ -288,7 +288,7 @@ Hudell.OrangeOverlay = Hudell.OrangeOverlay || {};
       if (!Talonos){Talonos={}};
       if (!Talonos.maskBitmap) 
       {
-        Talonos.maskBitmap = ImageManager.loadBitmap("img/lights/","flashlight_2",0,true)
+        Talonos.maskBitmap = ImageManager.loadBitmap("img/lights/","SpotlightMask",0,true)
       }
       var maskSprite = new Sprite(Talonos.maskBitmap);
       maskSprite.position.set(-1250-30, -937-60)
